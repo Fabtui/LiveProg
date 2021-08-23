@@ -10,10 +10,80 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_130237) do
+ActiveRecord::Schema.define(version: 2021_08_23_135340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "band_favs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_band_favs_on_band_id"
+    t.index ["user_id"], name: "index_band_favs_on_user_id"
+  end
+
+  create_table "band_reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
+    t.text "comment"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_band_reviews_on_band_id"
+    t.index ["user_id"], name: "index_band_reviews_on_user_id"
+  end
+
+  create_table "bands", force: :cascade do |t|
+    t.string "name"
+    t.string "style"
+    t.string "youtube_url"
+    t.string "facebook_url"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bands_on_user_id"
+  end
+
+  create_table "bar_favs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bar_id"], name: "index_bar_favs_on_bar_id"
+    t.index ["user_id"], name: "index_bar_favs_on_user_id"
+  end
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "type"
+    t.string "menu"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "band_id", null: false
+    t.bigint "bar_id", null: false
+    t.date "start_date"
+    t.text "description"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_events_on_band_id"
+    t.index ["bar_id"], name: "index_events_on_bar_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_participations_on_event_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +93,20 @@ ActiveRecord::Schema.define(version: 2021_08_23_130237) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "band_favs", "bands"
+  add_foreign_key "band_favs", "users"
+  add_foreign_key "band_reviews", "bands"
+  add_foreign_key "band_reviews", "users"
+  add_foreign_key "bands", "users"
+  add_foreign_key "bar_favs", "bars"
+  add_foreign_key "bar_favs", "users"
+  add_foreign_key "events", "bands"
+  add_foreign_key "events", "bars"
+  add_foreign_key "participations", "events"
+  add_foreign_key "participations", "users"
 end
