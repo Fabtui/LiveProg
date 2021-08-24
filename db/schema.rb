@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_104158) do
   create_table "bands", force: :cascade do |t|
     t.string "name"
     t.string "style"
+    t.text "description"
     t.string "youtube_url"
     t.string "facebook_url"
     t.bigint "user_id", null: false
