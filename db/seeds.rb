@@ -4,20 +4,20 @@ Users.destroy_all if Rails.env.development?
 la_degust = Bar.create! (
   name: "Bar de la Dégustation"
   address: "7 rue de la Prefecture, 06300 Nice France"
-  type: "bistrot"
+  genre: "bistrot"
   menu: "7 balles la pinte"
 )
 
 le_duc = Bar.create! (
   name: "Le Duc des Lombards"
   adress: "42 rue des Lombards, 75001 Paris"
-  type: "bar à jazz"
+  genre: "bar à jazz"
   menu: "bon vin pas cher"
 
 le_black_sheep = Bar.create! (
   name: "Le Black Sheep"
   address: "21 bd Louis Blanc, 34000 Montpellier"
-  type: "pub"
+  genre: "pub"
   menu: "de la bière et du fun"
 )
 
