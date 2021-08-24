@@ -2,6 +2,8 @@ Bar.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Band.destroy_all if Rails.env.development?
 
+# _______________________________BARS_________________________________________
+
 le_shakpo = Bar.create!(
   name: "Le Shakpo",
   address: "5 Rue Rossetti, 06300 Nice",
@@ -147,6 +149,7 @@ bulldog = Bar.create!(
 )
 bulldog.photo.attach(io: File.open('app/assets/images/bars/bulldog.JPG'), filename: 'bulldog.JPG', content_type:'image/jpg')
 
+# _______________________________USERS_________________________________________
 
 chuck = User.create!(
   email: "chuck@gmail.com",
@@ -185,6 +188,9 @@ User.create!(
   nickname: "Sebounoob"
 )
 
+# _______________________________BANDS-EVENTS_________________________________________
+
+
 vulfpeck = Band.create!(
   name: "Vulfpeck",
   style: "Funk",
@@ -193,14 +199,50 @@ vulfpeck = Band.create!(
   user_id: "1",
   description: "Vulfpeck est un groupe de funk américain fondé en 2011 à Ann Arbor, dans le Michigan."
 )
-vulfpeck.photos.attach(io: File.open('app/assets/images/bands/Vulfpeck.jpg'), filename: 'chuck.jpg', content_type:'image/jpg')
+vulfpeck.photos.attach(io: File.open('app/assets/images/bands/Vulfpeck.jpg'), filename: 'Vulfpeck.jpg', content_type:'image/jpg')
 
 vulfpeck_diane = Event.create!(
   band_id: "1",
   bar_id: "9",
-  start_date: "2021-09-17T21:00",
+  start_date: "2021-09-16T20:30",
   name: "Vulfpeck au Diane's Bar",
-  description: "Venez passez un moment funky au Dian's Bar avec Vulfpeck en live!"
+  description: "Venez passer une soirée funky avec Vulfpeck en live au Diane's bar."
+)
+
+efb = Band.create!(
+  name: "Elmer Food Beat",
+  style: "Rock",
+  youtube_url: "https://www.youtube.com/embed/Tri6GPixwJE",
+  facebook_url: "https://fr-fr.facebook.com/ElmerFoodBeatOfficiel",
+  user_id: "2",
+  description: "Elmer Food Beat est un groupe de rock français, originaire de Nantes et fondé en 1986. Il est notamment caractérisé par des textes égrillards et humoristiques."
+)
+efb.photos.attach(io: File.open('app/assets/images/bands/EFB.jpg'), filename: 'EFB.jpg', content_type:'image/jpg')
+
+efb_waka = Event.create!(
+  band_id: "2",
+  bar_id: "6",
+  start_date: "2021-09-02T21:30",
+  name: "Elmer Food Beat au Waka",
+  description: "Elmer Food Beat en concert au Waka bar pour une soirée barrée!"
+)
+
+djpone = Band.create!(
+  name: "DJ Pone",
+  style: "Electro",
+  youtube_url: "https://www.youtube.com/embed/sjXELnm315U",
+  facebook_url: "",
+  user_id: "3",
+  description: "DJ Pone, est un DJ et compositeur français. Il a collaboré avec de nombreux groupes de rap français tels que TTC, les Casseurs Flowters, et surtout les Svinkels"
+)
+djpone.photos.attach(io: File.open('app/assets/images/bands/djpone.jpg'), filename: 'djpone.jpg', content_type:'image/jpg')
+
+djpone_chupito = Event.create!(
+  band_id: "3",
+  bar_id: "10",
+  start_date: "2021-08-31T22:30",
+  name: "DJ Pone au Chupito Loco",
+  description: "DJ Pone pour un live set exclusif au Chupito Loco."
 )
 
 puts "#{Bar.all.count} bars created"
