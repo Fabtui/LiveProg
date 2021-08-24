@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :bar_favs
   has_many :favorite_bars, through: :bar_favs, source: :bar
   has_many :participations
+  has_one_attached :avatar
+  validates :nickname, uniqueness: true
 end
