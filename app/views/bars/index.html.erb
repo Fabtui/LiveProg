@@ -2,6 +2,9 @@
 <p>Find me in app/views/bars/index.html.erb</p>
 
 <% @bars.each do |bar| %>
+<% bar.photo.each do |photo| %>
+<%= cl_image_tag photo.key, :width=>100, :height=>100, 'aria-expanded': false %>
+<% end %>
   <%= bar.name %>
   <%= bar.address %>
   <%= bar.description %>

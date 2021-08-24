@@ -5,3 +5,6 @@
 <%= @bar.address %>
 <%= @bar.description %>
 <%= @bar.menu %>
+<% @bar.photo.each do |photo| %>
+<%= cl_image_tag photo.key, :width=>100, :height=>100, 'aria-expanded': false %>
+<% end %>
