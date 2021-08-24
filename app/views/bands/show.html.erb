@@ -3,3 +3,7 @@
 
 <%= @band.name %>
 <%= @band.style %>
+<br>
+<% if current_user == @band.owner %>
+<%= link_to "Créer un évènement", new_band_event_path(@band), class: "btn btn-primary" %>
+<% end %>
