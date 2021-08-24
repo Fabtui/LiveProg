@@ -1,12 +1,20 @@
 <h1>Bars#index</h1>
 <p>Find me in app/views/bars/index.html.erb</p>
 
-<% @bars.each do |bar| %>
-<% bar.photo.each do |photo| %>
-<%= cl_image_tag photo.key, :width=>100, :height=>100, 'aria-expanded': false %>
-<% end %>
-  <%= bar.name %>
-  <%= bar.address %>
-  <%= bar.description %>
-  <%= bar.menu %>
-<% end %>
+<div class="card-bar-container">
+  <% @bars.each do |bar| %>
+    <div class="card-bar">
+      <div class="card-bar-img">
+        <% bar.photo.each do |photo| %>
+          <%= cl_image_tag photo.key, :width=>250, :height=>250, 'aria-expanded': false %>
+        <% end %>
+      </div>
+      <div class="card-bar-content">
+        <h1><%=link_to bar.name, bar_path(bar.id) %></h1>
+        <h2><%= bar.address %></h2>
+        <h3><%= bar.description %></h3>
+        <p><%= bar.menu %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
