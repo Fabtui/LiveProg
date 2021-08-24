@@ -1,7 +1,9 @@
 class BarsController < ApplicationController
-  def show
+  def index
+    @bars = Bar.all
   end
 
-  def index
+  def show
+    @bar = Bar.find(params[:id])
   end
 end
