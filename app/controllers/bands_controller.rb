@@ -1,8 +1,10 @@
 class BandsController < ApplicationController
-  def show
+  def index
+    @bands = Band.all
   end
 
-  def index
+  def show
+    @band = Band.find(params[:id])
   end
 
   def new
