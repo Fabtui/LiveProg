@@ -10,7 +10,7 @@ la_degust = Bar.create!(
 
 le_duc = Bar.create!(
   name: "Le Duc des Lombards",
-  adress: "42 rue des Lombards, 75001 Paris",
+  address: "42 rue des Lombards, 75001 Paris",
   description: "bar à jazz",
   menu: "bon vin pas cher",
 )
