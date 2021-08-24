@@ -25,6 +25,12 @@ User.create!(
   email: "chuck@gmail.com",
   password: "12345678",
   nickname: "Norris"
+  # user: Band.create! (
+  #   name: "elmer food beat"
+  #   style: "rock"
+  #   youtube: "ulr"
+  #   facebook:
+  )
 )
 
 User.create!(
