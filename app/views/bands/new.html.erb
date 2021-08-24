@@ -1,2 +1,26 @@
-<h1>Bands#new</h1>
-<p>Find me in app/views/bands/new.html.erb</p>
+<div class="form-container">
+  <h2>Créer mon groupe de musique<h2>
+  <%= simple_form_for(@band) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name,
+                  required: true,
+                  label: "Nom du groupe",
+                  input_html: { autocomplete: "Nom du groupe" } %>
+      <%= f.input :style,
+                  required: true,
+                  collection: ["Rock", "Rap", 'Punk'], prompt: "Quel est ton style de musique?"%>
+      <%= f.input :youtube_url,
+                  input_html: { autocomplete: "Lien Youtube" }%>
+      <%= f.input :facebook_url,
+                  input_html: { autocomplete: "Lien Facebook" } %>
+      <%= f.input :photos, as: :file,
+                  input_html: { multiple: true } %>
+
+
+    </div>
+    <hr>
+    <div class="form-actions">
+      <%= f.button :submit, "Créer", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
