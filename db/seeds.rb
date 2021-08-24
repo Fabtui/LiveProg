@@ -7,7 +7,7 @@ le_shakpo = Bar.create!(
   description: "bistrot",
   menu: "7 balles la pinte",
 )
-la_degust.photo.attach(io: File.open('app/assets/images/bars/bar(2).jpg'), filename: 'bar3.jpg', content_type:'image/jpg')
+le_shakpo.photo.attach(io: File.open('app/assets/images/bars/bar(2).jpg'), filename: 'bar3.jpg', content_type:'image/jpg')
 
 
 le_duc = Bar.create!(
