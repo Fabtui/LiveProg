@@ -1,8 +1,8 @@
 Bar.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
-la_degust = Bar.create!(
-  name: "Bar de la Dégustation",
+le_shakpo = Bar.create!(
+  name: "Le Shakpo",
   address: "7 rue de la Prefecture, 06300 Nice France",
   description: "bistrot",
   menu: "7 balles la pinte",
@@ -10,8 +10,8 @@ la_degust = Bar.create!(
 
 le_duc = Bar.create!(
   name: "Le Duc des Lombards",
-  address: "42 rue des Lombards, 75001 Paris",
-  description: "bar à jazz",
+  address: "5 Rue Rossetti, 06300 Nice",
+  description: "concert en tout genre",
   menu: "bon vin pas cher",
 )
 
