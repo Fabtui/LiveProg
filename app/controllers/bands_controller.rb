@@ -1,8 +1,10 @@
 class BandsController < ApplicationController
-  def show
+  def index
+    @bands = Band.all
   end
 
-  def index
+  def show
+    @band = Band.find(params[:id])
   end
 
   def new
@@ -32,6 +34,6 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :style, :facebook_url, :youtube_url, photos: [])
+    params.require(:band).permit(:name, :description, :style, :facebook_url, :youtube_url, photos: [])
   end
 end

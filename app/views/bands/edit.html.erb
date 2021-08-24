@@ -9,14 +9,15 @@
       <%= f.input :style,
                   required: true,
                   collection: ["Rock", "Rap", 'Punk'], prompt: "Quel est ton style de musique?"%>
+      <%= f.input :description,
+                  label: "Description du groupe",
+                  input_html: { autocomplete: "description" }%>
       <%= f.input :youtube_url,
                   input_html: { autocomplete: "youtube_url" }%>
       <%= f.input :facebook_url,
                   input_html: { autocomplete: "facebook_url" } %>
       <%= f.input :photos, as: :file,
                   input_html: { multiple: true } %>
-
-
     </div>
     <hr>
     <div class="form-actions">
