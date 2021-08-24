@@ -26,7 +26,7 @@ class BandsController < ApplicationController
   def update
     @band = Band.find(params[:id])
     @band.update(band_params)
-    redirect_to dwarves_path
+    redirect_to bands_path
   end
 
   private
