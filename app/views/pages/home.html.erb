@@ -3,6 +3,13 @@
 
 <% @bars = Bar.all %>
 <% @bars.each do |bar| %>
+
+<% bar.photo.each do |photo| %>
+<%= cl_image_tag photo.key, :width=>100, :height=>100, 'aria-expanded': false %>
+<% end %>
+
+
+
   <%= link_to bar.name, bar_path(bar.id) %>
   <%= bar.address %>
   <%= bar.description %>

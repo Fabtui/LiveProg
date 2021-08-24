@@ -7,6 +7,8 @@ la_degust = Bar.create!(
   description: "bistrot",
   menu: "7 balles la pinte",
 )
+la_degust.photo.attach(io: File.open('app/assets/images/bars/bar(2).jpg'), filename: 'bar3.jpg', content_type:'image/jpg')
+
 
 le_duc = Bar.create!(
   name: "Le Duc des Lombards",
@@ -14,6 +16,8 @@ le_duc = Bar.create!(
   description: "bar à jazz",
   menu: "bon vin pas cher",
 )
+le_duc.photo.attach(io: File.open('app/assets/images/bars/bar(2).jpg'), filename: 'bar2.jpg', content_type:'image/jpg')
+
 
 le_black_sheep = Bar.create!(
   name: "Le Black Sheep",
@@ -21,8 +25,10 @@ le_black_sheep = Bar.create!(
   description: "pub",
   menu: "de la bière et du fun",
 )
+le_black_sheep.photo.attach(io: File.open('app/assets/images/bars/bar(1).jpg'), filename: 'bar1.jpg', content_type:'image/jpg')
 
-User.create!(
+
+chuck = User.create!(
   email: "chuck@gmail.com",
   password: "12345678",
   nickname: "Norris",
@@ -32,6 +38,8 @@ User.create!(
   #   youtube: "ulr"
   #   facebook:
   )
+chuck.avatar.attach(io: File.open('app/assets/images/bars/boris_retreat_2017.jpg'), filename: 'chuck.jpg', content_type:'image/jpg')
+
 
 User.create!(
   email: "Bob@gmail.com",
