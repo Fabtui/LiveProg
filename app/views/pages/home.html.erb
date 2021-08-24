@@ -1,22 +1,40 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<% @bars = Bar.all %>
-<div class="card-bar-container">
-  <% @bars.each do |bar| %>
-    <div class="card-bar">
-      <div class="card-bar-img">
-        <% bar.photo.each do |photo| %>
-          <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+    <div class="carousel-container">
+      <div id="carousel-wrapper">
+        <div id="carousel">
+          <div id="cards">
+            <% @bars = Bar.all %>
+            <% @bars.each do |bar| %>
+              <div class="card">
+                <% bar.photo.each do |photo| %>
+                <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+                <% end %>
+                <div class="card-infos">
+                  <div>
+                    <h2><%= link_to bar.name, bar_path(bar.id) %></h2>
+                    <p><%= bar.address %></p>
+                    <hr>
+                    <p><%= bar.description %></p>
+                  </div>
+                </div>
+              </div>
         <% end %>
-      </div>
-      <div class="card-bar-content">
-        <h1><%=link_to bar.name, bar_path(bar.id) %></h1>
-        <h2><%= bar.address %></h2>
-        <h3><%= bar.description %></h3>
-        <p><%= bar.opening_time %></p>
-        <p><%= bar.menu %></p>
+
+          </div>
+        </div>
+        <button id="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+          </svg>
+        </button>
+        <button id="next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+          </svg>
+        </button>
       </div>
     </div>
-  <% end %>
-</div>
