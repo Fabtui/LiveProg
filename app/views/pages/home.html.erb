@@ -1,2 +1,16 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% @bars = Bar.all %>
+<% @bars.each do |bar| %>
+  <%= link_to bar.name, bar_path(bar.id) %>
+  <%= bar.address %>
+  <%= bar.description %>
+  <%= bar.menu %>
+<% end %>
+
+<% @bands = Band.all %>
+<% @bands.each do |band| %>
+  <%= link_to band.name, band_path(band.id) %>
+  <%= band.style %>
+<% end %>
