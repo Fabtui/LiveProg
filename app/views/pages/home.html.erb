@@ -12,7 +12,5 @@
 <% @bands = Band.all %>
 <% @bands.each do |band| %>
   <%= link_to band.name, band_path(band.id) %>
-  <%= band.address %>
-  <%= band.description %>
-  <%= band.menu %>
+  <%= band.style %>
 <% end %>
