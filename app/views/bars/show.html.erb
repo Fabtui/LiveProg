@@ -1,17 +1,21 @@
-<div class="container">
-  <div class="banner" >
-    <div><h1><%= @bar.name %>!</h1></div>
-    <div>star</div>
+<div class="bar-show-container">
+  <div class="bar-show-banner" >
+    <div><h1><%= @bar.name %></h1></div>
+    <div><h1><i class="far fa-star"></i></h1></div>
   </div>
-  <div class="con" >
-    <div class="photo"> MEDIA</div>
-    <div class="tags">
+  <div class="bar-show-con" >
+    <div class="bar-show-photo">
+     <% @bar.photo.each do |photo| %>
+      <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+      <% end %>
+     </div>
+    <div class="bar-show-tags">
       <div><a class="btn btn-ghost" href="#">Write a story</a></div>
       <div><a class="btn btn-ghost" href="#">Write a story</a></div>
       <div><a class="btn btn-ghost" href="#">Write a story</a></div>
     </div>
-    <div class="description"> <p><%= @bar.description %></p> </div>
-    <div class="programme">
+    <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
+    <div class="bar-show-programme">
       <div>date à venir</div>
       <div><a class="btn btn-gradient" href="#">Start now</a></div>
       <div><a class="btn btn-gradient" href="#">Start now</a></div>

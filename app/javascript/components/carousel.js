@@ -1,7 +1,7 @@
 const carouselSlide = () => {
 const gap = 16;
 
-const carousel = document.getElementById("carousel"),
+const carousel = document.querySelector(".carousel"),
   content = document.getElementById("content"),
   next = document.getElementById("next"),
   prev = document.getElementById("prev");
