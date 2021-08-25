@@ -29,5 +29,5 @@
 <h1>Prochains évenements : </h1>
   <% events = Event.where(band_id: @band.id) %>
   <% events.each do |event| %>
-<h2><%= event.name %> le <%= event.start_date %> : <%= event.description %></h2>
+    <h2><%= event.name %> le <%= event.start_date %> : <%= event.description %></h2>
   <% end %>
