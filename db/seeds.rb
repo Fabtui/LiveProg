@@ -190,7 +190,6 @@ User.create!(
 
 # _______________________________BANDS-EVENTS_________________________________________
 
-
 vulfpeck = Band.create!(
   name: "Vulfpeck",
   style: "Funk",
@@ -244,6 +243,25 @@ djpone_chupito = Event.create!(
   name: "DJ Pone au Chupito Loco",
   description: "DJ Pone pour un live set exclusif au Chupito Loco."
 )
+
+shokinpapa = Band.create!(
+  name: "The Shockin' Papas",
+  style: "Rock",
+  youtube_url: "https://www.youtube.com/embed/7NA5EKhPjpU",
+  facebook_url: "https://www.facebook.com/The-Shockin-Papas-504598226390356/",
+  user_id: "4",
+  description: "Groupe Rock/Blues/Folk niçois de reprise et morceau originaux, électrique ou acoustique."
+)
+shokinpapa.photos.attach(io: File.open('app/assets/images/bands/shokinpapa.jpg'), filename: 'shokinpapa.jpg', content_type:'image/jpg')
+
+shokinpapa_bulldog = Event.create!(
+  band_id: "4",
+  bar_id: "16",
+  start_date: "2021-09-20T21:30",
+  name: "The Shokin' Papas au Bulldog",
+  description: "Les Shokin' Papas viennent décoller le papier peint des murs du Bulldog."
+)
+
 
 puts "#{Bar.all.count} bars created"
 puts "#{User.all.count} users created"
