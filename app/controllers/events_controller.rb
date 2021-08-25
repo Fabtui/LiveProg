@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.future.sorted_by_date
   end
 
   def new
@@ -38,6 +38,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:start_date, :name, :description, :bar_id)
+    params.require(:event).permit(:start_date, :name, :description, :bar_id, :hour)
   end
 end

@@ -1,6 +1,57 @@
+<div class="container">
 <h1><%= @event.name %></h1>
-<p><%= @event.description %></p>
+
+<div class="infos-event">
+  <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
+</div>
 
 <%if @event.bar.photo.attached? %>
-<%= @event.bar.photos.all %>
-<%end %>
+    <div class="carousel-container">
+      <div id="carousel-event-wrapper">
+        <div id="carousel">
+          <div id="photos-event">
+              <div class="photo-event">
+                <% @event.bar.photo.each do |photo| %>
+                  <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+                <% end %>
+              </div>
+              <div class="photo-event">
+                <% @event.band.photos.each do |photo| %>
+                 <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+                <% end %>
+              </div>
+          </div>
+        </div>
+        <button id="prev" class= "d-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+          </svg>
+        </button>
+        <button id="next" class= "d-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+<% end %>
+
+<div class="style">
+  <%= @event.band.style %>
+</div>
+
+<div class="description">
+  <% if @event.description? %>
+    <p><%= @event.description %></p>
+  <% else %>
+    <p><%= @event.band.description %></p>
+  <% end %>
+</div>
+
+<div class="list-inline text-center">
+  <a href="#"> Y aller!</a>
+  <a href="#">Ajouter!</a>
+</div>
+</div>
