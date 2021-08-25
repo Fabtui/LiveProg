@@ -39,7 +39,12 @@
 </div>
 
 <div class="list-inline text-center">
+  <%  @participations = Participation.where(user: current_user.id)  %>
+  <% if @participations.find_by_user_id(current_user.id) %>
+  <%= link_to "Retirer de mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+  <% else  %>
   <%= link_to "Ajouter à mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+  <% end %>
   <a href="#">Y aller!</a>
 </div>
 </div>

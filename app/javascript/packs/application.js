@@ -7,7 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import { participationPopUp } from "../components/participationpopup"
 import { carouselSlide } from "../components/carousel"
 
 Rails.start()
@@ -28,6 +27,5 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  participationPopUp();
   carouselSlide();
 });
