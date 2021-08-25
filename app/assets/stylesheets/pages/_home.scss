@@ -1,1 +1,160 @@
 // Specific CSS for your home-page
+/* LiveProg */
+
+.liveprog-title {
+
+  position: absolute;
+  width: 179px;
+  height: 40px;
+  left: 30px;
+  top: 32px;
+  position: absolute;
+  font-family: Reckoner;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 48px;
+
+  color: #14FFEC;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.title-search {
+  position: absolute;
+  width: 310px;
+  height: 33px;
+  left: 48px;
+  top: 115px;
+}
+
+.home-bar-card {
+  position: absolute;
+  width: 162px;
+  height: 64px;
+  left: 21px;
+  top: 157px;
+  background: #323232;
+  border-radius: 20px;
+
+  .home-bar-card-picture {
+  position: absolute;
+  left: 0%;
+  right: 51.26%;
+  top: 0%;
+  bottom: 0%;
+  background: url(Bar_1.jpg);
+  border-radius: 20px;
+  }
+
+  .home-bar-card-textplain {
+    position: absolute;
+    left: 50.27%;
+    right: 3.24%;
+    top: 38.46%;
+    bottom: 9.23%;
+    
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 12px;
+    
+    color: #F5FFFA;
+  }
+}
+
+.home-band-card {
+  position: absolute;
+  width: 130px;
+  height: 143px;
+  left: 6px;
+  top: 402px;
+  border-radius: 15px;
+  background: url(Shocking_papas.jpg);
+
+  .home-band-card-textblock {
+  position: absolute;
+  left: 1.6%;
+  right: 63.73%;
+  top: 62.56%;
+  bottom: 33%;
+
+  background: #000000;
+  border-radius: 10px;
+
+    .home-band-card-textplain {
+      position: absolute;
+      left: 3.47%;
+      right: 65.33%;
+      top: 63.3%;
+      bottom: 33%;
+
+      font-family: Gotham;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 14px;
+      text-align: center;
+
+      color: #F5FFFA;
+    }
+  }
+}
+
+.home-event-card {
+  position: absolute;
+  width: 130px;
+  height: 127px;
+  left: 6px;
+  top: 619px;
+  background: #323232;
+  border-radius: 10px;
+
+  .home-event-card-dateblock {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 6.25%;
+    bottom: 75.57%;
+    
+    background: #14FFEC;
+
+    .home-event-card-datetext {
+      font-family: Gotham;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 13px;
+      
+      color: black;
+    }  
+  }
+  
+  .home-event-card-picture {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 28.41%;
+    
+    background: black;
+    border-radius: 5px;
+  }
+  
+  .home-event-card-titletext {
+    position: absolute;
+    left: 13.85%;
+    right: 4.77%;
+    top: 76.38%;
+    bottom: -19.56%;
+    
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #F5FFFA;
+  }
+}

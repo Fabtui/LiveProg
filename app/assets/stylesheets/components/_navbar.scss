@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  color: $cream;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,24 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main"
+                       "header";
+  height: 100vh;
+  background-color: $anthrax;
+}
+
+main {
+  overflow-y: auto;
+  grid-area: main;
+}
+
+header {
+  grid-area: header;
+  background-color : black;
+  color: $cream;
 }
