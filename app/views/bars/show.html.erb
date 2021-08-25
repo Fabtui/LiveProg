@@ -1,7 +1,8 @@
-<h1>Bars#show</h1>
-<p>Find me in app/views/bars/show.html.erb</p>
+<h1><%= @bar.name %></h1>
 
-<%= @bar.name %>
 <%= @bar.address %>
 <%= @bar.description %>
 <%= @bar.menu %>
+<% @bar.photo.each do |photo| %>
+<%= cl_image_tag photo.key, :width=>100, :height=>100, 'aria-expanded': false %>
+<% end %>

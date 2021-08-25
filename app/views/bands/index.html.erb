@@ -1,8 +1,19 @@
 <h1>Bands#index</h1>
 <p>Find me in app/views/bands/index.html.erb</p>
 
-
+<div class="card-bar-container">
 <% @bands.each do |band| %>
-  <%= link_to band.name, band_path(band.id) %>
-  <%= band.style %>
-<% end %>
+    <div class="card-bar">
+      <div class="card-bar-img">
+        <% band.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+        <% end %>
+      </div>
+      <div class="card-bar-content">
+        <h1><%= link_to band.name, band_path(band.id) %></h1>
+        <h2><%= band.style %></h2>
+        <p><%= band.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
