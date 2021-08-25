@@ -1,0 +1,35 @@
+.participation-popup-container {
+  width: 100%;
+}
+
+#participation-popup-close {
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+#participation-popup {
+  box-shadow: 0 0 30px $blue;
+  z-index: 99;
+  top: -200px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 50px 15px 30px;
+  border-radius: 25px;
+  border: 1px solid $blue;
+  color: $blue;
+  background: $green;
+  width: 50%;
+  transition: 1.5s;
+  h1 {
+    font-size: 35px;
+    margin: 0;
+  }
+}
+
+.hidden {
+  display: none;
+  transition: 1.5s;
+}

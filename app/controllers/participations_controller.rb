@@ -6,7 +6,7 @@ class ParticipationsController < ApplicationController
     @participation.user_id = current_user.id
     @participation.event_id = @event.id
     if @participation.save
-      redirect_to events_path
+      redirect_to event_path(@event.id)
     else
       render :new
     end
