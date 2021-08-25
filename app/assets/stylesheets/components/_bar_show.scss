@@ -1,0 +1,59 @@
+.btn-ghost {
+  color: #202120;
+  border: 1px solid #202120;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: #14ffec;
+}
+
+.btn-gradient {
+  color: #fffefe;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: #323333;
+  border: 1px solid #14ffec;
+}
+
+.banner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: #323333;
+  color:#14ffec;
+}
+
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.programme {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.btn-gradient {
+  margin: 10px;
+  width: 80%;
+}
+.container {
+  background-color: #010001;
+}
+
+.photo {
+  background-color: red;
+  color: white;
+  justify-content: center;
+  display: flex;
+}
+
+.description {
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
