@@ -115,7 +115,7 @@ beerdistrict.photo.attach(io: File.open('app/assets/images/bars/beerdistrict.jpg
 
 manolanport = Bar.create!(
   name: "Ma Nolan's Nice Port",
-  address: "5 quai des 2 Emmanuel 06300, 06300 Nice",
+  address: "5 quai des 2 Emmanuel 06300, Nice",
   description: "Pub irlandais",
   menu: "Repas, boissons",
   opening_time: "11h00 - 02h00"
