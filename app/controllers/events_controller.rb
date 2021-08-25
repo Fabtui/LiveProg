@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.sort_by {|date| date.start_date}
+    @events = Event.future.sorted_by_date
   end
 
   def new
