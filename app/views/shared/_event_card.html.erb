@@ -1,0 +1,7 @@
+<div class="card">
+    <h2><%= event.start_date %></h2>
+    <div class="card-infos">
+      <h2><%= link_to event.name, event_path(event.id) %></h2>
+      <p><%= event.description %></p>
+    </div>
+</div>

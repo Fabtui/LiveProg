@@ -9,7 +9,7 @@
   </div>
 </form>
 
-<div id="cards">
+<div class="cards-best-bar">
   <% @bars = Bar.first(4) %>
   <% @bars.each do |bar| %>
     <div class="card">
@@ -38,60 +38,26 @@
 </form>
 
 <div class="carousel-container">
-  <div id="carousel-wrapper">
-    <div id="carousel">
-      <div id="cards">
-        <% @bands = Band.all %>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="cards">
         <% @bands.each do |band| %>
-          <div class="card">
-            <% band.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
-            <% end %>
-            <div class="card-infos">
-              <div>
-                <h2><%= link_to band.name, band_path(band.id) %></h2>
-                <p><%= band.description %></p>
-                <hr>
-                <p><%= band.style %></p>
-              </div>
-            </div>
-          </div>
-    <% end %>
+        <%= render 'shared/band_card', band: band %>
+        <% end %>
       </div>
     </div>
-    <button id="prev">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="none" d="M0 0h24v24H0V0z" />
-        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-      </svg>
-    </button>
-    <button id="next">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="none" d="M0 0h24v24H0V0z" />
-        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-      </svg>
-    </button>
   </div>
 </div>
 
 <button><i class="fas fa-map-marker-alt"></i> A proximité</button>
 
 <div class="carousel-container">
-  <div id="carousel-wrapper">
-    <div id="carousel">
-      <div id="cards">
-        <% @events = Event.all %>
-        <% @events.each do |event| %>
-          <div class="card">
-            <h2><%= event.start_date %></h2>
-            <div class="card-infos">
-              <div>
-                <h2><%= link_to event.name, event_path(event.id) %></h2>
-                <p><%= event.description %></p>
-              </div>
-            </div>
-          </div>
-    <% end %>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="cards">
+      <% @events.each do |event| %>
+       <%= render 'shared/event_card', event: event %>
+       <% end %>
       </div>
     </div>
   </div>

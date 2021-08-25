@@ -2,7 +2,6 @@
 
 .carousel {
   position: relative;
-  height: 800px;
   margin-top: 20px;
 }
 
@@ -23,14 +22,12 @@ span {
   margin-top: 10px;
 }
 
-#carousel-wrapper {
+.carousel-wrapper {
   width: 100%;
-  padding: 0 10%;
-  max-width: 80%;
   position: relative;
 }
 
-#carousel {
+.carousel {
   padding-right: 200px;
   overflow: auto;
   scroll-behavior: smooth;
@@ -38,7 +35,7 @@ span {
   z-index: 99;
 }
 
-#carousel::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
   height: 0;
 }
 
