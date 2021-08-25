@@ -1,0 +1,13 @@
+          <div class="card">
+            <% band.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+            <% end %>
+            <div class="card-infos">
+              <div>
+                <h2><%= link_to band.name, band_path(band.id) %></h2>
+                <p><%= band.description %></p>
+                <hr>
+                <p><%= band.style %></p>
+              </div>
+            </div>
+          </div>
