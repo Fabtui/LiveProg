@@ -1,6 +1,8 @@
 <h1><%= @event.name %></h1>
 <p><%= @event.description %></p>
 
-<%if @event.bar.photo.attached? %>
-<%= @event.bar.photos.all %>
-<%end %>
+<% if @event.bar.photo.attached? %>
+  <% @event.bar.photo.each do |photo| %>
+    <%= cl_image_tag photo.key, :width=>400, :height=>400, 'aria-expanded': false %>
+  <% end %>
+<% end %>
