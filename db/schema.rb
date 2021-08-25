@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_174736) do
   create_table "events", force: :cascade do |t|
     t.bigint "band_id", null: false
     t.bigint "bar_id", null: false
-    t.date "start_date"
+    t.datetime "start_date"
     t.text "description"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
