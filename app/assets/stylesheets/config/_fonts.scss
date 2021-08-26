@@ -6,6 +6,19 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
+@font-face {
+  font-family: "GothamBook";
+  src: font-url('app/assets/fonts/GothamBook.ttf') format('truetype');
+  font-family: "Gotham-Thin";
+  src: font-url('app/assets/fonts/Gotham-Thin.otf') format('opentype');
+  font-family: "GothamBold";
+  src: font-url('app/assets/fonts/GothamBold.ttf') format('truetype');
+  font-family: "Reckoner_Bold";
+  src: font-url('app/assets/fonts/Reckoner_Bold.ttf') format('truetype');
+  font-family: "Reckoner";
+  src: font-url('app/assets/fonts/Reckoner.ttf') format('truetype');
+}
+
 // @font-face {
 //   font-family: "Font Name";
 //   src: font-url('FontFile.eot');
