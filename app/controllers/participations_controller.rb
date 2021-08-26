@@ -1,14 +1,13 @@
 class ParticipationsController < ApplicationController
   def new
-    @partiipation = Participation.new
     @participation = Participation.new
     @event = Event.find(params[:event_id])
     @participation.user_id = current_user.id
     @participation.event_id = @event.id
     if @participation.save
-      redirect_to events_path
+      redirect_to event_path(params[:event_id])
     else
-      render :new
+      redirect_to bands_path
     end
   end
 

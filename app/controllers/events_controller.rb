@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
+    @participations = Participation.where(user: current_user.id)
+    @user = current_user
   end
 
   def index
