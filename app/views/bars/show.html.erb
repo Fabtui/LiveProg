@@ -17,11 +17,10 @@
     <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
     <div class="bar-show-programme">
       <div>date à venir</div>
-<%= link_to "x #{@bar.events.first.band.name}: #{@bar.events.first.start_date.strftime('%d/%m')} - #{@bar.events.first.start_date.strftime('%H:%M')}" , event_path(@bar) %>
       <a class="btn btn-gradient" href="#">Start now</a>
       <a class="btn btn-gradient" href="#">Start now</a>
       <a class="btn btn-gradient" href="#">Start now</a>
-      
+
 
     </div>
   </div>
@@ -33,4 +32,3 @@
 <p><%= @bar.address %></p>
 <p><%= @bar.menu %></p>
 <% end %>
-
