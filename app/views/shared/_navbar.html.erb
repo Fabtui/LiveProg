@@ -1,53 +1,36 @@
 <nav class="header">
 	<div class="header__item <%= "header__item--active" if controller_name == "pages" && action_name == "home" %>">
+    <a href="../">
 		<div class="header__item-content">
 			<img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902563/yznpbp3kj6ipqrojfyfd.png" class="navbar-logo">
-			Accueil
-		</div>		
+			<p>Accueil</p>
+		</div>
+    </a>	
 	</div>
 	<div class="header__item" <%= "header__item--active" if controller_name == "search" && action_name == "search" %>">
 		<div class="header__item-content">
 			<img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902667/nrzzhevfcqofigtu1akv.png" class="navbar-logo">
-			Recherche
+			<p>Recherche</p>
 		</div>
 	</div>
 	<div class="header__item" <%= "header__item--active" if controller_name == "events" && action_name == "index" %>">
 		<div class="header__item-content">
-<img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="navbar-logo">
-			Evenements
-		</div>		
+    <a href="../events">
+      <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="navbar-logo">
+			<p>Evenements</p>
+		</div>
+    </a>
 	</div>
 	
 	<div class="header__item" id="navbarSupportedContent" data-target="#navbarSupportedContent">
 		<div class="header__item-content">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li> 
-          <li class="nav-item dropdown">
-            <% if current_user  %>
-              <%= cl_image_tag current_user.avatar.key, :width=>50, :height=>50, :gravity=>"faces", :crop=>"thumb", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else  %>
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", height: 40, width: 40, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end  %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-          </li>
-        <% else %>
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902700/wyryn2zwcvkkyfskrgao.png" class="navbar-logo">
-          </li>
-        <% end %>
+    <a href="../users/edit">
+      <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902700/wyryn2zwcvkkyfskrgao.png" class="navbar-logo">
+        <p>Profil</p>
+      </div>	
   </div>
+  </a>
 </div>
-		</div>		
-	</div>
 </nav>
 
 
