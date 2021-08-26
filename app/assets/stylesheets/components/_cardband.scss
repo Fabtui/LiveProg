@@ -1,0 +1,31 @@
+.card-band-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-band {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  margin: 20px;
+  background-color: #14FFEC;
+  border-radius: 20px;
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  a {
+    color: rgba(0, 0, 0, 0.63);
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+
+  p {
+    color: black;
+  }
+  }
+}
