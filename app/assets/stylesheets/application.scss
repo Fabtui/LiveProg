@@ -20,9 +20,11 @@ body {
   color: $cream;
   height: 100vh;
   background-color: $anthrax;
+  width: 100%;
 }
 
 main {
   overflow-y: auto;
   grid-area: main;
+  width: 100%;
 }
