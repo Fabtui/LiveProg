@@ -17,7 +17,8 @@
     <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
     <div class="bar-show-programme">
       <div>date à venir</div>
-      <div><a class="btn btn-gradient" href="#">Start now</a></div>
+      <div><a class="btn btn-gradient" href="#"></a></div>
+      <%= link_to "x #{@bar.events.first.band.name}: #{@bar.events.first.start_date.strftime('%d/%m')} - #{@bar.events.first.start_date.strftime('%H:%M')}" , event_path(@bar) %>
       <div><a class="btn btn-gradient" href="#">Start now</a></div>
       <div><a class="btn btn-gradient" href="#">Start now</a></div>
     </div>
