@@ -1,9 +1,42 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
-<ul>
-<% @events.each do |event| %>
-<li> <%= link_to "#{event.name}", event_path(event) %>
-<%=" - #{event.start_date.strftime('%d/%m')} - #{event.start_date.strftime('%H:%M')} : #{event.description}" %></li>
-<% end %>
+<div class="container">
+  <h1>RECHERCHER</h1>
+  <input type="" class="input-group mb-4">
+  <h2>Aujourd'hui</h2>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards">
+          <% today = [] %>
+          <% others = [] %>
+          <% @events.each do |event| %>
+            <% if event.start_date.today? %>
+              <% today << event %>
+            <% else %>
+              <% others << event %>
+            <% end %>
+          <% end %>
+        <% today.each do |event| %>
+        <%= render 'shared/event_card', event: event %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+ <h2>A venir</h2>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards">
+        <% others.each do |event| %>
+        <%= render 'shared/event_card', event: event %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</ul>
+
+
+</div>
