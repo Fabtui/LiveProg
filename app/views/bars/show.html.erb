@@ -17,11 +17,12 @@
     <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
     <div class="bar-show-programme">
       <div>date à venir</div>
-      <a class="btn btn-gradient" href="#">Start now</a>
-      <a class="btn btn-gradient" href="#">Start now</a>
-      <a class="btn btn-gradient" href="#">Start now</a>
-
-
+      <%@events.each do |event|%>
+        <%=link_to(event_path(event), class:"btn btn-gradient") do %>
+          <%=event.name%>
+          <%=event.start_date%>
+        <%end%>
+      <%end%>
     </div>
   </div>
 </div>
