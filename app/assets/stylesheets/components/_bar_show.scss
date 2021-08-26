@@ -1,0 +1,61 @@
+.btn-ghost {
+  color: #202120;
+  border: 1px solid #202120;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: #14ffec;
+}
+
+.btn-gradient {
+  color: #fffefe;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: #323333;
+  border: 1px solid #14ffec;
+}
+
+.bar-show-banner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: #323333;
+  color:#14ffec;
+  font-family: 'Reckoner';
+}
+
+.bar-show-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.bar-show-programme {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.btn-gradient {
+  margin: 10px;
+  width: 80%;
+}
+
+.bar-show-photo {
+  color: white;
+  justify-content: center;
+  display: flex;
+  img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+}
+
+.bar-show-description {
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}

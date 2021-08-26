@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main"
+  "header";
+  color: $cream;
+  height: 100vh;
+  background-color: $anthrax;
+}
+
+main {
+  overflow-y: auto;
+  grid-area: main;
+}

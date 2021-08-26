@@ -1,32 +1,31 @@
-<h1>Bands#show</h1>
-<p>Find me in app/views/bands/show.html.erb</p>
+<div class="d-flex align-items-center justify-content-between px-4 py-2" id="header-band">
+<%= @band.name %>
+<i id="fav-band" class="far fa-star" style="color:#14FFEC"></i>
+</div>
+
 
 <% if current_user == @band.owner %>
 <%= link_to "Créer un évènement", new_band_event_path(@band), class: "btn btn-primary" %>
 <% end %>
 
-<div class="card-bar-container">
-    <div class="card-bar">
-      <div class="card-bar-img">
-        <% @band.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
-        <% end %>
-      </div>
-      <div class="card-bar-content">
-        <h1><%= @band.name%></h1>
-        <h2><%= @band.style %></h2>
-        <p><%= @band.description %></p>
-        <% if @band.youtube_url %>
-          <iframe width="400" height="225" src = "<%=@band.youtube_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <% end %>
-        <%= link_to @band.facebook_url, target: "_blank" do %>
-          <i class="fab fa-facebook"></i>
-        <% end %>
-      </div>
-    </div>
-</div>
+<%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false, class: "mb-4"%>
+<br>
 
-<h1>Prochains évenements : </h1>
-  <% @events.each do |event| %>
-    <h2><%= event.name %> le <%= event.start_date %> : <%= event.description %></h2>
+<div class="card-bar-content">
+  <h2><%= @band.style %></h2>
+  <p><%= @band.description %></p>
+<br>
+        <% if @band.youtube_url %>
+          <iframe width="400" height="225" src = "<%=@band.youtube_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="mb-4"></iframe>
+        <% end %>
+
+        <%# <%= link_to @band.facebook_url, target: "_blank" do %>
+          <%# <i class="fab fa-facebook"></i> %>
+        <%# <% end %>
+      </div>
+
+
+<h3>Dâtes à venir: </h3>
+  <% @events.first(3).each do |event| %>
+    <p><%=link_to "@#{event.bar.name} : #{event.start_date.strftime('%d/%m')} - #{event.start_date.strftime('%H:%M')}", event_path%> </p>
   <% end %>
