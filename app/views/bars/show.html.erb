@@ -1,6 +1,6 @@
 <div class="bar-show-container">
   <div class="bar-show-banner" >
-    <%= @bar.name %>
+    <h1><%= @bar.name %></h1>
     <i class="far fa-star"></i>
   </div>
   <div class="bar-show-con">
@@ -17,7 +17,7 @@
     <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
     <div class="bar-show-programme">
       <div>date à venir</div>
-<%= link_to "x #{@bar.events.first.band.name}: #{@bar.events.first.start_date.strftime('%d/%m')} - #{@bar.events.first.start_date.strftime('%H:%M')}" , event_path(@bar) %>
+<%#= link_to "x #{@bar.events.first.band.name}: #{@bar.events.first.start_date.strftime('%d/%m')} - #{@bar.events.first.start_date.strftime('%H:%M')}" , event_path(@bar) %>
       <a class="btn btn-gradient" href="#">Start now</a>
       <a class="btn btn-gradient" href="#">Start now</a>
       <a class="btn btn-gradient" href="#">Start now</a>
