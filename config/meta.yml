@@ -1,0 +1,5 @@
+meta_product_name: "LiveProg"
+meta_title: "LiveProg - Découvrez la musique autour de vous!"
+meta_description: "Le site pour découvrir tout les concerts locaux."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

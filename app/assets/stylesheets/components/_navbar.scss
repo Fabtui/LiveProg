@@ -16,37 +16,26 @@
 //   width: 40px;
 // }
 
-body {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-areas: "main"
-                       "header";
-  height: 100vh;
-  background-color: $anthrax;
-}
-
-main {
-  overflow-y: auto;
-  grid-area: main;
-}
-
 .header {
 
   grid-area: header;
 	will-change: transform;
 	transform: translateZ(0);
-	display:flex;	
+	display:flex;
   color: $cream;
 	box-shadow: 0 -2px 5px -2px #333;
 	background-color: $anthrax;
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-top: 4px;
-	
+
 	&__item{
 		flex-grow: 1;
 		text-align: center;
 		font-size: 0.8rem;
-		
+
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -55,11 +44,10 @@ main {
 		color: $blue;
 	}
 	&__item-content{
-    margin-top: 4px; 
+    margin-top: 4px;
 		display: flex;
     align-items: center;
-		flex-direction: column;	
-    
+		flex-direction: column;
     text-align: center;
 	}
 
