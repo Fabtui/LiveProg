@@ -15,5 +15,10 @@ class ParticipationsController < ApplicationController
   end
 
   def destroy
+    @participation = Participation.find(params[:id])
+    @participation.destroy
+
+    # no need for app/views/participations/destroy.html.erb
+    redirect_to events_path
   end
 end

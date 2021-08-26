@@ -40,10 +40,13 @@
 
 <div class="list-inline text-center">
   <%  @participations = Participation.where(user: current_user.id)  %>
-  <% if @participations.find_by_user_id(current_user.id) %>
-  <%= link_to "Retirer de mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+  <% if @participations.find_by_event_id(@event) %>
+  <% @participation = @participations.find_by_event_id(@event) %>
+  <%= link_to "Retirer de mes évenements",
+            participation_path(@participation),
+            method: :delete %>
   <% else  %>
-  <%= link_to "Ajouter à mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+    <%= link_to "Ajouter à mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
   <% end %>
   <a href="#">Y aller!</a>
 </div>
