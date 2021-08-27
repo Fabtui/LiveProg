@@ -1,7 +1,18 @@
-<div class="card">
-    <h2><%= event.start_date %></h2>
-    <div class="card-infos">
-      <h2><%= link_to event.name, event_path(event.id) %></h2>
-      <p><%= event.description %></p>
+<div class="card-event">
+  <div class="band-img">
+    <%= cl_image_tag event.band.photos[0].key, :width=>250, :height=>132, 'aria-expanded': false %>
+  </div>
+  <div class="event-time">
+  <%=  "#{event.start_date.strftime('%d/%m')}" %>
+  <br>
+  <%= "#{event.start_date.strftime('%H:%M')}" %>
+  </div>
+    <div class="card-event-infos">
+      <%= link_to event.band.name, event_path(event.id) %>
+      <br>x<br>
+      <%= link_to event.bar.name, event_path(event.id) %>
+    </div>
+    <div class="event-address">
+      <%= event.bar.address %>
     </div>
 </div>

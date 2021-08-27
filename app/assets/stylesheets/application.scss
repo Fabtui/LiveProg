@@ -21,11 +21,13 @@ body {
   height: 100vh;
   background: rgb(35,35,39);
   background: linear-gradient(180deg, rgba(35,35,39,1) 10%, rgba(22,22,22,1) 77%, rgba(33,33,33,1) 90%);
+  width: 100%;
 }
   
 main {
   overflow-y: auto;
   grid-area: main;
+  width: 100%;
 }
 
 h1 {

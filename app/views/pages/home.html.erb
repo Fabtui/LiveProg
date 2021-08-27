@@ -9,19 +9,18 @@
   </div>
 </form>
 
-<div class="cards-best-bar">
+<div class="cards-best-bar-container">
   <% @bars = Bar.first(4) %>
   <% @bars.each do |bar| %>
-    <div class="card">
+    <div class="card-best-bar">
+    <div class="card-best-photo">
       <% bar.photo.each do |photo| %>
       <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
       <% end %>
-      <div class="card-infos">
-        <div>
-          <h2><%= link_to bar.name, bar_path(bar.id) %></h2>
-          <p><%= bar.description %></p>
-          <hr>
-          <p><%= bar.opening_time %></p>
+    </div>
+      <div class="card-infos-best-bar">
+        <div class="card-infos-best-bar-content">
+          <%= link_to bar.name, bar_path(bar.id) %>
         </div>
       </div>
     </div>
@@ -54,7 +53,7 @@
 <div class="carousel-container">
   <div class="carousel-wrapper">
     <div class="carousel">
-      <div class="cards">
+      <div class="cards-event">
       <% @events.each do |event| %>
        <%= render 'shared/event_card', event: event %>
        <% end %>

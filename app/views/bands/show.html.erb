@@ -7,8 +7,9 @@
 <% if current_user == @band.owner %>
 <%= link_to "Créer un évènement", new_band_event_path(@band), class: "btn btn-primary" %>
 <% end %>
-
-<%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false, class: "mb-4"%>
+<div class="bar-show-photo">
+  <%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false, class: "mb-4"%>
+</div>
 <br>
 
 <div class="card-bar-content">
@@ -26,6 +27,8 @@
 
 
 <h3>Dâtes à venir: </h3>
-  <% @events.first(3).each do |event| %>
-    <p><%=link_to "@#{event.bar.name} : #{event.start_date.strftime('%d/%m')} - #{event.start_date.strftime('%H:%M')}", event_path%> </p>
-  <% end %>
+  <div class="bar-show-programme">
+    <% @events.first(3).each do |event| %>
+      <%=link_to "@#{event.bar.name} : #{event.start_date.strftime('%d/%m')} - #{event.start_date.strftime('%H:%M')}", event_path, class: "btn btn-gradient"%>
+    <% end %>
+    </div>
