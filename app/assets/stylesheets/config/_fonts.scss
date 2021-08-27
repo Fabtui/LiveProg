@@ -1,5 +1,7 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/libre-franklin');
+
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
@@ -8,15 +10,15 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // To use a font file (.woff) uncomment following lines
 @font-face {
   font-family: "GothamBook";
-  src: font-url('app/assets/fonts/GothamBook.ttf') format('truetype');
+  src: font-url('GothamBook.ttf') format('truetype');
   font-family: "Gotham-Thin";
-  src: font-url('app/assets/fonts/Gotham-Thin.otf') format('opentype');
+  src: font-url('Gotham-Thin.otf') format('opentype');
   font-family: "GothamBold";
-  src: font-url('app/assets/fonts/GothamBold.ttf') format('truetype');
+  src: font-url('GothamBold.ttf') format('truetype');
   font-family: "Reckoner_Bold";
-  src: font-url('app/assets/fonts/Reckoner_Bold.ttf') format('truetype');
+  src: font-url('Reckoner_Bold.ttf') format('truetype');
   font-family: "Reckoner";
-  src: font-url('app/assets/fonts/Reckoner.ttf') format('truetype');
+  src: font-url('Reckoner.ttf') format('truetype');
 }
 
 // @font-face {
