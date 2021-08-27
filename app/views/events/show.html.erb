@@ -5,14 +5,15 @@
 </div>
 <div class="container">
 <div class="event-show-title">
-<h1><%= link_to @event.band.name, band_path(@event.band.id) %></h1><h1> au </h1>
-<h1><%= link_to @event.bar.name, bar_path(@event.bar.id)  %></h1>
+  <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="navbar-logo">
+  <%= link_to @event.band.name, band_path(@event.band.id) %> <br> x <br>
+  <%= link_to @event.bar.name, bar_path(@event.bar.id)  %>
 </div>
 
-<div class="container">
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
 </div>
+<div class="container">
 
 <%if @event.bar.photo.attached? %>
     <div class="carousel-container">
@@ -35,11 +36,13 @@
     </div>
 <% end %>
 
-<div class="style">
-  <%= @event.band.style %>
+<div class="d-flex justify-content-center mb-4">
+  <div class="btn btn-ghost">
+    <%= @event.band.style %>
+  </div>
 </div>
 
-<div class="description">
+<div class="description-event">
   <% if @event.description? %>
     <p><%= @event.description %></p>
   <% else %>
@@ -48,17 +51,19 @@
 </div>
 
 <div class="list-inline text-center">
+  <a class="links-event" href="#">Y aller!</a>
   <%  @participations = Participation.where(user: current_user.id)  %>
   <% if @participations.find_by_event_id(@event) %>
   <% @participation = @participations.find_by_event_id(@event) %>
-  <%= link_to "Retirer de mes évenements",
+  <%= link_to "Retirer!",
             participation_path(@participation),
+            class: "links-event",
             method: :delete %>
   <% else  %>
-    <%= link_to "Ajouter à mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+    <%# <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="guitar"> %>
+    <%= link_to "Ajouter!", new_event_participation_path(@event.id), class: "links-event", id: "add-participation" %>
   <% end %>
-  <a href="#">Y aller!</a>
 </div>
-</div>
+
 
 <%= render 'shared/paticipation_popup', event: @event %>
