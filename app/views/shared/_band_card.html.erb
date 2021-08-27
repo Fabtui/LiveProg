@@ -4,8 +4,7 @@
             <% end %>
             <div class="card-infos">
               <div>
-                <h2><%= link_to band.name, band_path(band.id) %></h2>
-                <p><%= band.description %></p>
+                <%= link_to band.name, band_path(band.id) %>
                 <hr>
                 <p><%= band.style %></p>
               </div>
