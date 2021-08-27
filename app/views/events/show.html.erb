@@ -1,6 +1,10 @@
 <div class="container">
-<h1><%= @event.name %></h1>
+<div class="event-show-title">
+<h1><%= link_to @event.band.name, band_path(@event.band.id) %></h1><h1> au </h1>
+<h1><%= link_to @event.bar.name, bar_path(@event.bar.id)  %></h1>
+</div>
 
+<div class="container">
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
 </div>

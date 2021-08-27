@@ -16,13 +16,33 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-areas: "main"
-  "header";
+                       "header";
   color: $cream;
   height: 100vh;
-  background-color: $anthrax;
+  background: rgb(35,35,39);
+  background: linear-gradient(180deg, rgba(35,35,39,1) 10%, rgba(22,22,22,1) 77%, rgba(33,33,33,1) 90%);
+  width: 100%;
 }
-
+  
 main {
   overflow-y: auto;
   grid-area: main;
+  width: 100%;
+}
+
+h1 {
+
+  width: 100%;
+  height: 40px;
+  left: 30px;
+  top: 32px;
+  font-family: 'Reckoner';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 48px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  color: #14FFEC;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }

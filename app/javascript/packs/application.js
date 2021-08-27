@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { carouselSlide } from "../components/carousel"
+import { editButtonShow } from "../components/editbutton"
 
 Rails.start()
 Turbolinks.start()
@@ -27,5 +28,6 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // carouselSlide();
+  //carouselSlide();
+  editButtonShow();
 });
