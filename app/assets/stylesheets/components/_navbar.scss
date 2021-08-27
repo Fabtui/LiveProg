@@ -25,7 +25,6 @@
   color: $cream;
 	box-shadow: 0 -2px 5px -2px #333;
 	background-color: #202020	;
-  padding-top: 8px;
   padding-bottom: 0px;
   padding-left: 8px;
   padding-right: 8px;
@@ -52,7 +51,14 @@
 	}
 
   .navbar-logo {
-    height: 43px;
-    width: 43px;
+    width: 30px;
   }
+
+  span{
+    font-size: 12px;
+    text-decoration: none;
+    color: $cream;
+    padding-bottom: 4px;
+  }
+
 }

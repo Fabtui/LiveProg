@@ -1,7 +1,8 @@
-<%= link_to :back do %>
-  <i class="fas fa-arrow-left"></i>
-<% end %>
-
+<div class="backlink">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+</div>
 <h1><%= current_user.nickname %></h1>
 
 <% @band = Band.find_by_user_id(current_user) %>

@@ -1,3 +1,8 @@
+<div class="backlink">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+</div>
 <div class="bar-show-container">
   <div class="bar-show-banner" >
     <h1><%= @bar.name %></h1>
@@ -10,17 +15,22 @@
       <% end %>
     </div>
     <div class="bar-show-tags">
-      <a class="btn btn-ghost" href="#">Write a story</a>
-      <a class="btn btn-ghost" href="#">Write a story</a>
-      <a class="btn btn-ghost" href="#">Write a story</a>
+      <a class="btn btn-ghost" href="#"><p><%= @bar.description %></p></a>
     </div>
-    <div class="bar-show-description"> <p><%= @bar.description %></p> </div>
     <div class="bar-show-programme">
-      <div>date à venir</div>
-      <%@events.each do |event|%>
+      <% if @events.count > 1 %>
+        <h2>Dates à venir</h2>
+      <% elsif @events.count > 0 %>
+        <h2>Date à venir</h2>
+      <% else %>
+        <h2>Pas de date à venir</h2>
+      <% end %>
+      <% @events.each do |event| %>
         <%=link_to(event_path(event), class:"btn btn-gradient") do %>
           <%=event.name%>
-          <%=event.start_date%>
+        <br>
+        <%=  "#{event.start_date.strftime('%d/%m')} à" %>
+        <%= "#{event.start_date.strftime('%H:%M')}" %>
         <%end%>
       <%end%>
     </div>
