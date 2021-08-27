@@ -1,3 +1,8 @@
+<div class="backlink">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+</div>
 <div class="container">
 <div class="event-show-title">
 <h1><%= link_to @event.band.name, band_path(@event.band.id) %></h1><h1> au </h1>
