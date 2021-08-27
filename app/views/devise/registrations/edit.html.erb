@@ -5,11 +5,10 @@
 <h1><%= current_user.nickname %></h1>
 
 <% @band = Band.find_by_user_id(current_user) %>
-<h3>Mon groupe : <%= link_to @band.name, band_path(@band) %></h3>
-
-<hr>
 
 <% if @band %>
+<h3>Mon groupe : <%= link_to @band.name, band_path(@band) %></h3>
+<hr>
 <%= link_to "Créer un évènement", new_band_event_path(@band.owner), class: "btn btn-primary" %>
 <% end %>
 
