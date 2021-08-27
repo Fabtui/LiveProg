@@ -1,4 +1,4 @@
-.participation-popup-container {
+.participation-popup-cont {
   width: 100%;
 }
 
@@ -11,25 +11,25 @@
 
 #participation-popup {
   box-shadow: 0 0 30px $blue;
-  z-index: 99;
-  top: -200px;
+  z-index: 999;
+  top: -400px;
   position: relative;
   margin: 0 auto;
   text-align: center;
-  padding: 15px 50px 15px 30px;
+  padding: 15px 30px 15px 20px;
   border-radius: 25px;
   border: 1px solid $blue;
   color: $blue;
   background: $green;
   width: 50%;
-  transition: 1.5s;
-  h1 {
-    font-size: 35px;
+  transition: 0.5s;
+  h2 {
+    font-size: 25px;
     margin: 0;
   }
 }
 
 .hidden {
   display: none;
-  transition: 1.5s;
+  transition: 0.5s;
 }

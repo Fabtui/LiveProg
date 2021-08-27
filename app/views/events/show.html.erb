@@ -5,11 +5,11 @@
 </div>
 <div class="container">
 <div class="event-show-title">
-<h1><%= link_to @event.band.name, band_path(@event.band.id) %></h1><h1> au </h1>
-<h1><%= link_to @event.bar.name, bar_path(@event.bar.id)  %></h1>
+<h2><%= link_to @event.band.name, band_path(@event.band.id) %></h2><h2> au </h2>
+<h2><%= link_to @event.bar.name, bar_path(@event.bar.id)  %></h2>
 </div>
 
-<div class="container">
+<div id="infos-container" class="container">
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
 </div>
@@ -35,8 +35,8 @@
     </div>
 <% end %>
 
-<div class="style">
-  <%= @event.band.style %>
+<div class="bar-show-tags">
+  <a class="btn btn-ghost" href="#"><%= @event.band.style %></a>
 </div>
 
 <div class="description">
@@ -55,9 +55,9 @@
             participation_path(@participation),
             method: :delete %>
   <% else  %>
-    <%= link_to "Ajouter à mes évenements", new_event_participation_path(@event.id), id: "add-participation" %>
+    <%= link_to "Ajouter à mes évenements", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "liveprog" %>
   <% end %>
-  <a href="#">Y aller!</a>
+  <%# <a href="#">Y aller!</a> %>
 </div>
 </div>
 

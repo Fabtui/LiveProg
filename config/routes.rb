@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :bars, only: [:index, :show]
   resources :events, except: [:new, :create] do
-    resources :participations, only: [:new, :create]
+    resources :participations, only: [ :create ]
   end
 
   resources :participations, only: :destroy
