@@ -3,10 +3,6 @@
 <i id="fav-band" class="far fa-star" style="color:#14FFEC"></i>
 </div>
 
-
-<% if current_user == @band.owner %>
-<%= link_to "Créer un évènement", new_band_event_path(@band), class: "btn btn-primary" %>
-<% end %>
 <div class="bar-show-photo">
   <%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false, class: "mb-4"%>
 </div>
