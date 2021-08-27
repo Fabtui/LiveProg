@@ -8,7 +8,7 @@
   <%= link_to @event.band.name, band_path(@event.band.id) %> <br> x <br>
   <%= link_to @event.bar.name, bar_path(@event.bar.id)  %>
 </div>
-<div class="container">
+<div id="infos-container" class="container">
 
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
@@ -36,10 +36,12 @@
     </div>
 <% end %>
 
+
 <div class="d-flex justify-content-center mb-4">
   <div class="btn btn-ghost">
     <%= @event.band.style %>
   </div>
+
 </div>
 
 <div class="description-event">
@@ -60,9 +62,11 @@
             class: "links-event",
             method: :delete %>
   <% else  %>
+
     <%# <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="guitar"> %>
-    <%= link_to "Ajouter!", new_event_participation_path(@event.id), class: "links-event", id: "add-participation" %>
+<%= link_to "Ajouter à mes évenements", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "links-event" %>
   <% end %>
+
 </div>
 
 

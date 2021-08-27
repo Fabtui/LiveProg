@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { carouselSlide } from "../components/carousel"
 import { editButtonShow } from "../components/editbutton"
+import { participationPopUp } from "../components/participationpopup"
 
 Rails.start()
 Turbolinks.start()
@@ -30,4 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   //carouselSlide();
   editButtonShow();
+  participationPopUp();
 });
