@@ -1,14 +1,14 @@
-<div class="backlink">
+<div class="backlink" style="background-color: black">
   <%= link_to :back do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 </div>
-<div class="container">
 <div class="event-show-title">
   <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="navbar-logo">
   <%= link_to @event.band.name, band_path(@event.band.id) %> <br> x <br>
   <%= link_to @event.bar.name, bar_path(@event.bar.id)  %>
 </div>
+<div class="container">
 
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
