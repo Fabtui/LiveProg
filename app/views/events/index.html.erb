@@ -1,5 +1,14 @@
 <div class="container">
-  <h1>RECHERCHER</h1>
+<div class="user-events-cotainer">
+  <h2>Mes évenements</h2>
+  <div class="bar-show-programme">
+  <% participations = Participation.where(user_id: current_user.id) %>
+  <% participations.each do |participation| %>
+    <div class="btn btn-gradient"></btn-gradient><h1><%=link_to participation.event.name, event_path(participation.event) %> <%= participation.event.start_date %> </h1></div>
+  <% end %>
+  </div>
+</div>
+  <h2>RECHERCHER</h2>
   <input type="" class="input-group mb-4">
   <h2>Aujourd'hui</h2>
   <div class="carousel-container">
