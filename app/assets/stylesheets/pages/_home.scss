@@ -11,14 +11,34 @@
   top: 115px;
 }
 
-.home-bar-card {
-  position: absolute;
-  width: 162px;
-  height: 64px;
-  left: 21px;
-  top: 157px;
-  background: #323232;
-  border-radius: 20px;
+// .card-best-bar {
+  
+  .card-best-photo {
+    width: 12rem;
+    height: 6rem;
+    background: #323232;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+
+    img {
+      height: 6rem;
+      width: 12rem;
+      opacity: 0.8;
+      filter: blur(0.3px) grayscale(80%) contrast(150%) drop-shadow(1px 1px 5px rgb(12, 0, 0));
+      border-radius: 10px 10px 10px 10px;
+      position: relative;
+      text-align: center;
+      color: $cream;
+
+    }
+  // }
+
+  .card-infos-best-bar {
+    font-family: 'Libre Franklin';
+    font-size: 2rem;
+    justify-content: center;
+  }
+
 
   .home-bar-card-picture {
   position: absolute;
@@ -37,7 +57,7 @@
     top: 38.46%;
     bottom: 9.23%;
     
-    font-family: Gotham;
+    font-family: 'GothamBook';
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -73,7 +93,7 @@
       top: 63.3%;
       bottom: 33%;
 
-      font-family: Gotham;
+      font-family: 'GothamBook';
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -104,7 +124,7 @@
     background: #14FFEC;
 
     .home-event-card-datetext {
-      font-family: Gotham;
+      font-family: 'GothamBook';
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
@@ -132,7 +152,7 @@
     top: 76.38%;
     bottom: -19.56%;
     
-    font-family: Gotham;
+    font-family: 'GothamBook';
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -140,4 +160,60 @@
     
     color: #F5FFFA;
   }
+}
+
+.bar-search-input {
+  background-color: #11ffee00;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2rem;
+  border: none;
+  color: $cream;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  margin-top: 1rem;
+}
+
+.cards-best-bar-container {
+  text-align: center;
+  height: 15rem;
+  align-items: stretch;
+  position: relative;
+
+  .bar-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $cream;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-shadow: $jet;
+  }
+}
+
+.band-search-input {
+  margin-top: 2rem;
+  background-color: #11ffee00;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2rem;
+  border: none;
+  color: $cream;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+#events-near {
+  background-color: #11ffee00;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2rem;
+  border: none;
+  color: $cream;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+::placeholder {
+  color: $cream;
+  font-weight: lighter;
 }
