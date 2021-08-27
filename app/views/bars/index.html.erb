@@ -1,6 +1,8 @@
-<h1>Bars#index</h1>
-<p>Find me in app/views/bars/index.html.erb</p>
-
+<div class="backlink">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+</div>
 <div class="card-bar-container">
   <% @bars.each do |bar| %>
     <div class="card-bar">
