@@ -8,12 +8,12 @@
   <%= link_to @event.band.name, band_path(@event.band.id) %> <br> x <br>
   <%= link_to @event.bar.name, bar_path(@event.bar.id)  %>
 </div>
-<div id="infos-container" class="container">
+<div class="container">
 
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
 </div>
-<div class="container">
+<div id="infos-container" class="container">
 
 <%if @event.bar.photo.attached? %>
     <div class="carousel-container">
