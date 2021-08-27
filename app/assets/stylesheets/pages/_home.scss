@@ -12,7 +12,7 @@
 }
 
 // .card-best-bar {
-  
+
   .card-best-photo {
     width: 12rem;
     height: 6rem;
@@ -56,13 +56,13 @@
     right: 3.24%;
     top: 38.46%;
     bottom: 9.23%;
-    
+
     font-family: 'GothamBook';
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 12px;
-    
+
     color: #F5FFFA;
   }
 }
@@ -120,7 +120,7 @@
     right: 0%;
     top: 6.25%;
     bottom: 75.57%;
-    
+
     background: #14FFEC;
 
     .home-event-card-datetext {
@@ -129,35 +129,35 @@
       font-weight: normal;
       font-size: 14px;
       line-height: 13px;
-      
+
       color: black;
-    }  
+    }
   }
-  
+
   .home-event-card-picture {
     position: absolute;
     left: 0%;
     right: 0%;
     top: 0%;
     bottom: 28.41%;
-    
+
     background: black;
     border-radius: 5px;
   }
-  
+
   .home-event-card-titletext {
     position: absolute;
     left: 13.85%;
     right: 4.77%;
     top: 76.38%;
     bottom: -19.56%;
-    
+
     font-family: 'GothamBook';
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    
+
     color: #F5FFFA;
   }
 }
@@ -171,25 +171,6 @@
   letter-spacing: 1px;
   font-weight: lighter;
   margin: auto;
-}
-
-.cards-best-bar-container {
-  text-align: center;
-  height: 15rem;
-  align-items: stretch;
-  position: relative;
-
-  .bar-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: $cream;
-    font-size: 1.3rem;
-    letter-spacing: 3px;
-    font-weight: bold;
-    text-shadow: $jet;
-  }
 }
 
 .band-search-input {

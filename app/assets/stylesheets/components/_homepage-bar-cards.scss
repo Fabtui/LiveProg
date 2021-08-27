@@ -1,20 +1,32 @@
 .cards-best-bar-container{
   width: 100%;
   display: grid;
-  grid-gap: 20px;
   box-sizing: border-box;
   grid-template-columns: 1fr 1fr;
-  padding: 15px;
+  text-align: center;
+  height: 15rem;
+  align-items: stretch;
+  position: relative;
+
+  .bar-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $cream;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-shadow: $jet;
+  }
 }
 
 .card-best-bar {
-  display: flex;
   width: auto;
   height: 40px;
 }
 
 .card-best-photo img {
-  width: 80px;
   height: 40px;
   border-radius: 20px 0 0 20px;
   object-fit: cover;

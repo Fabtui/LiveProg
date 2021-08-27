@@ -1,4 +1,8 @@
-<div class="gradient-text">LIVEPROG</div>
+<div class="gradient-text">
+  <div class="gradient-text-content">
+    LIVEPROG
+  </div>
+</div>
 
 <form action="bars" method="get">
   <div class="bar-search">
@@ -19,11 +23,6 @@
       <% end %>
       <%= link_to bar.name, bar_path(bar.id), class: "bar-name" %>
     </div>
-      <%# <div class="card-infos-best-bar">
-        <div class="card-infos-best-bar-content">
-          
-        </div>
-      </div> %>
     </div>
   <% end %>
 </div>
