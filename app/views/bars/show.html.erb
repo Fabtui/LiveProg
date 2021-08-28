@@ -14,8 +14,10 @@
         <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
       <% end %>
     </div>
-    <div class="bar-show-tags">
-      <a class="btn btn-ghost" href="#"><p><%= @bar.description %></p></a>
+    <div class="d-flex justify-content-center mb-4">
+      <div class="btn btn-ghost">
+        <%= @bar.description %>
+      </div>
     </div>
     <div class="bar-show-infos">
       <h3><i class="far fa-clock"></i> <%= @bar.opening_time %></h3>
