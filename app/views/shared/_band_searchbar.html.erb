@@ -1,0 +1,27 @@
+<form action="bands" method="get">
+  <div class="product-search">
+    <div class="search-element">
+      <label class="search-label">Artiste ?</label>
+      <input class="search-input" type="text" placeholder="Artist" class="" autocomplete="on" name="search[band]">
+    </div>
+    <div class="search-element">
+      <label class="search-label">Style ?</label>
+      <datalist id="suggestions">
+          <option>Acoustique</option>
+          <option>DJ</option>
+          <option>Electro</option>
+          <option>Funk</option>
+          <option>Hip Hop</option>
+          <option>Jazz</option>
+          <option>Metal</option>
+          <option>Pop</option>
+          <option>Rap</option>
+          <option>Reggae</option>
+          <option>Reprises</option>
+          <option>Rock</option>
+      </datalist>
+      <input class="search-input" list="suggestions" placeholder="Style" autocomplete="on" name="search[band_style]">
+      </div>
+    <input type="submit" name="commit" class="search-button"></a>
+  </div>
+</form>
