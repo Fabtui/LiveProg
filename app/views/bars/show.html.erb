@@ -17,6 +17,9 @@
     <div class="bar-show-tags">
       <a class="btn btn-ghost" href="#"><p><%= @bar.description %></p></a>
     </div>
+    <div class="bar-show-infos">
+      <h3><i class="far fa-clock"></i> <%= @bar.opening_time %></h3>
+    </div>
     <div class="bar-show-programme">
       <% if @events.count > 1 %>
         <h2>Dates à venir</h2>
