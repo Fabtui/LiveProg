@@ -22,6 +22,11 @@
       <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
       <% end %>
       <%= link_to bar.name, bar_path(bar.id), class: "bar-name" %>
+      <% if bar.events.count > 0 %>
+        <div class="best_bar_event-count">
+          <%= bar.events.count %>
+        </div>
+      <% end %>
     </div>
     </div>
   <% end %>

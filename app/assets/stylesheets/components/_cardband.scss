@@ -11,12 +11,12 @@
   width: 250px;
   border-radius: 20px;
   margin:20px;
-  border: solid #14FFEC 1px;
+  border: solid $blue 1px;
   }
 
 .card-band-img {
   border-radius: 20px 20px 0px 0px;
-  border-bottom: solid #14FFEC 1px;
+  border-bottom: solid $blue 1px;
   height: 300px;
   background-size: cover;
 }
