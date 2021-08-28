@@ -7,4 +7,12 @@ class Band < ApplicationRecord
   has_many_attached :photos
   has_many :band_styles, dependent: :destroy
   has_many :styles, through: :band_styles
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :description ],
+    associated_against: {
+      styles: [ :style_type]
+    },
+    using: { tsearch: { prefix: true } }
 end
