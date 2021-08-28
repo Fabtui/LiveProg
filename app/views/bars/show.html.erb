@@ -49,3 +49,15 @@
 <p><%= @bar.address %></p>
 <p><%= @bar.menu %></p>
 <% end %>
+
+
+<% if current_user.bar_favs %>
+  <% if current_user.bar_favs.where(bar_id: @bar.id).first %>
+  <% @bar_fav = current_user.bar_favs.where(bar_id: @bar.id).first %>
+    <%= link_to "remove favorite", bar_fav_path(@bar_fav), method: :delete, remote: true, id: "remove-fav" %>
+<% else %>
+  <%= link_to "add favorite", bar_bar_favs_path(@bar), method: :post, remote: true, id: "add-fav" %>
+<% end %>
+<% end %>
+    <div id="fav-icone"><i class="fas fa-star"></i></div>
+    <div><i class="far fa-star"></i></div>

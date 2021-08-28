@@ -14,23 +14,27 @@
 </form>
 
 <div class="cards-best-bar-container">
-  <% @bars = Bar.first(4) %>
-  <% @bars.each do |bar| %>
-    <div class="card-best-bar">
-    <div class="card-best-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)">
-      <% bar.photo.each do |photo| %>
-      <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
-      <% end %>
-      <%= link_to bar.name, bar_path(bar.id), class: "bar-name" %>
-      <% if bar.events.count > 0 %>
-        <div class="best_bar_event-count">
-          <%= bar.events.count %>
+  <% if current_user.bar_favs %>
+    <% @bar_favs = current_user.bar_favs %>
+    <% @bar_favs.each do |bar_fav| %>
+      <% bar = Bar.find(bar_fav.bar_id) %>
+       <div class="card-best-bar">
+        <div class="card-best-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)">
+          <% bar.photo.each do |photo| %>
+          <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+          <% end %>
+          <%= link_to bar.name, bar_path(bar.id), class: "bar-name" %>
+          <% if bar.events.count > 0 %>
+            <div class="best_bar_event-count">
+              <%= bar.events.count %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-    </div>
-  <% end %>
-</div>
+      </div>
+        <% end %>
+        <% end %>
+      </div>
+
 
 <form action="band" method="get">
   <div class="band-search">

@@ -1,0 +1,3 @@
+var add = document.querySelector("#add-fav")
+
+add.outerHTML = "<%= j(link_to "remove favorite", bar_fav_path(@bar_fav), method: :delete, remote: true, id: "remove-fav") %>"
