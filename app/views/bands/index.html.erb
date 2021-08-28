@@ -1,19 +1,11 @@
-<div class="card-band-container">
 <div class="backlink">
   <%= link_to :back do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 </div>
-<div class="card-bar-container">
-<% @bands.each do |band| %>
-    <div class="card-band">
-      <div class="card-band-img" style="background-image: url(<%=cl_image_path band.photos.first.key%>)" >
-      </div>
-      <div class="card-band-content">
-        <h1><%= link_to band.name, band_path(band.id) %></h1>
-        <h2><%= band.style %></h2>
-        <p><%= band.description %></p>
-      </div>
-    </div>
-  <% end %>
+<div id="band-index-title"><h1>DECOUVREZ DES ARTISTES</h1></div>
+<div class="card-band-container">
+        <% @bands.each do |band| %>
+        <%= render 'shared/band_index_card', band: band %>
+        <% end %>
 </div>
