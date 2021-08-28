@@ -1,6 +1,14 @@
 class BandsController < ApplicationController
   def index
-    @bands = Band.all
+    if params[:query].present?
+      sql_query = " \
+        bands.name @@ :query \
+        OR bands.description @@ :query \
+      "
+      @bands = Band.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bands = Band.all
+    end
   end
 
   def show

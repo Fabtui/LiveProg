@@ -4,6 +4,16 @@
   <% end %>
 </div>
 <div id="band-index-title"><h1>DECOUVREZ DES ARTISTES</h1></div>
+
+<%= form_tag bands_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Trouver un groupe"
+  %>
+  <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+<% end %>
+
 <div class="card-band-container">
         <% @bands.each do |band| %>
         <%= render 'shared/band_index_card', band: band %>
