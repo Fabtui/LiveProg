@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_174736) do
+ActiveRecord::Schema.define(version: 2021_08_28_134849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2021_08_24_174736) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["band_id"], name: "index_band_reviews_on_band_id"
     t.index ["user_id"], name: "index_band_reviews_on_user_id"
+  end
+
+  create_table "band_styles", force: :cascade do |t|
+    t.bigint "style_id", null: false
+    t.bigint "band_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_band_styles_on_band_id"
+    t.index ["style_id"], name: "index_band_styles_on_style_id"
   end
 
   create_table "bands", force: :cascade do |t|
@@ -115,6 +124,12 @@ ActiveRecord::Schema.define(version: 2021_08_24_174736) do
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
+  create_table "styles", force: :cascade do |t|
+    t.string "style_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -134,6 +149,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_174736) do
   add_foreign_key "band_favs", "users"
   add_foreign_key "band_reviews", "bands"
   add_foreign_key "band_reviews", "users"
+  add_foreign_key "band_styles", "bands"
+  add_foreign_key "band_styles", "styles"
   add_foreign_key "bands", "users"
   add_foreign_key "bar_favs", "bars"
   add_foreign_key "bar_favs", "users"

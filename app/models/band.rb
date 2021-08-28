@@ -5,4 +5,6 @@ class Band < ApplicationRecord
   has_many :band_favs, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   has_many_attached :photos
+  has_many :band_styles, dependent: :destroy
+  has_many :styles, through: :band_styles
 end

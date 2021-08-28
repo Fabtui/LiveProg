@@ -1,6 +1,16 @@
 Bar.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Band.destroy_all if Rails.env.development?
+Style.destroy_all if Rails.env.development?
+BandStyle.destroy_all if Rails.env.development?
+
+# _______________________________STYLE_________________________________________
+
+styles = %w(Hip\ Hop Rap Rock Metal Pop Electro Funk Rap Jazz DJ Reggae Divers Reprises Acoustique)
+
+styles.each do |style|
+  Style.create!(style_type: style)
+end
 
 # _______________________________BARS_________________________________________
 
@@ -262,8 +272,48 @@ shokinpapa_bulldog = Event.create!(
   description: "Les Shokin' Papas viennent décoller le papier peint des murs du Bulldog."
 )
 
+# _______________________________BANDS-STYLES_________________________________________
 
+BandStyle.create!(
+  band_id: "1",
+  style_id: "7"
+)
+
+BandStyle.create!(
+  band_id: "2",
+  style_id: "3"
+)
+
+BandStyle.create!(
+  band_id: "3",
+  style_id: "6"
+)
+
+BandStyle.create!(
+  band_id: "3",
+  style_id: "10"
+)
+
+BandStyle.create!(
+  band_id: "4",
+  style_id: "3"
+)
+
+BandStyle.create!(
+  band_id: "4",
+  style_id: "13"
+)
+
+BandStyle.create!(
+  band_id: "4",
+  style_id: "5"
+)
+# ______________________________________________________________________________________
+
+
+puts "#{Style.all.count} styles created"
 puts "#{Bar.all.count} bars created"
 puts "#{User.all.count} users created"
 puts "#{Band.all.count} bands created"
 puts "#{Event.all.count} events created"
+puts "#{BandStyle.all.count} band styles created"

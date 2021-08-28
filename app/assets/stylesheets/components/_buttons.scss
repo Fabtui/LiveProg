@@ -12,3 +12,39 @@
 .green {
   background-color: $green;
 }
+
+.btn-ghost {
+  color: $cream;
+  border: 1px solid #202120;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: $green;
+}
+
+.btn-gradient {
+  color: #fffefe;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: #323333;
+  border: 1px solid #14ffec;
+}
+
+.btn-ghost {
+  color: $cream;
+  border: 1px solid #202120;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: $green;
+}
+
+.btn-ghost-mini {
+  color: $cream;
+  border: 1px solid #202120;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: $green;
+}
