@@ -4,5 +4,6 @@ popUp.classList.remove('hidden')
 container.style.filter = "blur(3px)";
 
 var link = document.getElementById('add-participation')
+console.log(link)
 
-link.outerHTML = "<%= j(link_to "Retirer!", participation_path(@participation), class: "links-event", method: :delete, id: "add-participation", remote: true) %>"
+link.outerHTML = "<%= link_to "Ajouter!", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "links-event" %>"

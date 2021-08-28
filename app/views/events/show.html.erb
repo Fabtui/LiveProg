@@ -13,6 +13,9 @@
 <div class="infos-event">
   <%= "#{@event.start_date.strftime('%d/%m')} - #{@event.start_date.strftime('%H:%M')} @ #{@event.bar.address}" %>
 </div>
+
+<%= render 'shared/paticipation_popup', event: @event %>
+
 <div id="infos-container" class="container">
 
 <%if @event.bar.photo.attached? %>
@@ -60,14 +63,12 @@
   <%= link_to "Retirer!",
             participation_path(@participation),
             class: "links-event",
+            remote: true,
+            id: "add-participation",
             method: :delete %>
   <% else  %>
 
-    <%# <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="guitar"> %>
 <%= link_to "Ajouter!", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "links-event" %>
   <% end %>
 
 </div>
-
-
-<%= render 'shared/paticipation_popup', event: @event %>
