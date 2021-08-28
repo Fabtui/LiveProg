@@ -55,3 +55,12 @@
 text-align: center;
 margin-bottom: 50px;
 }
+
+.event-button-container {
+  color: aquamarine;
+  z-index: 9999;
+}
+
+#add-participation, #event-location {
+  margin: 0 auto;
+}
