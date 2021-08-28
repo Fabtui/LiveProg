@@ -4,9 +4,16 @@
             <% end %>
             <div class="card-infos">
               <div>
+              <div class="card-band-name">
                 <%= link_to band.name, band_path(band.id) %>
-                <hr>
-                <p><%= band.style %></p>
+                </div>
+                <% band.styles.each do |style| %>
+                <div class="card-bandstyle">
+                  <div class="btn btn-ghost-mini">
+                    <%= style.style_type %>
+                  </div>
+                </div>
+                <% end %>
               </div>
             </div>
           </div>

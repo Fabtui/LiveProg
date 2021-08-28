@@ -1,8 +1,54 @@
 #header-band{
-    margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 2rem;
   h1 {
-    margin-bottom: 10px;
+    margin: 16px 0;
     padding-top: 0;
   }
+}
 
+#fav-band {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 48px;
+  right: 16px;
+}
+
+.image-band{
+  display: block;
+  width: 100%;
+}
+
+.bandstyle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bandstyle {
+  display: inline-block;
+  margin: 16px 8px;
+}
+
+.youtube-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.band-show-program {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+  align-items: center
+}
+
+#band-show-program-title {
+  width: 400px;
+  margin-left: 16px;
+  h3 {
+    color: $cream;
+  }
 }
