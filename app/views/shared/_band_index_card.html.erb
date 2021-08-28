@@ -1,0 +1,19 @@
+<% band.photos.each do |photo| %>
+<div class="band-index-card">
+  <div class="band-index-image">
+  <%= cl_image_tag photo.key, :width=>180, :height=>120, 'aria-expanded': false %>
+  <% end %>
+    <div class="band-index-card-name">
+      <%= link_to band.name, band_path(band.id) %>
+    </div>
+    <div class="card-bandstyle-container">
+    <% band.styles.each do |style| %>
+    <div class="card-bandstyle">
+      <div class="btn btn-ghost-micro">
+        <%= style.style_type %>
+      </div>
+    </div>
+      <% end %>
+    </div>
+  </div>
+</div>
