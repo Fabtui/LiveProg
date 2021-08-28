@@ -1,14 +1,25 @@
-<div class="backlink">
-  <%= link_to :back do %>
-    <i class="fas fa-arrow-left"></i>
-  <% end %>
-</div>
-<div class="bar-show-container">
+<div class="tainer">
   <div class="bar-show-banner" >
-    <h1><%= @bar.name %></h1>
-    <i class="far fa-star"></i>
+  <div class="backlink">
+    <%= link_to :back do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
   </div>
-  <div class="bar-show-con">
+    <h1><%= @bar.name %></h1>
+    <div class="bar-favorite">
+      <% if current_user.bar_favs %>
+        <% if current_user.bar_favs.where(bar_id: @bar.id).first %>
+        <% @bar_fav = current_user.bar_favs.where(bar_id: @bar.id).first %>
+          <%= link_to "remove favorite", bar_fav_path(@bar_fav), method: :delete, remote: true, id: "remove-fav" %>
+          <%# <div><i class="far fa-star"></i></div> %>
+        <% else %>
+          <%= link_to "add favorite", bar_bar_favs_path(@bar), method: :post, remote: true, id: "add-fav" %>
+            <%# <div id="fav-icone"><i class="fas fa-star"></i></div> %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="bar-show-content">
     <div class="bar-show-photo">
       <% @bar.photo.each do |photo| %>
         <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
@@ -21,7 +32,10 @@
     </div>
 
     <div class="d-flex justify-content-center mb-4">
-      <h3><i class="far fa-clock"></i> <%= @bar.opening_time %></h3>
+      <p><%= @bar.address %></p>
+    </div>
+    <div class="d-flex justify-content-center mb-4">
+      <p><i class="far fa-clock"></i> <%= @bar.opening_time %></p>
     </div>
     <div class="bar-show-programme">
       <% if @events.count > 1 %>
@@ -42,22 +56,3 @@
     </div>
   </div>
 </div>
-
-
-
-<% if false %>
-<p><%= @bar.address %></p>
-<p><%= @bar.menu %></p>
-<% end %>
-
-
-<% if current_user.bar_favs %>
-  <% if current_user.bar_favs.where(bar_id: @bar.id).first %>
-  <% @bar_fav = current_user.bar_favs.where(bar_id: @bar.id).first %>
-    <%= link_to "remove favorite", bar_fav_path(@bar_fav), method: :delete, remote: true, id: "remove-fav" %>
-<% else %>
-  <%= link_to "add favorite", bar_bar_favs_path(@bar), method: :post, remote: true, id: "add-fav" %>
-<% end %>
-<% end %>
-    <div id="fav-icone"><i class="fas fa-star"></i></div>
-    <div><i class="far fa-star"></i></div>
