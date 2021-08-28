@@ -11,7 +11,5 @@ class ParticipationsController < ApplicationController
   def destroy
     @participation = Participation.find(params[:id])
     @participation.destroy
-
-    redirect_to events_path
   end
 end
