@@ -53,6 +53,16 @@
     <p><%= @event.band.description %></p>
   <% end %>
 </div>
+<div class="participants-count">
+  <% if @event.participations.count > 1 %>
+    <p><%= @event.participations.count %> personnes interessées par cette évenement.</p>
+  <% elsif @event.participations.count == 1 %>
+    <p><%= @event.participations.count %> personne interessée par cette évenement.</p>
+  <% else %>
+    <p>Soyez la première personne à vous inscrire à cette évenement!</p>
+  <% end %>
+</div>
+
 
 <div class="d-flex justify-content-center mb-4">
   <%  @participations = Participation.where(user: current_user.id)  %>
