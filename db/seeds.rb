@@ -78,7 +78,7 @@ foam = Bar.create!(
 foam.photo.attach(io: File.open('app/assets/images/bars/foam.JPG'), filename: 'foam.jpg', content_type:'image/jpg')
 
 diane = Bar.create!(
-  name: "Diane's, Bar à Potes",
+  name: "Diane's, Bar a Potes",
   address: "6 rue Saint Vincent 06300 Nice",
   description: "Bar à bières",
   menu: "Repas, boissons",

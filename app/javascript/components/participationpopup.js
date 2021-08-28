@@ -5,13 +5,15 @@ const participationPopUpClose = () => {
   const close = document.getElementById('participation-popup-close')
   const addParticipation = document.getElementById('add-participation')
   const popUp = document.getElementById('participation-popup')
-  close.addEventListener('click', (e) => {
-    popUp.classList.add('hidden')
-    popUp.style.transition = "0.5s";
-    container.style.opacity = ""
-    container.style.filter = "";
+  if (close) {
+    close.addEventListener('click', (e) => {
+      popUp.classList.add('hidden')
+      popUp.style.transition = "0.5s";
+      container.style.opacity = ""
+      container.style.filter = "";
+    }
+    )
   }
-  )
 }
 
 export { participationPopUpClose }

@@ -2,11 +2,12 @@
   width: 100%;
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  height: 15rem;
+  height: auto;
   align-items: stretch;
   position: relative;
+  grid-auto-rows: minmax(100px, auto);
 
   .bar-name {
     position: absolute;
@@ -22,7 +23,6 @@
 }
 
 .card-best-bar {
-  width: auto;
   height: 40px;
 }
 
@@ -32,13 +32,6 @@
   object-fit: cover;
 }
 
-.card-infos-best-bar {
-  width: 100%;
-  background-color: $jet;
-  text-align: center;
-  border-radius: 0 20px 20px 0;
-  padding-top: 5px;
-}
 
 .card-infos-best-bar-content {
   text-align: center;
@@ -55,11 +48,23 @@
 .best_bar_event-count {
   font-size: 12px;
   position: absolute;
-  top: 4px;
-  right: 8px;
+  top: -8px;
+  right: 0;
   padding: 3px 10px 4px 10px;
   border-radius: 50%;
   border: 1px solid $jet;
   color: $blue;
   background-color: $anthrax;
+}
+
+@media (max-width: 700px) {
+.cards-best-bar-container{
+  grid-template-columns: 1fr 1fr;
+  }
+}
+
+#best-bar-title {
+  margin-left: 8px;
+  font-size: 20px;
+  color: $green;
 }
