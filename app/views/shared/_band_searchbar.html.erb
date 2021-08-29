@@ -1,11 +1,23 @@
 <form action="bands" method="get">
-  <div class="product-search">
-    <div class="search-element">
-      <label class="search-label">Artiste ?</label>
-      <input class="search-input" type="text" placeholder="Artist" class="" autocomplete="on" name="search[band]">
+  <div class="band-search">
+    <div class="band-search-element">
+      <div class="band-search-icone">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="band-search-bar">
+        <input class="band-search-input"
+                type="text"
+                placeholder="Artiste"
+                class=""
+                autocomplete="on"
+                name="search[band]">
+      </div>
     </div>
-    <div class="search-element">
-      <label class="search-label">Style ?</label>
+    <div class="band-search-element">
+      <div class="band-search-icone">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="band-search-bar">
       <datalist id="suggestions">
           <option>Acoustique</option>
           <option>DJ</option>
@@ -20,8 +32,14 @@
           <option>Reprises</option>
           <option>Rock</option>
       </datalist>
-      <input class="search-input" list="suggestions" placeholder="Style" autocomplete="on" name="search[band_style]">
+      <input class="band-search-input"
+             type="text"
+             list="suggestions"
+             placeholder="Style"
+             autocomplete="on"
+             name="search[band_style]">
       </div>
-    <input type="submit" name="commit" class="search-button"></a>
+      </div>
+    <input type="submit" name="commit" class="btn btn-blue-mini" value="Chercher">
   </div>
 </form>
