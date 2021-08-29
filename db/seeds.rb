@@ -6,7 +6,7 @@ BandStyle.destroy_all if Rails.env.development?
 
 # _______________________________STYLE_________________________________________
 
-styles = %w(Hip\ Hop Rap Rock Metal Pop Electro Funk Rap Jazz DJ Reggae Divers Reprises Acoustique)
+styles = %w(Hip\ Hop Rap Rock Metal Pop Electro Funk Rap Jazz House Reggae Divers Reprises Acoustique)
 
 styles.each do |style|
   Style.create!(style_type: style)
@@ -272,6 +272,24 @@ shokinpapa_bulldog = Event.create!(
   description: "Les Shokin' Papas viennent décoller le papier peint des murs du Bulldog."
 )
 
+ofenbach = Band.create!(
+  name: "Ofenbach",
+  style: "Electro",
+  youtube_url: "https://www.youtube.com/embed/Ycg5oOSdpPQ",
+  facebook_url: "https://www.facebook.com/weareofenbach",
+  user_id: "5",
+  description: "Ofenbach est un duo de DJ français réunissant Dorian et César, deux amis d'enfance parisiens aux influences deep house, rock et pop."
+)
+ofenbach.photos.attach(io: File.open('app/assets/images/bands/ofenbach.JPG'), filename: 'ofenbach.jpg', content_type:'image/jpg')
+
+ofenbach_yolo = Event.create!(
+  band_id: "5",
+  bar_id: "15",
+  start_date: "2021-09-24T21:30",
+  name: "Ofenbach au Yolo",
+  description: "Ofenback pose ses platines au Yolo pour une soirée mouvementée!"
+)
+
 # _______________________________BANDS-STYLES_________________________________________
 
 BandStyle.create!(
@@ -290,11 +308,6 @@ BandStyle.create!(
 )
 
 BandStyle.create!(
-  band_id: "3",
-  style_id: "10"
-)
-
-BandStyle.create!(
   band_id: "4",
   style_id: "3"
 )
@@ -307,6 +320,16 @@ BandStyle.create!(
 BandStyle.create!(
   band_id: "4",
   style_id: "5"
+)
+
+BandStyle.create!(
+  band_id: "5",
+  style_id: "6"
+)
+
+BandStyle.create!(
+  band_id: "5",
+  style_id: "10"
 )
 # ______________________________________________________________________________________
 
