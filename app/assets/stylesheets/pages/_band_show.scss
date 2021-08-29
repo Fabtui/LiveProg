@@ -20,6 +20,17 @@
   width: 100%;
 }
 
+.band-comment {
+  position: relative;
+  right: 0;
+}
+
+.band-comment-content {
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
 .bandstyle-container {
   width: 100%;
   display: flex;
