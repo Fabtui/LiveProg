@@ -12,11 +12,23 @@
   <%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false%>
 </div>
 
+<% if @band.band_reviews.count > 0 %>
+
+  <div class="band-comment">
+    <div class="band-comment-content">
+      <%= @band.band_reviews.count %>
+      <%= link_to band_path(@band), remote: true do %>
+        <i class="fas fa-comment"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <div class="bandstyle-container">
 <% @band.styles.each do |style| %>
 <div class="bandstyle">
   <div class="btn btn-ghost">
-    <%= style.style_type %>
+    <%= link_to style.style_type, bands_path(:band_style => style.style_type)  %>
   </div>
 </div>
 <% end %>
@@ -51,7 +63,7 @@
 
 <% reviews = BandReview.where(band_id: @band.id) %>
 <% unless reviews.find_by_user_id(current_user.id) || @band.owner == current_user%>
-  <div class="add-comment">
+  <div id="comment-anchor" class="add-comment">
     <i class="fas fa-pen"></i><%= link_to "Ajouter un commentaire", new_band_band_review_path(@band) %>
   </div>
 <% end %>
