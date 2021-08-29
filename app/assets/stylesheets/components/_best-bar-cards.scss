@@ -27,6 +27,7 @@
 }
 
 .card-best-photo img {
+  border: 1px solid $jet;
   height: 40px;
   border-radius: 20px 0 0 20px;
   object-fit: cover;
