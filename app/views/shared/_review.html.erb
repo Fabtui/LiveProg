@@ -1,0 +1,27 @@
+<div class="reviews-container">
+  <h3><%= "Avis sur #{@band.name}" %></h3>
+    <% @band.band_reviews.each do |band_review| %>
+    <div class="band-review">
+      <div class="band-review-content">
+        <% @user = User.find(band_review.user_id) %>
+        <div class="band-review-content-name"><%= "@#{@user.nickname} : " %></div>
+        <div class="band-review-content-comment"><%= band_review.comment %></div>
+      </div>
+      <div class="band-review-rating">
+        <% stars = band_review.rating  %>
+        <% stars.times do %>
+        <div class="show-stars">
+          <i class="fas fa-star"></i>
+        </div>
+        <% end %>
+        <% if band_review.user_id == current_user.id %>
+          <div class="band-review-delete">
+          <%= link_to band_review_path(band_review.id), method: :delete, remote: true do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+</div>

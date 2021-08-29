@@ -1,0 +1,13 @@
+<div class="form-container">
+<%= "Ajouter un commentaire à #{@band.name}" %>
+<%= simple_form_for [ @band, @band_review ]  do |f| %>
+  <%= f.input :comment,
+      prompt: 'Commentaire',
+      label: false %>
+  <%= f.input :rating,
+    collection: 0..5,
+    prompt: "Note de 0 à 5",
+    label: false %>
+  <%= f.submit 'Ajouter', class: "btn btn-ghost" %>
+<% end %>
+</div>

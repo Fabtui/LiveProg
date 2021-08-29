@@ -1,0 +1,42 @@
+.reviews-container {
+  padding: 0 16px;
+  margin-top: 30px;
+  width: 100%;
+  h3 {
+    color: $cream;
+  }
+}
+
+.band-review {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $green;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 4px;
+}
+
+.band-review-content {
+  display: flex;
+}
+
+.band-review-content-name {
+  margin-right: 8px;
+  color: $green;
+}
+
+.band-review-content-comment {
+  font-style: italic;
+}
+
+.band-review-rating {
+  display: flex;
+}
+
+.show-stars i {
+    color: gold;
+  }
+
+.band-review-delete {
+  margin-left: 8px;
+}
