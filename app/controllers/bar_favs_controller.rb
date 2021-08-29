@@ -8,6 +8,8 @@ class BarFavsController < ApplicationController
 
   def destroy
     @bar_fav = BarFav.find(params[:id])
+    @bar = Bar.find(@bar_fav.bar_id)
     @bar_fav.destroy
+    redirect_to bar_path(@bar)
   end
 end
