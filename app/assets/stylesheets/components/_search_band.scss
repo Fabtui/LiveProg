@@ -1,0 +1,44 @@
+.band-search {
+  height: 30px;
+  width: 100%;
+  display: flex;
+}
+
+.band-search-element {
+  display: flex;
+}
+
+.band-search-bar {
+  width: 120px;
+}
+
+.band-search-input {
+  width: 120px;
+  height: 30px;
+  font-size: 16px;
+  &:focus {
+  outline: none;
+  border-bottom: 1px solid $blue;
+  }
+}
+
+.band-search-bar input[type="text"] {
+  font-size: 16px;
+  color: $blue;
+}
+
+.band-search-bar input::placeholder {
+  color: $green;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.band-search-icone {
+  margin: 0 8px;
+  padding-top: 4px;
+  color: $green;
+}
+
+input[name="styles"] {
+  background-color: burlywood;
+}
