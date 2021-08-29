@@ -1,23 +1,4 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: black;
-//   color: $cream;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-
-// .navbar-logo {
-//   width: 40px;
-// }
-
 .header {
-
   grid-area: header;
 	will-change: transform;
 	transform: translateZ(0);
@@ -40,7 +21,7 @@
 		justify-content: center;
 	}
 	&__item--active{
-		color: $blue;
+		border-bottom: 3px solid $blue;
 	}
 	&__item-content{
     margin-top: 4px;
@@ -52,6 +33,7 @@
 
   .navbar-logo {
     width: 30px;
+    margin-bottom: 8px;
   }
 
   span{
