@@ -10,11 +10,17 @@
       <% if current_user.bar_favs %>
         <% if current_user.bar_favs.where(bar_id: @bar.id).first %>
         <% @bar_fav = current_user.bar_favs.where(bar_id: @bar.id).first %>
-          <%= link_to "remove favorite", bar_fav_path(@bar_fav), method: :delete, remote: true, id: "remove-fav" %>
-          <%# <div><i class="far fa-star"></i></div> %>
+          <%= link_to bar_fav_path(@bar_fav),
+            method: :delete,
+            remote: true,
+            id: "remove-fav" do %>
+            <div id="fav-icone"><i class="fas fa-star"></i></div>
+            <% end %>
+          <%# <div><i class="fas fa-star"></i></div> %>
         <% else %>
-          <%= link_to "add favorite", bar_bar_favs_path(@bar), method: :post, remote: true, id: "add-fav" %>
-            <%# <div id="fav-icone"><i class="fas fa-star"></i></div> %>
+          <%= link_to bar_bar_favs_path(@bar), method: :post, remote: true, id: "add-fav" do %>
+            <div id="fav-icone"><i class="far fa-star"></i></div>
+        <% end %>
         <% end %>
       <% end %>
     </div>
@@ -37,22 +43,24 @@
     <div class="d-flex justify-content-center mb-4">
       <p><i class="far fa-clock"></i> <%= @bar.opening_time %></p>
     </div>
-    <div class="bar-show-programme">
-      <% if @events.count > 1 %>
-        <h2>Dates à venir</h2>
-      <% elsif @events.count > 0 %>
-        <h2>Date à venir</h2>
-      <% else %>
-        <h2>Pas de date à venir</h2>
-      <% end %>
-      <% @events.each do |event| %>
-        <%=link_to(event_path(event), class:"btn btn-gradient") do %>
-          <%=event.name%>
-        <br>
-        <%=  "#{event.start_date.strftime('%d/%m')} à" %>
-        <%= "#{event.start_date.strftime('%H:%M')}" %>
+    <div class="d-flex justify-content-center mb-4">
+      <div class="bar-show-programme">
+        <% if @events.count > 1 %>
+          <h2>Dates à venir</h2>
+        <% elsif @events.count > 0 %>
+          <h2>Date à venir</h2>
+        <% else %>
+          <h2>Pas de date à venir</h2>
+        <% end %>
+        <% @events.each do |event| %>
+          <%=link_to(event_path(event), class:"btn btn-gradient") do %>
+            <%=event.band.name%>
+          <br>
+          <%=  "#{event.start_date.strftime('%d/%m')} à" %>
+          <%= "#{event.start_date.strftime('%H:%M')}" %>
+          <%end%>
         <%end%>
-      <%end%>
+      </div>
     </div>
   </div>
 </div>
