@@ -186,13 +186,17 @@
 }
 
 #events-near {
-  background-color: #11ffee00;
-  font-family: 'Libre Franklin', sans-serif;
-  font-size: 2rem;
-  border: none;
-  color: $cream;
-  letter-spacing: 1px;
-  font-weight: lighter;
+
+    background-color: #11ffee00;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2rem;
+    border: none;
+    color: $cream;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    a{
+      color: $cream;
+    }
 }
 
 ::placeholder {
