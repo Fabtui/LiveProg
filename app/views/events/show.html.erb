@@ -80,5 +80,5 @@
 </div>
 
 <div class="d-flex justify-content-center mb-4">
-  <a id="event-location" class="links-event" href="#"><i class="fas fa-map-marker-alt"></i></a></div>
+  <div id="event-location" class="links-event"> <%=link_to "", "https://www.google.fr/maps/dir//#{@event.bar.address}", class:"fas fa-map-marker-alt", style: "color:white" %></div>
 </div>
