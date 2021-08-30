@@ -202,7 +202,6 @@ User.create!(
 
 vulfpeck = Band.create!(
   name: "Vulfpeck",
-  style: "Funk",
   youtube_url: "https://www.youtube.com/embed/le0BLAEO93g",
   facebook_url: "https://www.facebook.com/vulfpeck",
   user_id: "1",
@@ -220,7 +219,6 @@ vulfpeck_diane = Event.create!(
 
 efb = Band.create!(
   name: "Elmer Food Beat",
-  style: "Rock",
   youtube_url: "https://www.youtube.com/embed/Tri6GPixwJE",
   facebook_url: "https://fr-fr.facebook.com/ElmerFoodBeatOfficiel",
   user_id: "2",
@@ -238,7 +236,6 @@ efb_waka = Event.create!(
 
 djpone = Band.create!(
   name: "DJ Pone",
-  style: "Electro",
   youtube_url: "https://www.youtube.com/embed/sjXELnm315U",
   facebook_url: "",
   user_id: "3",
@@ -256,7 +253,6 @@ djpone_chupito = Event.create!(
 
 shokinpapa = Band.create!(
   name: "The Shockin' Papas",
-  style: "Rock",
   youtube_url: "https://www.youtube.com/embed/7NA5EKhPjpU",
   facebook_url: "https://www.facebook.com/The-Shockin-Papas-504598226390356/",
   user_id: "4",
@@ -274,7 +270,6 @@ shokinpapa_bulldog = Event.create!(
 
 ofenbach = Band.create!(
   name: "Ofenbach",
-  style: "Electro",
   youtube_url: "https://www.youtube.com/embed/Ycg5oOSdpPQ",
   facebook_url: "https://www.facebook.com/weareofenbach",
   user_id: "5",
