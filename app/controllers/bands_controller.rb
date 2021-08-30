@@ -21,6 +21,7 @@ search = params[:search]
 
   def show
     @band = Band.find(params[:id])
+    @band_fav = BandFav.find_by(user: current_user, band: @band)
     @events = @band.events.future.sorted_by_date
   end
 
