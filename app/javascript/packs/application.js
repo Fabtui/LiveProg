@@ -11,11 +11,13 @@ import { carouselSlide } from "../components/carousel"
 import { editButtonShow } from "../components/editbutton"
 import { participationPopUpClose } from "../components/participationpopup"
 import { commentScroll } from "../components/commentscroll"
+import { initFlatpickr } from "../plugins/flatpickr";
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+initFlatpickr();
 
 
 // ----------------------------------------------------
