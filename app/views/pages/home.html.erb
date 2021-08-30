@@ -1,34 +1,34 @@
-<div class="gradient-text">
+<div class="gradient-text-title">
   <div class="gradient-text-content">
     LIVEPROG
   </div>
 </div>
 
-<form action="bars" method="get">
-  <div class="bar-search">
-      <div class="bar-search-element">
-        <i class="fas fa-search"></i>
+<%# <form action="bars" method="get"> %>
+  <div class="bar-title-home"> Mes bars préférés </div>
+        <%# <i class="fas fa-search"></i>
           <input class="bar-search-input" list="suggestions" placeholder="Chercher un bar" autocomplete="on">
       </div>
   </div>
-</form>
+</form> %>
 
+<h4 id="best-bar-title" >Découvre vite si un groupe y joue</h4>
 <%= render "shared/fav_bar_home" %>
 
-<form action="band" method="get">
-  <div class="band-search">
-      <div class="band-search-element">
+<%# <form action="band" method="get"> %>
+  <div class="band-title-home"> Groupes à découvrir </div>
+      <%# <div class="band-search-element">
         <i class="fas fa-search"></i>
           <input class="band-search-input" list="suggestions" placeholder="Découvrez des groupes" autocomplete="on">
       </div>
   </div>
-</form>
+</form> %>
 
-<h4 id="best-bar-title" >A découvrir</h4>
+<h4 id="best-bar-title" >Actuellement en tournée</h4>
 <div class="carousel-container">
   <div class="carousel-wrapper">
     <div class="carousel">
-      <div class="cards">
+      <div class="cards_band_home">
         <% @bands.each do |band| %>
         <%= render 'shared/band_card', band: band %>
         <% end %>

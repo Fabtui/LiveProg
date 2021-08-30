@@ -1,64 +1,75 @@
 /* --------------------------------CARDS---------------------------------------------- */
 
-.cards {
+.cards_band_home {
   display: grid;
-  grid-gap: 16px;
   grid-auto-flow: column;
   margin: auto;
   box-sizing: border-box;
+
+  .card_band_home a {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 3px;
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 
-.card {
+.card_band_home {
+  position: relative;
   border: 1px solid $jet;
-  border-radius: 15px;
-  width: 250px;
-  height: 300px;
+  border-radius: 10px;
+  filter: drop-shadow(1px 1px 3px #0c0000);
+  width: 10rem;
+  height: 15rem;
   transition: 0.2s;
-  margin: 30px 20px;
+  margin: 0px 20px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.336);
-  color: black;
 }
 
-.card {
+.card_band_home {
   overflow: hidden;
   background: $jet;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card > img {
+.card_band_home > img {
   height: 200px;
   width: 100%;
+  width: 12rem;
+  opacity: 0.8;
+  filter: blur(0.1px) grayscale(90%) contrast(150%) drop-shadow(1px 1px 3px rgb(12, 0, 0));
+  border-radius: 10px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  color: $cream;
   object-fit: cover;
+
 }
 
-.card a {
-  font-size: 20px;
-  font-weight: bold;
-  color: $blue;
-  margin: 0;
-  &:hover {
-    color: $blue;
-    text-decoration: none;
-  }
-}
-
-.card p {
+.card_band_home p {
   font-size: 15px;
   margin: 0;
   color: $cream;
 }
 
 
-.card .card-infos {
+.card_band_home .card-infos_band_home {
   padding: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
-.card-infos .card-user {
+.card-infos_band_home .card-user {
   position: absolute;
   right: 16px;
   top: -20px;
@@ -66,12 +77,16 @@
 }
 
 .card-bandstyle {
+  position: relative;
   display: inline-block;
+  align-self: center;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
+  border-radius: 50px;
 }
 
-.card-band-name {
-  margin-bottom: 8px;
-  a {
-    font-size: 24px;
-  }
-}
+// .card-band-name {
+//   margin-bottom: 8px;
+//   a {
+//     font-size: 24px;
+//   }
+// }
