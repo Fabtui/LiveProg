@@ -41,9 +41,13 @@
 
 
 <div class="d-flex justify-content-center mb-4">
-  <div class="btn btn-ghost">
-    <%= @event.band.style %>
+  <% @event.band.styles.each do |style| %>
+  <div class="bandstyle">
+    <div class="btn btn-ghost">
+      <%= link_to style.style_type, bands_path(:band_style => style.style_type) %>
+    </div>
   </div>
+  <% end %>
 </div>
 
 <div class="description-event">
