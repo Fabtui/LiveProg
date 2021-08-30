@@ -1,0 +1,24 @@
+<div class="band-review-rating-container">
+  <div class="band-review-rating">
+    <% if @band.band_reviews.count > 0 %>
+      <% rating = 0 %>
+      <% @band.band_reviews.each do |review| %>
+          <% rating += review.rating %>
+        <% end %>
+          <% averagerating = rating / @band.band_reviews.count %>
+        <% end %>
+          <% averagerating.times do %>
+          <div class="show-stars">
+            <i class="fas fa-star"></i>
+          </div>
+    <% end %>
+  </div>
+  <div class="band-comment">
+    <div class="band-comment-content">
+      <%= @band.band_reviews.count %>
+      <%= link_to band_path(@band), remote: true do %>
+        <i class="fas fa-comment"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
