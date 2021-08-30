@@ -10,9 +10,9 @@ class Band < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :description ],
+    against: [ :name ],
     associated_against: {
-      styles: [ :style_type]
+      descriptions: [ :description_type]
     },
     using: { tsearch: { prefix: true } }
 end
