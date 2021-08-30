@@ -3,15 +3,15 @@ class BandsController < ApplicationController
 search = params[:search]
 
  if search.present?
-      if search[:band_style].empty? && !search[:band].empty?
+      if search[:band_style].blank? && search[:band].present?
         @bands = Band.global_search(search[:band])
-      elsif !search[:band_style].empty? && search[:band].empty?
+      elsif search[:band_style].present? && search[:band].blank?
         @bands = Band.global_search(search[:band_style])
-      elsif !search[:band_style].empty? && !search[:band].empty?
+      elsif search[:band_style].present? && search[:band].present?
         band_style = Band.global_search(search[:band_style])
         band = Band.global_search(search[:band])
         @bands = (band_style & band)
-      elsif search[:band_style].empty? && search[:band].empty?
+      elsif search[:band_style].blank? && search[:band].blank?
         @bands = Band.all
       end
     else

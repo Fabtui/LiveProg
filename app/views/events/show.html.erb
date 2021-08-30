@@ -44,7 +44,7 @@
   <% @event.band.styles.each do |style| %>
   <div class="bandstyle">
     <div class="btn btn-ghost">
-      <%= link_to style.style_type, bands_path(:band_style => style.style_type) %>
+      <%= link_to style.style_type, bands_path(search: {band_style: style.style_type}) %>
     </div>
   </div>
   <% end %>
