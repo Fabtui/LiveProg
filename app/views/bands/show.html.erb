@@ -5,7 +5,20 @@
 </div>
 <div class="d-flex align-items-top justify-content-between px-4" id="header-band">
   <h1><%= @band.name %></h1>
-<i id="fav-band" class="far fa-star" style="color:#14FFEC"></i>
+<div class="band-favorite">
+      <% if current_user.favorite_bands.include? @band %>
+          <%= link_to band_fav_path(@band_fav.id),
+            method: :delete,
+            remote: true,
+            id: "remove-fav" do %>
+            <div id="fav-icone"><i class="fas fa-star"></i></div>
+            <% end %>
+        <% else %>
+          <%= link_to band_band_favs_path(@band), method: :post, remote: true, id: "add-fav" do %>
+            <div id="fav-icone"><i class="far fa-star"></i></div>
+        <% end %>
+      <% end %>
+    </div>
 </div>
 
 <div class="bar-show-photo">

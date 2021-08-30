@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :bands do
     resources :band_reviews, only: [:new, :create]
+    resources :band_favs, only: [:create]
   end
 
   resources :bars, only: [:index, :show] do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :band_reviews, only: :destroy
   resources :bar_favs, only: :destroy
+  resources :band_favs, only: :destroy
   resources :participations, only: :destroy
   devise_for :users
   root to: 'pages#home'
