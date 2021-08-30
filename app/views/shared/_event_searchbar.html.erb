@@ -1,8 +1,16 @@
-<i class="fas fa-search"></i>
-<div class="container">
-  <div class="form-wrapper" style="width: 550px; margin: 0 auto;">
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :start_date, as: :string, placeholder: "dates", required: false, input_html: {class: "datepicker"}, label: false %>
-    <% end %>
+<div class="event-search-label">
+  <div class="event-search-icone">
+    <i class="fas fa-search"></i>
   </div>
+  <h3>Rechercher</h3>
+</div>
+<div class="event-search-form-container">
+  <%= simple_form_for :search, method: "get" do |f| %>
+  <div class="event-date-input">
+    <%= f.input :start_date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
+  </div>
+  <div class="event-style-input">
+    <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %>
+  </div>
+  <% end %>
 </div>

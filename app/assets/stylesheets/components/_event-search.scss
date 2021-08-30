@@ -5,3 +5,35 @@
   color: $blue;
   font-size: 16px;
 }
+
+#search_style_type {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  background-color: $jet;
+  border: $jet;
+  width: 150px;
+  color: $blue;
+  font-size: 16px;
+}
+
+.event-search-form-container {
+  position: relative;
+}
+
+.event-search-label {
+  display: flex;
+  margin-top: 8px;
+  h3 {
+    margin: 0;
+  }
+}
+
+.event-search-icone {
+  position: relative;
+  margin-right: 8px;
+  i {
+    position: relative;
+    top: 4px;
+  }
+}

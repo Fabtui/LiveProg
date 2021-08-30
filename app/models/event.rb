@@ -12,5 +12,8 @@ class Event < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
                   against: [:start_date],
+                  associated_against: {
+                  styles: [ :style_type]
+                  },
                   using: { tsearch: { prefix: true } }
 end
