@@ -1,0 +1,32 @@
+<form action="events" method="get">
+  <div class="band-search">
+    <div class="band-search-element">
+      <div class="band-search-icone">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="band-search-bar">
+      <datalist id="suggestions">
+          <option>Acoustique</option>
+          <option>Electro</option>
+          <option>Funk</option>
+          <option>Hip Hop</option>
+          <option>House</option>
+          <option>Jazz</option>
+          <option>Metal</option>
+          <option>Pop</option>
+          <option>Rap</option>
+          <option>Reggae</option>
+          <option>Reprises</option>
+          <option>Rock</option>
+      </datalist>
+      <input class="band-search-input"
+             type="date"
+             list="suggestions"
+             placeholder="Style"
+             autocomplete="on"
+             name="search[start_date]">
+      </div>
+      </div>
+    <input type="submit" name="commit" class="btn btn-blue-mini" value="Chercher">
+  </div>
+</form>

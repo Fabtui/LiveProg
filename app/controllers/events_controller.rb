@@ -6,7 +6,24 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.future.sorted_by_date
+  search = params[:search]
+
+  if search.present?
+    if search[:start_date].blank?
+      @events = Event.future.sorted_by_date
+    elsif search[:start_date].present?
+      @events = Event.global_search(search[:start_date])
+    end
+    else
+      @events = Event.future.sorted_by_date
+    end
+    #     @markers = @events&.geocoded&.map do |event|
+    #   {
+    #     lat: event.latitude,
+    #     lng: event.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { event: event })
+    #   }
+    # end
   end
 
   def new
