@@ -7,7 +7,7 @@
 <div class="event-search-form-container">
   <%= simple_form_for :search, method: "get" do |f| %>
   <div class="event-date-input">
-    <%= f.input :start_date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
+    <%= f.input :date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
   </div>
   <div class="event-style-input">
     <%# <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %> %>

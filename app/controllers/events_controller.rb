@@ -6,17 +6,26 @@ class EventsController < ApplicationController
   end
 
   def index
-  search = params[:search]
-
-  if search.present?
-    if search[:start_date].blank?
-      @events = Event.future.sorted_by_date
-    elsif search[:start_date].present?
-      @events = Event.global_search(search[:start_date])
-    end
+    search = params[:search]
+    if search.present?
+      if search[:date].blank?
+        @events = Event.future.sorted_by_date
+      elsif search[:date].present?
+        if date_search_length(params).length > 1
+          enddate = create_end_date(params)
+          startdate = create_start_date(params)
+          nextevents = Event.future.sorted_by_date.where("start_date > ?", startdate )
+          @events = nextevents.where("start_date < ?", enddate )
+        else
+          @events = Event.global_search(search[:date])
+        end
+      end
     else
       @events = Event.future.sorted_by_date
     end
+
+    # Event.where("start_date > ?",  )
+
     #     @markers = @events&.geocoded&.map do |event|
     #   {
     #     lat: event.latitude,
@@ -55,6 +64,21 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def date_search_length(params)
+    daterange = params[:search][:date].split(" to ")
+  end
+
+  def create_end_date(params)
+    daterange = params[:search][:date].split(" to ")
+    return daterange[1]
+  end
+
+
+  def create_start_date(params)
+    daterange = params[:search][:date].split(" to ")
+    return daterange[0]
+  end
 
   def event_params
     params.require(:event).permit(:start_date, :name, :description, :bar_id, :hour)

@@ -37,3 +37,23 @@
     top: 4px;
   }
 }
+
+.flatpickr-month, .flatpickr-day, .flatpickr-monthDropdown-months, .flatpickr-calendar, .flatpickr-weekday {
+  background-color: $jet !important;
+}
+
+.selected {
+  color: $blue !important;
+}
+
+// .today {
+//   border-color: $blue !important;
+//   color: $blue !important;
+//   font-size: bold !important;
+// }
+
+.inRange {
+  color: $blue !important;
+  box-shadow: none !important;
+  border-color: $blue !important;
+}
