@@ -9,8 +9,9 @@
   <div class="event-date-input" id="search_start_date">
     <%= f.input :date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
   </div>
-  <div class="event-style-input">
-    <%# <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %> %>
+  <div class="event-style-input" id="search_style_type">
+    <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %>
   </div>
+  <%= f.button :submit %>
   <% end %>
 </div>

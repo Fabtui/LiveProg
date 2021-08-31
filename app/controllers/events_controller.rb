@@ -8,23 +8,37 @@ class EventsController < ApplicationController
   def index
     search = params[:search]
     if search.present?
-      if search[:date].blank?
+      if search[:date].blank? && search[:style_type].blank?
         @events = Event.future.sorted_by_date
-      elsif search[:date].present?
+      elsif search[:date].blank? && search[:style_type].present?
+        @events = Event.future.sorted_by_date.global_search(search[:style_type])
+      elsif search[:date].present? && search[:style_type].blank?
         if date_search_length(params).length > 1
           enddate = create_end_date(params)
           startdate = create_start_date(params)
           nextevents = Event.future.sorted_by_date.where("start_date > ?", startdate )
           @events = nextevents.where("start_date < ?", enddate )
         else
-          @events = Event.global_search(search[:date])
+          @events = Event.future.sorted_by_date.global_search(search[:date])
+        end
+      elsif search[:date].present? && search[:style_type].present?
+        if date_search_length(params).length > 1
+          enddate = create_end_date(params)
+          startdate = create_start_date(params)
+          nextevents = Event.future.sorted_by_date.where("start_date > ?", startdate )
+          eventsbydate = nextevents.where("start_date < ?", enddate )
+          bandstyle = Event.future.sorted_by_date.global_search(search[:style_type])
+          @events = (eventsbydate & bandstyle)
+        else
+          eventsbydate = Event.future.sorted_by_date.global_search(search[:date])
+          bandstyle = Event.future.sorted_by_date.global_search(search[:style_type])
+          @events = (eventsbydate & bandstyle)
         end
       end
     else
       @events = Event.future.sorted_by_date
     end
-
-    # Event.where("start_date > ?",  )
+  end
 
     #     @markers = @events&.geocoded&.map do |event|
     #   {
@@ -33,7 +47,6 @@ class EventsController < ApplicationController
     #     info_window: render_to_string(partial: "info_window", locals: { event: event })
     #   }
     # end
-  end
 
   def new
     @band = Band.find(params[:band_id])

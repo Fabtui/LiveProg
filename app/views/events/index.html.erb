@@ -21,15 +21,15 @@
 
 <%= render 'shared/event_searchbar'%>
 
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="cards">
           <% today = [] %>
           <% others = [] %>
           <% @events.each do |event| %>
             <% if event.start_date.today? %>
-            <h2>Aujourd'hui</h2>
+<h2>Aujourd'hui</h2>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards">
               <% today << event %>
             <% else %>
               <% others << event %>
