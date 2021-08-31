@@ -27,6 +27,7 @@ ActiveStorage.start()
 
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox'
+import { starReview } from '../plugins/starsInReviewForm'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   participationPopUpClose();
   initMapbox()
   commentScroll();
+  starReview()
 });

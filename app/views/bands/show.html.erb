@@ -50,9 +50,9 @@
 <% end %>
 
 <div id="band-show-program-title">
-  <% if @events.count > 1 %>
+  <% if @events.present? && @events.count > 1 %>
   <h3>Prochains concerts : </h3>
-  <% elsif @events.count == 1 %>
+  <% elsif @events.present? && @events.count == 1 %>
   <h3>Prochain concert : </h3>
   <% else %>
   <h3>En concert prochainement.</h3>
@@ -64,11 +64,25 @@
   <% end %>
 </div>
 
-<%= render 'shared/review', band: @band %>
 
-<% reviews = BandReview.where(band_id: @band.id) %>
-<% unless reviews.find_by_user_id(current_user.id) || @band.owner == current_user%>
-  <div id="comment-anchor" class="add-comment">
-    <i class="fas fa-pen"></i><%= link_to "Ajouter un commentaire", new_band_band_review_path(@band) %>
+  <div class="reviews">
+    <% @band_reviews.each do |band_review| %>
+      <p>
+        <% BandReview::AUTHORIZED_RATINGS.each do |number| %>
+          <i class="fa<%= (number > band_review.rating) ? 'r' : 's' %> fa-star"></i>
+        <% end %>
+      </p>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="review">
+    <p>Laissez une évaluation</p>
+    <%= simple_form_for [@band, @band_review] do |f| %>
+      <%= f.input :rating, as: :hidden  %>
+      <div class="my-3">
+        <% BandReview::AUTHORIZED_RATINGS.each do |index| %>
+          <i id="star_<%= index %>" data-star-value="<%=index%>" class="review-rating far fa-star"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
