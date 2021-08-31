@@ -58,7 +58,13 @@
   </div>
 </div>
 
+<div class="up-container">
+  <div class="up-icone" id="up-button">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+</div>
+
 <div id="map"
-     style="width: 100%; height: 100%;"
+     style="width: 100%; height: 90%;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

@@ -12,6 +12,7 @@ import { editButtonShow } from "../components/editbutton"
 import { participationPopUpClose } from "../components/participationpopup"
 import { commentScroll } from "../components/commentscroll"
 import { initFlatpickr } from "../plugins/flatpickr";
+import { mapUpScroll } from "../components/mapupscroll";
 
 
 Rails.start()
@@ -39,7 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   //carouselSlide();
   editButtonShow();
   participationPopUpClose();
-  initMapbox()
+  initMapbox();
   commentScroll();
-  starReview()
+  starReview();
+  mapUpScroll();
 });

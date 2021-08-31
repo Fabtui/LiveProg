@@ -20,3 +20,16 @@
 .mapboxgl-popup-close-button {
   color: $cream;
 }
+
+.up-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.up-icone {
+  padding: 16px;
+  i {
+    color: $cream;
+    font-size: 24px;
+  }
+}
