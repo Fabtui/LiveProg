@@ -1,0 +1,116 @@
+[1mdiff --cc app/assets/stylesheets/pages/_home.scss[m
+[1mindex 686d5e7,f074f7f..0000000[m
+[1m--- a/app/assets/stylesheets/pages/_home.scss[m
+[1m+++ b/app/assets/stylesheets/pages/_home.scss[m
+[36m@@@ -185,16 -186,20 +185,30 @@@[m
+  }[m
+  [m
+  #events-near {[m
+[32m++<<<<<<< HEAD[m
+[32m +  background-color: #11ffee00;[m
+[32m +  font-family: 'Libre Franklin', sans-serif;[m
+[32m +  font-size: 1.3rem;[m
+[32m +  border: none;[m
+[32m +  color: $cream;[m
+[32m +  letter-spacing: 3px;[m
+[32m +  font-weight: bold;[m
+[32m++=======[m
+[32m+ [m
+[32m+     background-color: #11ffee00;[m
+[32m+     font-family: 'Libre Franklin', sans-serif;[m
+[32m+     font-size: 2rem;[m
+[32m+     border: none;[m
+[32m+     color: $cream;[m
+[32m+     letter-spacing: 1px;[m
+[32m+     font-weight: lighter;[m
+[32m+     a{[m
+[32m+       color: $cream;[m
+[32m+     }[m
+[32m++>>>>>>> b6e419982e3c9ebabb9e8c40c4dc66336844ecee[m
+  }[m
+  [m
+[31m -::placeholder {[m
+[31m -  color: $cream;[m
+[31m -  font-weight: lighter;[m
+[31m -}[m
+[32m +// ::placeholder {[m
+[32m +//   color: $cream;[m
+[32m +//   font-weight: lighter;[m
+[32m +// }[m
+[1mdiff --cc app/views/pages/home.html.erb[m
+[1mindex adfd603,a30aaf4..0000000[m
+[1m--- a/app/views/pages/home.html.erb[m
+[1m+++ b/app/views/pages/home.html.erb[m
+[36m@@@ -3,35 -3,41 +3,72 @@@[m
+      LIVEPROG[m
+    </div>[m
+  </div>[m
+[32m+ <div class="container">[m
+  [m
+[32m++<<<<<<< HEAD[m
+[32m +<%# <form action="bars" method="get"> %>[m
+[32m +  <div class="bar-title-home"> Mes bars préférés </div>[m
+[32m +        <%# <i class="fas fa-search"></i>[m
+[32m +          <input class="bar-search-input" list="suggestions" placeholder="Chercher un bar" autocomplete="on">[m
+[32m +      </div>[m
+[32m +  </div>[m
+[32m +</form> %>[m
+[32m +[m
+[32m +<h4 id="best-bar-title" >Découvre vite si un groupe y joue</h4>[m
+[32m +<%= render "shared/fav_bar_home" %>[m
+[32m +[m
+[32m +<%# <form action="band" method="get"> %>[m
+[32m +  <div class="band-title-home"> Groupes à découvrir </div>[m
+[32m +      <%# <div class="band-search-element">[m
+[32m +        <i class="fas fa-search"></i>[m
+[32m +          <input class="band-search-input" list="suggestions" placeholder="Découvrez des groupes" autocomplete="on">[m
+[32m +      </div>[m
+[32m +  </div>[m
+[32m +</form> %>[m
+[32m +[m
+[32m +<h4 id="best-bar-title" >Actuellement en tournée</h4>[m
+[32m +<div class="carousel-container">[m
+[32m +  <div class="carousel-wrapper">[m
+[32m +    <div class="carousel">[m
+[32m +      <div class="cards_band_home">[m
+[32m +        <% @bands.each do |band| %>[m
+[32m +        <%= render 'shared/band_card', band: band %>[m
+[32m +        <% end %>[m
+[32m++=======[m
+[32m+   <div id="events-near">[m
+[32m+   <i class="fas fa-map-marker-alt"></i><%= link_to ' Bars à proximité', bars_path%>[m
+[32m+   </div>[m
+[32m+ <br>[m
+[32m+   <form action="bars" method="get">[m
+[32m+     <div class="bar-search">[m
+[32m+         <div class="bar-search-element">[m
+[32m+           <i class="fas fa-search"></i>[m
+[32m+             <input class="bar-search-input" list="suggestions" placeholder="Chercher un bar" autocomplete="on">[m
+[32m+         </div>[m
+[32m+     </div>[m
+[32m+   </form>[m
+[32m+ [m
+[32m+   <%= render "shared/fav_bar_home" %>[m
+[32m+ [m
+[32m+   <form action="band" method="get">[m
+[32m+     <div class="band-search">[m
+[32m+         <div class="band-search-element">[m
+[32m+           <i class="fas fa-search"></i>[m
+[32m+             <input class="band-search-input" list="suggestions" placeholder="Découvrez des groupes" autocomplete="on">[m
+[32m+         </div>[m
+[32m+     </div>[m
+[32m+   </form>[m
+[32m+ [m
+[32m+   <h4 id="best-bar-title" >A découvrir</h4>[m
+[32m+   <div class="carousel-container">[m
+[32m+     <div class="carousel-wrapper">[m
+[32m+       <div class="carousel">[m
+[32m+         <div class="cards">[m
+[32m+           <% @bands.each do |band| %>[m
+[32m+           <%= render 'shared/band_card', band: band %>[m
+[32m+           <% end %>[m
+[32m+         </div>[m
+[32m++>>>>>>> b6e419982e3c9ebabb9e8c40c4dc66336844ecee[m
+        </div>[m
+      </div>[m
+    </div>[m
