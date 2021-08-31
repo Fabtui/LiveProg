@@ -6,15 +6,21 @@ class BandReviewsController < ApplicationController
   end
 
   def create
-    @band_review = BandReview.new(band_review_params)
+   # @band_review = BandReview.new(band_review_params)
+   # @band = Band.find(params[:band_id])
+   # @band_review.band_id = @band.id
+   # @band_review.user_id = current_user.id
+   # if @band_review.save
+   #   redirect_to band_path(@band)
+   # else
+   #   render :new
+
     @band = Band.find(params[:band_id])
-    @band_review.band_id = @band.id
+    @band_review = BandReview.new(band_review_params)
     @band_review.user_id = current_user.id
-    if @band_review.save
-      redirect_to band_path(@band)
-    else
-      render :new
-    end
+    @band_review.band = @band
+    @band_review.save
+    redirect_to band_path(@band)
   end
 
   def destroy
