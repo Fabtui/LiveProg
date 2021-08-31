@@ -46,11 +46,16 @@
   color: $blue !important;
 }
 
-// .today {
-//   border-color: $blue !important;
-//   color: $blue !important;
-//   font-size: bold !important;
-// }
+#event-search-button {
+  // position: absolute;
+}
+
+.event-serch-button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
 
 .inRange {
   color: $blue !important;
