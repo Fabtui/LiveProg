@@ -1,10 +1,11 @@
 <% band.photos.each do |photo| %>
+<%= link_to band_path(band.id) do %>
 <div class="band-index-card">
   <div class="band-index-image">
   <%= cl_image_tag photo.key, :width=>180, :height=>120, 'aria-expanded': false %>
   <% end %>
     <div class="band-index-card-name">
-      <%= link_to band.name, band_path(band.id) %>
+      <%= band.name %>
     </div>
     <div class="card-bandstyle-container">
     <% band.styles.each do |style| %>
@@ -17,3 +18,4 @@
     </div>
   </div>
 </div>
+<% end %>

@@ -1,22 +1,18 @@
-          <div class="card_band_home">
-          <%# <span class="overlay-for-text"> %>
-            <% band.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
-            <% end %>
-            <%= link_to band.name, band_path(band.id), class:"band-name-home"%>
-            <div class="card-infos_band_home">
-              <div>
-              <%# <div class="card-band-name"> %>
-                <%# <%= link_to band.name, band_path(band.id) %>
-                <%# </div> %>
-                <% band.styles.each do |style| %>
-                <div class="card-bandstyle">
-                  <div class="btn btn-ghost-mini">
-                    <%= style.style_type %>
-                  </div>
-                </div>
-                <% end %>
-              </div>
-            </div>
-            <%# </span> %>
-          </div>
+
+<div class="card_band_home">
+  <% band.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
+  <% end %>
+  <%= link_to band.name, band_path(band.id), class:"band-name-home"%>
+  <div class="card-infos_band_home">
+    <div>
+      <% band.styles.first(2).each do |style| %>
+      <div class="card-bandstyle">
+        <div class="btn btn-ghost-mini">
+          <%= style.style_type %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

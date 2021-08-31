@@ -4,10 +4,12 @@
   <%= f.input :comment,
       prompt: 'Commentaire',
       label: false %>
-  <%= f.input :rating,
-    collection: 0..5,
-    prompt: "Note de 0 à 5",
-    label: false %>
-  <%= f.submit 'Ajouter', class: "btn btn-ghost" %>
-<% end %>
+      <%= f.input :rating, as: :hidden  %>
+      <div class="my-3">
+        <% BandReview::AUTHORIZED_RATINGS.each do |index| %>
+          <i id="star_<%= index %>" data-star-value="<%=index%>" class="review-rating far fa-star"></i>
+        <% end %>
+      </div>
+      <%= f.submit 'Ajouter', class: "btn btn-ghost" %>
+    <% end %>
 </div>
