@@ -1,5 +1,5 @@
-#search_start_date {
-  background-color: $jet;
+#search_start_date, .flatpickr-input {
+  background-color: $jet !important;
   border: $jet;
   width: 150px;
   color: $blue;
