@@ -13,6 +13,12 @@
           </div>
     <% end %>
   </div>
+  <% if @band.band_favs.count > 0 %>
+    <div class="band-likes">
+      <%= @band.band_favs.count %>
+      <i class="fas fa-heart"></i>
+    </div>
+  <% end %>
   <div class="band-comment">
     <div class="band-comment-content">
       <%= @band.band_reviews.count %>
