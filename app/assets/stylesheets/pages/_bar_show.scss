@@ -20,8 +20,9 @@
 .bar-favorite {
   z-index: 999;
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 12px;
+  top: 70px;
+  font-size: 30px;
   font-family: 'GothamBook';
 }
 
@@ -31,7 +32,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   color: white;
-  align-items: center
+  align-items: center;
+  width: 100%;
 }
 
 .btn-gradient {

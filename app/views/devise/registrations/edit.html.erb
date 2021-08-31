@@ -10,7 +10,7 @@
 
   <% if @band %>
 <div class="text-center mb-5">
-  <%= link_to "Créer un évènement pour #{@band.name}", new_band_event_path(@band.owner), class: "liveprog-button jet" %>
+  <%= link_to "Créer un évènement", new_band_event_path(@band.owner), class: "liveprog-button jet" %>
 </div>
   <% end %>
 
