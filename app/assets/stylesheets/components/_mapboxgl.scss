@@ -1,0 +1,22 @@
+.mapboxgl-popup-content {
+  background-color: none !important;
+  width: 200px !important;
+  height: 190px !important;
+  background-color: $jet !important;
+  border-radius: 15px !important;
+  padding-right: 16px !important;
+}
+
+.cards-best-bar-container {
+  margin: 0 !important;
+}
+
+#address a {
+  text-decoration: none;
+  color: $cream !important;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-close-button {
+  color: $cream;
+}
