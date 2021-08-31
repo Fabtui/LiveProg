@@ -12,6 +12,8 @@
   <div class="event-style-input" id="search_style_type">
     <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %>
   </div>
-  <%= f.button :submit, value: "." %>
+  <div class="event-serch-button-container">
+    <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>
+  </div>
   <% end %>
 </div>
