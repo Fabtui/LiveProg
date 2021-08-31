@@ -11,11 +11,11 @@
             method: :delete,
             remote: true,
             id: "remove-fav" do %>
-            <div id="fav-icone"><i class="fas fa-star"></i></div>
+            <div id="fav-icone"><i class="fas fa-heart"></i></div>
             <% end %>
         <% else %>
           <%= link_to band_band_favs_path(@band), method: :post, remote: true, id: "add-fav" do %>
-            <div id="fav-icone"><i class="far fa-star"></i></div>
+            <div id="fav-icone"><i class="far fa-heart"></i></div>
         <% end %>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 var fav_band = document.querySelector(".band-favorite")
 
 <%
-  link = link_to '<div id="fav-icone"><i class="fas fa-star"></i></div>'.html_safe, band_fav_path(@band_fav), method: :delete, remote: true, id: "remove-fav" %>
+  link = link_to '<div id="fav-icone"><i class="fas fa-heart"></i></div>'.html_safe, band_fav_path(@band_fav), method: :delete, remote: true, id: "remove-fav" %>
 
 fav_band.innerHTML = "<%= j(link)%>"

@@ -8,11 +8,12 @@
   }
 }
 
-#fav-band {
+.band-favorite{
+  z-index: 999;
   position: absolute;
-  font-size: 1.5rem;
-  top: 48px;
-  right: 16px;
+  right: 12px;
+  top: 40px;
+  font-size: 30px;
 }
 
 .image-band{
