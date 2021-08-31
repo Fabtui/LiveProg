@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
   def index
-search = params[:search]
+  search = params[:search]
 
  if search.present?
       if search[:band_style].blank? && search[:band].present?

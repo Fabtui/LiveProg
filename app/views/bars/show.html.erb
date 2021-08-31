@@ -53,12 +53,7 @@
           <h2>Pas de date à venir</h2>
         <% end %>
         <% @events.each do |event| %>
-          <%=link_to(event_path(event), class:"btn btn-gradient") do %>
-            <%=event.band.name%>
-          <br>
-          <%=  "#{event.start_date.strftime('%d/%m')} à" %>
-          <%= "#{event.start_date.strftime('%H:%M')}" %>
-          <%end%>
+          <%=link_to "#{event.band.name} : #{event.start_date.strftime('%d/%m')} - #{event.start_date.strftime('%H:%M')}", event_path(event), class:"btn btn-gradient"  %>
         <%end%>
       </div>
     </div>

@@ -19,12 +19,14 @@ span {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .carousel-wrapper {
   width: 100%;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .carousel {
@@ -32,7 +34,6 @@ span {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  z-index: 99;
 }
 
 .carousel::-webkit-scrollbar {

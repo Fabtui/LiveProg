@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/themes/dark";
 
 // Your CSS partials
 @import "components/index";
@@ -47,15 +48,15 @@ h1 {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.gradient-text {
+.gradient-text-title {
   width: 100%;
   height: auto;
   font-family: 'Reckoner';
   font-style: normal;
   font-weight: 500;
-  font-size: 5rem;
-  line-height: 48px;
-  padding: 1rem 0;
+  font-size: 3.2rem;
+  line-height: 36px;
+  letter-spacing: 1px;
   color: $blue;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-sizing: initial;
@@ -79,12 +80,49 @@ h1 {
   animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
 }
 
-.gradient-text:hover{
+.gradient-text-title:hover{
   animation: rainbow-text-simple-animation 0.5s ease-in forwards;
 }
 
 .gradient-text-content {
   margin: 2rem;
+}
+
+#gradient-text {
+  width: 100%;
+  height: auto;
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 48px;
+  padding: 1rem 0;
+  color: $cream;
+  // text-shadow:
+  //     0.07em 0 black,
+  //     0 0.07em black,
+  //     -0.07em 0 black,
+  //     0 -0.07em black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)),
+          contrast(-10);
+  box-sizing: initial;
+  border-color: 3px, 3px, 10px, 0.618 black;
+  background-color: $cream;
+  background-image: linear-gradient(
+        45deg,
+        #f2faf9 16.666%,
+        #ebe0e0 16.666%,
+        #32d5f1 33.333%,
+        #a5a1df 33.333%,
+        #f19955 50%,
+        #9aa76f 50%,
+        #a1b365 66.666%,
+        #32d5f1 33.333%,
+        #4371d3 83.333%,
+        #cc39b8 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
 }
 
 
@@ -116,6 +154,7 @@ a:hover {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 .fa-star {
   color:  #14FFEC 16.666%,;
 }
@@ -124,3 +163,8 @@ a:hover {
   cursor:    pointer;
   font-size: 2rem;
 }
+=======
+// .overlay-for-text {
+//   background: rgba(54, 25, 25, .00004);
+// }
+>>>>>>> 475cac732bef536dbf67137dd80863c12a0e1894

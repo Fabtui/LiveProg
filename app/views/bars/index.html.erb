@@ -3,25 +3,10 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
 </div>
-<%# <div class="card-bar-container"> %>
-  <%# <% @bars.each do |bar| %>
-    <%# <div class="card-bar"> %>
-      <%# <div class="card-bar-img"> %>
-        <%# <% bar.photo.each do |photo| %>
-          <%# <%= cl_image_tag photo.key, :width=>250, :height=>250, 'aria-expanded': false %>
-        <%# <% end %>
-      <%# </div> %>
-      <%# <div class="card-bar-content"> %>
-        <%# <h1><%=link_to bar.name, bar_path(bar.id)</h1>  %>
-        <%# <h2><%= bar.address</h2>  %>
-        <%# <h3><%= bar.description</h3>  %>
-        <%# <p><%= bar.opening_time</p>  %>
-        <%# <p><%= bar.menu</p>  %>
-      <%# </div> %>
-    <%# </div> %>
-  <%# <% end %>
-<%# </div> %>
+<hr>
+<%= render 'shared/bar_searchbar'%>
+
 <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 100%;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
