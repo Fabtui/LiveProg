@@ -14,13 +14,14 @@
     <%= link_to participation_path(participation), method: :delete, remote: true do %>
       <i class="fas fa-trash-alt"></i>
     <% end %>
-</div>
+    </div>
   <% end %>
   </div>
 </div>
-  <%= render 'shared/band_searchbar'%>
+
+<%= render 'shared/event_searchbar'%>
+
   <input type="" class="input-group mb-4">
-  <h2>Aujourd'hui</h2>
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
@@ -29,6 +30,7 @@
           <% others = [] %>
           <% @events.each do |event| %>
             <% if event.start_date.today? %>
+            <h2>Aujourd'hui</h2>
               <% today << event %>
             <% else %>
               <% others << event %>
@@ -55,7 +57,4 @@
       </div>
     </div>
   </div>
-
-
-
 </div>

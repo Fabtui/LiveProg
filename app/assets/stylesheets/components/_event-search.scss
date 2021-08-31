@@ -1,0 +1,59 @@
+#search_start_date, .flatpickr-input {
+  background-color: $jet !important;
+  border: $jet;
+  width: 150px;
+  color: $blue;
+  font-size: 16px;
+}
+
+#search_style_type {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  background-color: $jet;
+  border: $jet;
+  width: 150px;
+  color: $blue;
+  font-size: 16px;
+}
+
+.event-search-form-container {
+  position: relative;
+}
+
+.event-search-label {
+  display: flex;
+  margin-top: 8px;
+  h3 {
+    margin: 0;
+  }
+}
+
+.event-search-icone {
+  position: relative;
+  margin-right: 8px;
+  i {
+    position: relative;
+    top: 4px;
+  }
+}
+
+.flatpickr-month, .flatpickr-day, .flatpickr-monthDropdown-months, .flatpickr-calendar, .flatpickr-weekday {
+  background-color: $jet !important;
+}
+
+.selected {
+  color: $blue !important;
+}
+
+// .today {
+//   border-color: $blue !important;
+//   color: $blue !important;
+//   font-size: bold !important;
+// }
+
+.inRange {
+  color: $blue !important;
+  box-shadow: none !important;
+  border-color: $blue !important;
+}
