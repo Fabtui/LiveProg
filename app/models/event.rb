@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :band
   has_many :styles, through: :band
   belongs_to :bar
-  has_many :participations
+  has_many :participations, dependent: :destroy
   validates :start_date, presence: true
   validates :bar_id, presence: true, uniqueness: { scope: :start_date }
 
