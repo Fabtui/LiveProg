@@ -8,7 +8,7 @@
   <%= "#{event.start_date.strftime('%H:%M')}" %>
   </div>
     <div class="card-event-infos">
-      <div id="gradient-text">
+      <div>
         <%= link_to event.band.name, event_path(event.id) %>
         <br>x<br>
         <%= link_to event.bar.name, event_path(event.id) %>

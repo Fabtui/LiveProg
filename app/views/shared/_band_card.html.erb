@@ -3,7 +3,7 @@
             <% band.photos.each do |photo| %>
             <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
             <% end %>
-            <%= link_to band.name, band_path(band.id), class:"band-name-home", id:"gradient-text"%>
+            <%= link_to band.name, band_path(band.id), class:"band-name-home"%>
             <div class="card-infos_band_home">
               <div>
               <%# <div class="card-band-name"> %>

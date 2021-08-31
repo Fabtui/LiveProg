@@ -182,6 +182,10 @@
   letter-spacing: 3px;
   font-weight: bold;
   margin: 0 20px;
+
+  a {
+    color: $cream;
+  }
 }
 
 #events-near {
