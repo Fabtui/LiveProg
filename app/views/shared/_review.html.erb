@@ -2,7 +2,7 @@
   <h3><%= "Avis sur #{@band.name}" %></h3>
     <% @band.band_reviews.each do |band_review| %>
     <div class="band-review">
-      <div class="band-review-content">
+      <div id="reviews" class="band-review-content">
         <% @user = User.find(band_review.user_id) %>
         <div class="band-review-content-name"><%= "@#{@user.nickname} : " %></div>
         <div class="band-review-content-comment"><%= band_review.comment %></div>
