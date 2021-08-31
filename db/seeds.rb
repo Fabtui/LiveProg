@@ -18,7 +18,6 @@ le_shakpo = Bar.create!(
   name: "Le Shakpo",
   address: "5 Rue Rossetti, 06300 Nice",
   description: "Café-Concert",
-  menu: "Repas, boissons",
   opening_time: "21h00 - 01h00"
 )
 le_shakpo.photo.attach(io: File.open('app/assets/images/bars/shakpo2.JPG'), filename: 'shakpo2.jpg', content_type:'image/jpg')
@@ -28,7 +27,6 @@ bazar = Bar.create!(
   name: "Bazar café",
   address: "5 Rue de France, 06000 Nice",
   description: "Bar italien",
-  menu: "Repas, boissons",
   opening_time: "09h00 - 02h00"
 )
 bazar.photo.attach(io: File.open('app/assets/images/bars/bazarcafe.JPG'), filename: 'bazarcafe.jpg', content_type:'image/jpg')
@@ -37,7 +35,6 @@ trafalbar = Bar.create!(
   name: "Trafalbar",
   address: "3 rue Barillerie, 06300 Nice",
   description: "Bar caribéen",
-  menu: "Repas, boissons",
   opening_time: "21h00 - 02h30"
 )
 trafalbar.photo.attach(io: File.open('app/assets/images/bars/trafalbar.JPG'), filename: 'trafalbar.jpg', content_type:'image/jpg')
@@ -46,7 +43,6 @@ bateleur = Bar.create!(
   name: "Le Bateleur",
   address: "18 rue Centrale, 06300 Nice",
   description: "Bar à bière",
-  menu: "Repas, boissons",
   opening_time: "21h00 - 02h30"
 )
 bateleur.photo.attach(io: File.open('app/assets/images/bars/bateleur.JPG'), filename: 'bateleur.jpg', content_type:'image/jpg')
@@ -55,7 +51,6 @@ vandiemen = Bar.create!(
   name: "Van Diemen's",
   address: "30 cours Saleya, 06300 Nice",
   description: "Pub australien",
-  menu: "Repas, boissons",
   opening_time: "11h00 - 02h00"
 )
 vandiemen.photo.attach(io: File.open('app/assets/images/bars/vandiemen.JPG'), filename: 'vandiemen.jpg', content_type:'image/jpg')
@@ -64,7 +59,6 @@ waka = Bar.create!(
   name: "Waka Bar",
   address: "57 Quai des Etats-Unis, 06300 Nice",
   description: "Pub",
-  menu: "Repas, boissons",
   opening_time: "10h00 - 02h00"
 )
 waka.photo.attach(io: File.open('app/assets/images/bars/waka.JPG'), filename: 'waka.jpg', content_type:'image/jpg')
@@ -73,7 +67,6 @@ masterhome = Bar.create!(
   name: "Master Home",
   address: "11 Rue de la Prefecture, 06300 Nice",
   description: "Pub",
-  menu: "Petit déjeuner, boissons",
   opening_time: "08h00 - 02h00"
 )
 masterhome.photo.attach(io: File.open('app/assets/images/bars/masterhome.JPG'), filename: 'masterhome.jpg', content_type:'image/jpg')
@@ -82,7 +75,6 @@ foam = Bar.create!(
   name: "Foam",
   address: "3 Quai Des Deux Emmanuels, 06300 Nice",
   description: "Bar méditerranéen",
-  menu: "Repas, boissons",
   opening_time: "11h00 - 23h00"
 )
 foam.photo.attach(io: File.open('app/assets/images/bars/foam.JPG'), filename: 'foam.jpg', content_type:'image/jpg')
@@ -91,7 +83,6 @@ diane = Bar.create!(
   name: "Diane's, Bar a Potes",
   address: "6 rue Saint Vincent 06300 Nice",
   description: "Bar à bières",
-  menu: "Repas, boissons",
   opening_time: "17h00 - 00h00"
 )
 diane.photo.attach(io: File.open('app/assets/images/bars/diane.jpg'), filename: 'diane.jpg', content_type:'image/jpg')
@@ -100,7 +91,6 @@ chupito = Bar.create!(
   name: "Chupito Loco",
   address: "7 Rue Raoul Bosio, 06300 Nice",
   description: "Bar",
-  menu: "Repas, boissons",
   opening_time: "19h00 - 02h30"
 )
 chupito.photo.attach(io: File.open('app/assets/images/bars/chupito.JPG'), filename: 'chupito.jpg', content_type:'image/jpg')
@@ -109,7 +99,6 @@ oneil = Bar.create!(
   name: "O'Neill's Pub",
   address: "40 rue Droite, 06300 Nice",
   description: "Pub irlandais",
-  menu: "Repas, boissons",
   opening_time: "18h00 - 02h30"
 )
 oneil.photo.attach(io: File.open('app/assets/images/bars/oneil.JPG'), filename: 'oneil.jpg', content_type:'image/jpg')
@@ -118,7 +107,6 @@ beerdistrict = Bar.create!(
   name: "Beer District",
   address: "1 Place Philippe Randon, 06000 Nice",
   description: "Bar à bières",
-  menu: "Repas, boissons",
   opening_time: "18h00 - 00h30"
 )
 beerdistrict.photo.attach(io: File.open('app/assets/images/bars/beerdistrict.jpg'), filename: 'beerdistrict.jpg', content_type:'image/jpg')
@@ -127,7 +115,6 @@ manolanport = Bar.create!(
   name: "Ma Nolan's Nice Port",
   address: "5 Quai des Deux Emmanuels, 06300 Nice",
   description: "Pub irlandais",
-  menu: "Repas, boissons",
   opening_time: "11h00 - 02h00"
 )
 manolanport.photo.attach(io: File.open('app/assets/images/bars/manolansport.JPG'), filename: 'manolanport.jpg', content_type:'image/jpg')
@@ -136,7 +123,6 @@ manolan = Bar.create!(
   name: "Ma Nolan's Vieux Nice",
   address: "2, rue Saint-François de Paule, 06300 Nice",
   description: "Pub irlandais",
-  menu: "Repas, boissons",
   opening_time: "11h00 - 02h00"
 )
 manolan.photo.attach(io: File.open('app/assets/images/bars/manolan.jpg'), filename: 'manolan.jpg', content_type:'image/jpg')
@@ -145,7 +131,6 @@ yolo = Bar.create!(
   name: "Yolo Wine Bar",
   address: "10 rue du Marechal Joffre, 06000 Nice",
   description: "Bar à vin",
-  menu: "Repas, boissons",
   opening_time: "18h00 - 00h30"
 )
 yolo.photo.attach(io: File.open('app/assets/images/bars/yolo.JPG'), filename: 'yolo.jpg', content_type:'image/jpg')
@@ -154,7 +139,6 @@ bulldog = Bar.create!(
   name: "Bulldog-Pub Pompei",
   address: "16, Rue De L'Abbaye, 06000 Nice",
   description: "Bar-Concert",
-  menu: "Repas, boissons",
   opening_time: "18h00 - 02h30"
 )
 bulldog.photo.attach(io: File.open('app/assets/images/bars/bulldog.JPG'), filename: 'bulldog.JPG', content_type:'image/jpg')
@@ -198,6 +182,16 @@ User.create!(
   nickname: "Sebounoob"
 )
 
+User.create!(
+  email: "Selup@gmail.com",
+  password: "12345678",
+  nickname: "Selup"
+)
+User.create!(
+  email: "namjera@gmail.com",
+  password: "12345678",
+  nickname: "Namjera"
+)
 # _______________________________BANDS-EVENTS_________________________________________
 
 vulfpeck = Band.create!(
@@ -285,6 +279,29 @@ ofenbach_yolo = Event.create!(
   description: "Ofenback pose ses platines au Yolo pour une soirée mouvementée!"
 )
 
+brotherockers = Band.create!(
+  name: "The Brotherockers",
+  youtube_url: "https://www.youtube.com/embed/u67TLNYMgP0",
+  user_id: "6",
+  description:"The Brotherockers est un groupe Niçois fondé en 2015. Avec une set list de plus de 200 musiques dans plusieurs languages et dans presque tous les styles, le groupe s'est fait une mission de proposer de la musique pour tous."
+)
+brotherockers.photos.attach(io: File.open('app/assets/images/bands/brother.jpeg'), filename: 'brother.jpeg', content_type:'image/jpeg')
+
+seluj = Band.create!(
+  name: "Seluj & Léon x Shoka",
+  youtube_url: "https://www.youtube.com/embed/y_l5Vj7-6Xg",
+  user_id: "7",
+  description:"Seluj & Léon x Shoka, deux frères qui rappent et un multi-instrumentiste. Nous proposons un set de 40 à 60 minutes entre rap et chanson, multicolore."
+)
+seluj.photos.attach(io: File.open('app/assets/images/bands/seluj.png'), filename: 'seluj.png', content_type:'image/png')
+
+nam = Band.create!(
+  name: "Namjera",
+  youtube_url: "https://www.youtube.com/embed/TCIrUtevUf4",
+  user_id: "8",
+  description:"Namjera is a project that offers a journey to atmospherically violent atmospheres. The sinuous rhythms and melodies of this Sludge with psychedelic influences, describe a chaotic vision of the world."
+)
+nam.photos.attach(io: File.open('app/assets/images/bands/namjera.jpeg'), filename: 'namjera.jpeg', content_type:'image/jpeg')
 # _______________________________BANDS-STYLES_________________________________________
 
 BandStyle.create!(
@@ -325,6 +342,27 @@ BandStyle.create!(
 BandStyle.create!(
   band_id: "5",
   style_id: "10"
+)
+
+BandStyle.create!(
+  band_id: "6",
+  style_id: "3"
+)
+BandStyle.create!(
+  band_id: "6",
+  style_id: "4"
+)
+BandStyle.create!(
+  band_id: "7",
+  style_id: "1"
+)
+BandStyle.create!(
+  band_id: "7",
+  style_id: "2"
+)
+BandStyle.create!(
+  band_id: "8",
+  style_id: "4"
 )
 # ______________________________________________________________________________________
 
