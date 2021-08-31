@@ -65,6 +65,16 @@
 </div>
 
 
+  <%= render 'shared/review', band: @band %>
+
+  <% reviews = BandReview.where(band_id: @band.id) %>
+  <% unless reviews.find_by_user_id(current_user.id) || @band.owner == current_user%>
+    <div id="comment-anchor" class="add-comment">
+      <i class="fas fa-pen"></i><%= link_to "Ajouter un commentaire", new_band_band_review_path(@band) %>
+    </div>
+  <% end %>
+
+
   <div class="reviews">
     <% @band_reviews.each do |band_review| %>
       <p>
