@@ -10,6 +10,8 @@ import "channels"
 import { carouselSlide } from "../components/carousel"
 import { editButtonShow } from "../components/editbutton"
 import { participationPopUpClose } from "../components/participationpopup"
+import { commentScroll } from "../components/commentscroll"
+
 
 Rails.start()
 Turbolinks.start()
@@ -22,7 +24,9 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
+
 import "bootstrap";
+import { initMapbox } from '../plugins/init_mapbox'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,4 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   //carouselSlide();
   editButtonShow();
   participationPopUpClose();
+  initMapbox()
+  commentScroll();
 });

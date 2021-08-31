@@ -3,6 +3,12 @@
     LIVEPROG
   </div>
 </div>
+<div class="container">
+
+<div id="events-near">
+  <i class="fas fa-map-marker-alt"></i><%= link_to ' Bars à proximité', bars_path%>
+</div>
+<br>
 
 <%# <form action="bars" method="get"> %>
   <div class="bar-title-home"> Mes bars préférés </div>
@@ -35,19 +41,19 @@
       </div>
     </div>
   </div>
-</div>
 
-<button id="events-near"><i class="fas fa-map-marker-alt"></i> A proximité</button>
 
-<h4 id="best-bar-title" >Prochains évenements</h4>
-<div class="carousel-container">
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      <div class="cards-event">
-      <% @events.future.sorted_by_date.each do |event| %>
-       <%= render 'shared/event_card', event: event %>
-       <% end %>
+  <h4 id="best-bar-title" >Prochains évenements</h4>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards-event">
+        <% @events.future.sorted_by_date.each do |event| %>
+        <%= render 'shared/event_card', event: event %>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
