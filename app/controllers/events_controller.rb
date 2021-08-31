@@ -38,15 +38,15 @@ class EventsController < ApplicationController
     else
       @events = Event.future.sorted_by_date
     end
+        @bars = Bar.where(id: @events.pluck(:bar_id).uniq)
+        @markers = @bars&.geocoded&.map do |bar|
+      {
+        lat: bar.latitude,
+        lng: bar.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: { bar: bar })
+      }
+    end
   end
-
-    #     @markers = @events&.geocoded&.map do |event|
-    #   {
-    #     lat: event.latitude,
-    #     lng: event.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { event: event })
-    #   }
-    # end
 
   def new
     @band = Band.find(params[:band_id])

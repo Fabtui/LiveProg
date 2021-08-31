@@ -3,7 +3,6 @@ class BarsController < ApplicationController
     @bars = Bar.all
     search = params[:search]
     @bars = Bar.global_search(search) if search.present?
-
     @markers = @bars&.geocoded&.map do |bar|
       {
         lat: bar.latitude,
