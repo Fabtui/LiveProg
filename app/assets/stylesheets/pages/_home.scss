@@ -162,6 +162,9 @@
 }
 
 .bar-title-home {
+  display: flex;
+  grid-gap: 1rem;
+  text-align:center;
   background-color: #11ffee00;
   font-family: 'Libre Franklin', sans-serif;
   font-size: 1.3rem;
@@ -173,6 +176,8 @@
 }
 
 .band-title-home {
+  display: flex;
+  grid-gap: 1rem;
   margin-top: 2rem;
   background-color: #11ffee00;
   font-family: 'Libre Franklin', sans-serif;
@@ -205,3 +210,23 @@
 //   color: $cream;
 //   font-weight: lighter;
 // }
+
+#geo_logo {
+  height: 18.6px;
+  width: 20.8px;
+  bottom: 0;
+  margin-top: 2px;
+}
+
+#band_logo {
+  height: 18.6px;
+  width: 20.8px;
+  bottom: 0;
+  margin-top: 6px;
+}
+
+#bar_logo {
+  height: 18.6px;
+  width: 20.8px;
+  margin-top: 6px;
+}

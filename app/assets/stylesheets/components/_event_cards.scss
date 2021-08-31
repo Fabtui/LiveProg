@@ -94,6 +94,7 @@
     margin-top: 1rem;
     vertical-align: middle;
     border-style: none;
+    filter: blur(0.1px) grayscale(30%) contrast(110%) drop-shadow(1px 1px 3px rgb(12, 0, 0));
   }
   
 }
