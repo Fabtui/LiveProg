@@ -1,48 +1,10 @@
-<div class="gradient-text">
-  <div class="gradient-text-content">
+<div class="gradient-text-title">
     LIVEPROG
-  </div>
 </div>
-<div class="container">
 
-  <div id="events-near">
-  <i class="fas fa-map-marker-alt"></i><%= link_to ' Bars à proximité', bars_path%>
+<div class="band-title-home">
+  <i class="fas fa-map-marker-alt"></i><%= link_to 'À proximité', bars_path%>
   </div>
-<br>
-  <form action="bars" method="get">
-    <div class="bar-search">
-        <div class="bar-search-element">
-          <i class="fas fa-search"></i>
-            <input class="bar-search-input" list="suggestions" placeholder="Chercher un bar" autocomplete="on">
-        </div>
-    </div>
-  </form>
-
-  <%= render "shared/fav_bar_home" %>
-
-  <form action="band" method="get">
-    <div class="band-search">
-        <div class="band-search-element">
-          <i class="fas fa-search"></i>
-            <input class="band-search-input" list="suggestions" placeholder="Découvrez des groupes" autocomplete="on">
-        </div>
-    </div>
-  </form>
-
-  <h4 id="best-bar-title" >A découvrir</h4>
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="cards">
-          <% @bands.each do |band| %>
-          <%= render 'shared/band_card', band: band %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
   <h4 id="best-bar-title" >Prochains évenements</h4>
   <div class="carousel-container">
     <div class="carousel-wrapper">
@@ -56,4 +18,20 @@
     </div>
   </div>
 
-</div>
+<div class="band-title-home"> Groupes à découvrir </div>
+  <h4 id="best-bar-title" >Actuellement en tournée</h4>
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards_band_home">
+          <% @bands.each do |band| %>
+          <%= render 'shared/band_card', band: band %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="bar-title-home"> Mes bars préférés </div>
+  <h4 id="best-bar-title" >Découvre vite si un groupe y joue</h4>
+    <%= render "shared/fav_bar_home" %>

@@ -14,21 +14,22 @@
     <%= link_to participation_path(participation), method: :delete, remote: true do %>
       <i class="fas fa-trash-alt"></i>
     <% end %>
-</div>
+    </div>
   <% end %>
   </div>
 </div>
-  <%= render 'shared/band_searchbar'%>
-  <input type="" class="input-group mb-4">
+
+<%= render 'shared/event_searchbar'%>
+
+  <% today = [] %>
+  <% others = [] %>
+  <% @events.each do |event| %>
+  <% if event.start_date.today? %>
+  <h2>Aujourd'hui</h2>
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
-        <div class="cards">
-          <% today = [] %>
-          <% others = [] %>
-          <% @events.each do |event| %>
-            <% if event.start_date.today? %>
-            <h2>Aujourd'hui</h2>
+        <div class="cards-event">
               <% today << event %>
             <% else %>
               <% others << event %>
@@ -47,7 +48,7 @@
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
-        <div class="cards">
+        <div class="cards-event">
         <% others.each do |event| %>
         <%= render 'shared/event_card', event: event %>
         <% end %>
@@ -55,7 +56,9 @@
       </div>
     </div>
   </div>
-
-
-
 </div>
+
+<div id="map"
+     style="width: 100%; height: 100%;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
