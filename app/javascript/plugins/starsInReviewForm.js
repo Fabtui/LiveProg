@@ -25,7 +25,6 @@ const starReview = () => {
         unselectedStars(stars)
         selectedStars(stars, event.currentTarget)
         input.value = event.currentTarget.dataset.starValue
-        form.submit()
       })
     })
 

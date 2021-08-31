@@ -73,26 +73,3 @@
       <i class="fas fa-pen"></i><%= link_to "Ajouter un commentaire", new_band_band_review_path(@band) %>
     </div>
   <% end %>
-
-
-  <div class="reviews">
-    <% @band_reviews.each do |band_review| %>
-      <p>
-        <% BandReview::AUTHORIZED_RATINGS.each do |number| %>
-          <i class="fa<%= (number > band_review.rating) ? 'r' : 's' %> fa-star"></i>
-        <% end %>
-      </p>
-    <% end %>
-  </div>
-
-  <div class="review">
-    <p>Laissez une évaluation</p>
-    <%= simple_form_for [@band, @band_review] do |f| %>
-      <%= f.input :rating, as: :hidden  %>
-      <div class="my-3">
-        <% BandReview::AUTHORIZED_RATINGS.each do |index| %>
-          <i id="star_<%= index %>" data-star-value="<%=index%>" class="review-rating far fa-star"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
