@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
   def index
-search = params[:search]
+  search = params[:search]
 
  if search.present?
       if search[:band_style].blank? && search[:band].present?
@@ -20,9 +20,12 @@ search = params[:search]
   end
 
   def show
+    @band_review = BandReview.new
     @band = Band.find(params[:id])
     @band_fav = BandFav.find_by(user: current_user, band: @band)
     @events = @band.events.future.sorted_by_date
+    @band_reviews = @band.band_reviews
+    @average_rating = @band_reviews.average(:rating)
   end
 
   def new

@@ -6,7 +6,46 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.future.sorted_by_date
+    search = params[:search]
+    if search.present?
+      if search[:date].blank? && search[:style_type].blank?
+        @events = Event.future.sorted_by_date
+      elsif search[:date].blank? && search[:style_type].present?
+        @events = Event.future.sorted_by_date.global_search(search[:style_type])
+      elsif search[:date].present? && search[:style_type].blank?
+        if date_search_length(params).length > 1
+          enddate = create_end_date(params)
+          startdate = create_start_date(params)
+          nextevents = Event.future.sorted_by_date.where("start_date > ?", startdate )
+          @events = nextevents.where("start_date < ?", enddate )
+        else
+          @events = Event.future.sorted_by_date.global_search(search[:date])
+        end
+      elsif search[:date].present? && search[:style_type].present?
+        if date_search_length(params).length > 1
+          enddate = create_end_date(params)
+          startdate = create_start_date(params)
+          nextevents = Event.future.sorted_by_date.where("start_date > ?", startdate )
+          eventsbydate = nextevents.where("start_date < ?", enddate )
+          bandstyle = Event.future.sorted_by_date.global_search(search[:style_type])
+          @events = (eventsbydate & bandstyle)
+        else
+          eventsbydate = Event.future.sorted_by_date.global_search(search[:date])
+          bandstyle = Event.future.sorted_by_date.global_search(search[:style_type])
+          @events = (eventsbydate & bandstyle)
+        end
+      end
+    else
+      @events = Event.future.sorted_by_date
+    end
+        @bars = Bar.where(id: @events.pluck(:bar_id).uniq)
+        @markers = @bars&.geocoded&.map do |bar|
+      {
+        lat: bar.latitude,
+        lng: bar.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bar: bar })
+      }
+    end
   end
 
   def new
@@ -38,6 +77,21 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def date_search_length(params)
+    daterange = params[:search][:date].split(" to ")
+  end
+
+  def create_end_date(params)
+    daterange = params[:search][:date].split(" to ")
+    return daterange[1]
+  end
+
+
+  def create_start_date(params)
+    daterange = params[:search][:date].split(" to ")
+    return daterange[0]
+  end
 
   def event_params
     params.require(:event).permit(:start_date, :name, :description, :bar_id, :hour)
