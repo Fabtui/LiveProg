@@ -14,7 +14,7 @@
 // .card-best-bar {
 
   .card-best-photo {
-    width: 12rem;
+    width: 10rem;
     height: 6rem;
     background: #323232;
     border-radius: 10px 10px 10px 10px;
@@ -22,14 +22,14 @@
 
     img {
       height: 6rem;
-      width: 12rem;
+      width: 10rem;
       opacity: 0.8;
-      filter: blur(0.3px) grayscale(80%) contrast(150%) drop-shadow(1px 1px 5px rgb(12, 0, 0));
+      filter: blur(0.1px) grayscale(70%) contrast(120%) drop-shadow(1px 1px 3px rgb(12, 0, 0));
       border-radius: 10px 10px 10px 10px;
       position: relative;
       text-align: center;
       color: $cream;
-
+      text-shadow:rgba(0, 0, 0, 0.800)
     }
   // }
 
@@ -60,8 +60,8 @@
     font-family: 'GothamBook';
     font-style: normal;
     font-weight: normal;
-    font-size: 13px;
-    line-height: 12px;
+    font-size: 1rem;
+    line-height: 1rem;
 
     color: #F5FFFA;
   }
@@ -96,10 +96,9 @@
       font-family: 'GothamBook';
       font-style: normal;
       font-weight: normal;
-      font-size: 15px;
-      line-height: 14px;
+      font-size: 1rem;
+      line-height: 1rem;
       text-align: center;
-
       color: #F5FFFA;
     }
   }
@@ -127,7 +126,7 @@
       font-family: 'GothamBook';
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 1rem;
       line-height: 13px;
 
       color: black;
@@ -162,44 +161,43 @@
   }
 }
 
-.bar-search-input {
+.bar-title-home {
   background-color: #11ffee00;
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 2rem;
+  font-size: 1.3rem;
   border: none;
   color: $cream;
-  letter-spacing: 1px;
-  font-weight: lighter;
-  margin: auto;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 0 20px;
 }
 
-.band-search-input {
+.band-title-home {
   margin-top: 2rem;
   background-color: #11ffee00;
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 2rem;
+  font-size: 1.3rem;
   border: none;
   color: $cream;
-  letter-spacing: 1px;
-  font-weight: lighter;
-  margin: auto;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 0 20px;
 }
 
 #events-near {
-
-    background-color: #11ffee00;
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 2rem;
-    border: none;
-    color: $cream;
-    letter-spacing: 1px;
-    font-weight: lighter;
-    a{
-      color: $cream;
+  background-color: #11ffee00;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.3rem;
+  border: none;
+  color: $cream;
+  letter-spacing: 3px;
+  font-weight: bold;
+   a{
+     color: $cream;
     }
 }
 
-::placeholder {
-  color: $cream;
-  font-weight: lighter;
-}
+// ::placeholder {
+//   color: $cream;
+//   font-weight: lighter;
+// }

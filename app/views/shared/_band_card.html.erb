@@ -1,12 +1,14 @@
-          <div class="card">
+          <div class="card_band_home">
+          <%# <span class="overlay-for-text"> %>
             <% band.photos.each do |photo| %>
             <%= cl_image_tag photo.key, :width=>400, :height=>250, 'aria-expanded': false %>
             <% end %>
-            <div class="card-infos">
+            <%= link_to band.name, band_path(band.id), class:"band-name-home", id:"gradient-text"%>
+            <div class="card-infos_band_home">
               <div>
-              <div class="card-band-name">
-                <%= link_to band.name, band_path(band.id) %>
-                </div>
+              <%# <div class="card-band-name"> %>
+                <%# <%= link_to band.name, band_path(band.id) %>
+                <%# </div> %>
                 <% band.styles.each do |style| %>
                 <div class="card-bandstyle">
                   <div class="btn btn-ghost-mini">
@@ -16,4 +18,5 @@
                 <% end %>
               </div>
             </div>
+            <%# </span> %>
           </div>
