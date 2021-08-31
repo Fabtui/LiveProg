@@ -1,15 +1,17 @@
 .event-show-title {
+  position: sticky;
+  top: 0;
   padding-top: 5px;
   letter-spacing: 3px;
   font-family: reckoner;
   font-weight: lighter;
   color: $blue;
-  font-size: larger;
-  position: relative;
+  font-size: 2rem;
   background: black;
-  height: 6rem;
+  height: 9rem;
   justify-content: center;
   text-align: center;
+  z-index: 999999;
     img {
       width: 30px;
       position: absolute;
@@ -20,6 +22,9 @@
 
 
 .infos-event {
+  position: sticky;
+  top: 144px;
+  z-index: 99;
   font-size: 12px;
   font-weight: bold;
   height: 40px;

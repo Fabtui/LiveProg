@@ -3,7 +3,7 @@
 </div>
 
 <div class="band-title-home">
-  <i class="fas fa-map-marker-alt"></i><%= link_to 'À proximité', bars_path%>
+  <i class="fas fa-map-marker-alt" id="geo_logo"></i><%= link_to 'À proximité', bars_path%>
   </div>
   <h4 id="best-bar-title" >Prochains évenements</h4>
   <div class="carousel-container">
@@ -18,7 +18,10 @@
     </div>
   </div>
 
-<div class="band-title-home"> Groupes à découvrir </div>
+<div class="band-title-home">
+  <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1630415024/vw1opkcskqzousdth0wa.png" id="band_logo">
+  <%= link_to 'Groupes à découvrir', bands_path %>
+  </div>
   <h4 id="best-bar-title" >Actuellement en tournée</h4>
   <div class="carousel-container">
     <div class="carousel-wrapper">
@@ -32,6 +35,9 @@
     </div>
   </div>
 
-<div class="bar-title-home"> Mes bars préférés </div>
+<div class="bar-title-home">
+ <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1630415024/pncxgkwdwxypas5vcezj.png" id="bar_logo">
+  Mes bars préférés
+  </div>
   <h4 id="best-bar-title" >Découvre vite si un groupe y joue</h4>
     <%= render "shared/fav_bar_home" %>
