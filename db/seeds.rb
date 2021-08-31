@@ -26,7 +26,7 @@ le_shakpo.photo.attach(io: File.open('app/assets/images/bars/shakpo2.JPG'), file
 
 bazar = Bar.create!(
   name: "Bazar café",
-  address: "5 Rue de France Zone Pietonne, 06000 Nice",
+  address: "5 Rue de France, 06000 Nice",
   description: "Bar italien",
   menu: "Repas, boissons",
   opening_time: "09h00 - 02h00"
@@ -143,7 +143,7 @@ manolan.photo.attach(io: File.open('app/assets/images/bars/manolan.jpg'), filena
 
 yolo = Bar.create!(
   name: "Yolo Wine Bar",
-  address: "10 rue Marechal Joffre, 06000 Nice",
+  address: "10 rue du Marechal Joffre, 06000 Nice",
   description: "Bar à vin",
   menu: "Repas, boissons",
   opening_time: "18h00 - 00h30"
