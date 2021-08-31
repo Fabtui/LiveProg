@@ -1,6 +1,7 @@
 .cards-best-bar-container{
   width: 100%;
   display: grid;
+  grid-gap: 1rem 1rem;
   box-sizing: border-box;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
@@ -8,6 +9,8 @@
   align-items: stretch;
   position: relative;
   grid-auto-rows: minmax(100px, auto);
+  padding: 1rem;
+  margin-bottom: 1rem;
 
   .bar-name {
     position: absolute;
@@ -15,7 +18,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: $cream;
-    font-size: 1.3rem;
+    font-size: 1rem;
     letter-spacing: 3px;
     font-weight: bold;
     text-shadow: $jet;
@@ -23,7 +26,7 @@
 }
 
 .card-best-bar {
-  height: 40px;
+  height: 2rem;
 }
 
 .card-best-photo img {
@@ -39,7 +42,7 @@
   align-items: center;
   a {
     color: $cream;
-    font-size: 10px;
+    font-size: 0.5rem;
     &:hover {
       text-decoration: none;
     }
@@ -47,7 +50,7 @@
 }
 
 .best_bar_event-count {
-  font-size: 12px;
+  font-size: 0.6rem;
   position: absolute;
   top: -8px;
   right: 0;
@@ -65,7 +68,8 @@
 }
 
 #best-bar-title {
-  margin-left: 8px;
-  font-size: 20px;
+  margin: 0 20px;
+  font-size: 1rem;
+  letter-spacing: 1px;
   color: $green;
 }

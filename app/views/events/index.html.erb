@@ -21,15 +21,16 @@
 
 <%= render 'shared/event_searchbar'%>
 
+  <input type="" class="input-group mb-4">
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="cards-event">
           <% today = [] %>
           <% others = [] %>
           <% @events.each do |event| %>
             <% if event.start_date.today? %>
-<h2>Aujourd'hui</h2>
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="cards">
+            <h2>Aujourd'hui</h2>
               <% today << event %>
             <% else %>
               <% others << event %>
@@ -48,7 +49,7 @@
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
-        <div class="cards">
+        <div class="cards-event">
         <% others.each do |event| %>
         <%= render 'shared/event_card', event: event %>
         <% end %>
