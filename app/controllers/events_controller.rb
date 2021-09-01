@@ -48,6 +48,7 @@ class EventsController < ApplicationController
     end
   end
 
+
   def new
     @band = Band.find(params[:band_id])
     @event = Event.new

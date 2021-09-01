@@ -13,7 +13,9 @@ const buildMap = (mapElement) => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({
+        color: "#0D7377"
+        })
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
@@ -33,7 +35,25 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true,
+      showUserHeading: true
+      }));
+    // const userPosition = navigator.geolocation.getCurrentPosition( (position) => {
+    //   const userLat = position.coords.latitude
+    //   const userLong = position.coords.longitude
+    //   const marker = new mapboxgl.Marker({
+    //     color: "red",
+    //     draggable: true
+    //     }).setLngLat([userLong, userLat])
+    //     .addTo(map);
+    // })
   }
 };
+
+
 
 export { initMapbox };
