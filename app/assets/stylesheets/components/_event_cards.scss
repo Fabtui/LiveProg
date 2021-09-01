@@ -40,7 +40,7 @@
       width: 100%;
       height: auto;
       font-weight: bolder;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       line-height: 1rem;
       padding: 1rem 0;
       color: #F5FFFA;
@@ -52,7 +52,7 @@
       background-size: 100%;
       background-repeat: repeat;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: $cream;
       -webkit-animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
       animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
     }
@@ -68,7 +68,7 @@
   position: relative;
   border-radius: 15px;
   width: 10rem;
-  height: 18rem;
+  height: 14rem;
   transition: 0.2s;
   margin: 0px 20px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.336);
@@ -78,37 +78,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: 1px solid $jet;
   filter: drop-shadow(1px 1px 3px #0c0000);
+  text-shadow: 2px 2px 4px black;
 
   .card-event a {
     position: absolute;
     color: $cream;
     &:hover {
-      color: black;
       text-decoration: none;
     }
 
   }
   .band-img {
-    margin-top: 1rem;
+    margin-top: 2rem;
     vertical-align: middle;
     border-style: none;
-    filter: blur(0.1px) grayscale(30%) contrast(110%) drop-shadow(1px 1px 3px rgb(12, 0, 0));
   }
 
 }
 
 .card-event > img {
-  height: 200px;
-  width: 100%;
-  width: 12rem;
   opacity: 0.8;
-  filter: blur(0.1px) grayscale(90%) contrast(150%) drop-shadow(1px 1px 3px #0c0000);
   border-radius: 10px 0px 0px 0px;
   position: relative;
   text-align: center;
   color: $cream;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 .event-address {

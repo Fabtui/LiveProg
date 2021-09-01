@@ -291,7 +291,7 @@ seluj = Band.create!(
   name: "Seluj & Léon x Shoka",
   youtube_url: "https://www.youtube.com/embed/y_l5Vj7-6Xg",
   user_id: "7",
-  description:"Seluj & Léon x Shoka, deux frères qui rappent et un multi-instrumentiste. Nous proposons un set de 40 à 60 minutes entre rap et chanson, multicolore."
+  description:"Seluj & Léon x Shoka, deux frères qui rappent et un multi-instrumentiste. Nous proposons un univers entre rap et chanson, multicolore."
 )
 seluj.photos.attach(io: File.open('app/assets/images/bands/seluj.png'), filename: 'seluj.png', content_type:'image/png')
 
@@ -299,7 +299,7 @@ nam = Band.create!(
   name: "Namjera",
   youtube_url: "https://www.youtube.com/embed/TCIrUtevUf4",
   user_id: "8",
-  description:"Namjera is a project that offers a journey to atmospherically violent atmospheres. The sinuous rhythms and melodies of this Sludge with psychedelic influences, describe a chaotic vision of the world."
+  description:"Groupe de métal français qui propose un voyage dans des atmosphères violentes. Les rythmes et mélodies sinueux de ce groupe aux influences psychédéliques, décrivent une vision chaotique du monde."
 )
 nam.photos.attach(io: File.open('app/assets/images/bands/namjera.jpeg'), filename: 'namjera.jpeg', content_type:'image/jpeg')
 # _______________________________BANDS-STYLES_________________________________________
