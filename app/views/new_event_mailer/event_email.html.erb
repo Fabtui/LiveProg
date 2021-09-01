@@ -1,3 +1,13 @@
-Bonjour <%= @user.nickname %>,
+<h1 style="color:#14FFEC">Bonjour <%= @user.nickname %></h1>
 
-un nouveau concert de <%= @event.band.name %> sur Nice.
+Un nouveau concert de <%= @event.band.name %> sur Nice au <%= @event.bar.name %>, <%= @event.bar.address %> à <%= @event.start_date.strftime('%H:%M') %> !
+
+<%= @event.description %>
+
+Rendez vous sur LiveProg pour plus d'informations!
+
+
+Viendez nombreux!
+
+
+L'équipe de LiveProg.
