@@ -1,5 +1,20 @@
 .band-review-rating-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 8px 16px 0px 16px;
+}
+
+
+
+.band-likes {
+  transform: translateX(-12px);
+  i {
+    color: red;
+  }
+}
+
+
+.band-comment-content i {
+  color: rgb(172, 172, 172);
 }
