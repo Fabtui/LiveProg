@@ -192,6 +192,32 @@ User.create!(
   password: "12345678",
   nickname: "Namjera"
 )
+User.create!(
+  email: "luckyluke@gmail.com",
+  password: "12345678",
+  nickname: "luckyluke"
+)
+User.create!(
+  email: "milou@gmail.com",
+  password: "12345678",
+  nickname: "milou"
+)
+User.create!(
+  email: "marvin@gmail.com",
+  password: "12345678",
+  nickname: "marvin"
+)
+User.create!(
+  email: "herbert@gmail.com",
+  password: "12345678",
+  nickname: "herbert"
+)
+User.create!(
+  email: "blueberry@gmail.com",
+  password: "12345678",
+  nickname: "blueberry"
+)
+
 # _______________________________BANDS-EVENTS_________________________________________
 
 vulfpeck = Band.create!(
@@ -302,6 +328,70 @@ nam = Band.create!(
   description:"Namjera is a project that offers a journey to atmospherically violent atmospheres. The sinuous rhythms and melodies of this Sludge with psychedelic influences, describe a chaotic vision of the world."
 )
 nam.photos.attach(io: File.open('app/assets/images/bands/namjera.jpeg'), filename: 'namjera.jpeg', content_type:'image/jpeg')
+
+theAvener = Band.create!(
+  name: "The Avener",
+  youtube_url: "https://www.youtube.com/embed/hqwU7nv3hTM",
+  user_id: "9",
+  description:"The Avener est un DJ niçois d'electro house de renommée internationale. Initialement DJ résident au High Club, il continu ajourd'hui de créer avec et pour les plus grands."
+)
+theAvener.photos.attach(io: File.open('app/assets/images/bands/avener.jpg'), filename: 'avener.jpg', content_type:'image/jpg')
+
+theAvener_waka = Event.create!(
+  band_id: "9",
+  bar_id: "6",
+  start_date: "2021-09-03T21:30",
+  name: "The Avener au Waka bar",
+  description: "Le Waka est ravi de vous accueillir à l'occasion du passage d'une figure locale de la musique electronique."
+)
+
+feder = Band.create!(
+  name: "Feder",
+  youtube_url: "https://www.youtube.com/embed/Mptdcx36qZU",
+  user_id: "10",
+  description:"Feder est un DJ français originaire de Nice. Sa House electrique fait bouger les dance floor de Miami à Ibiza."
+)
+feder.photos.attach(io: File.open('app/assets/images/bands/feder.jpg'), filename: 'feder.jpg', content_type:'image/jpg')
+
+feder_bulldog = Event.create!(
+  band_id: "10",
+  bar_id: "16",
+  start_date: "2021-09-03T21:30",
+  name: "Feder au Bulldog",
+  description: "Tout frais, tout beau, venez écouter le nouvel EP de Feder au Bulldog."
+)
+
+thoj = Band.create!(
+  name: "Thoj",
+  youtube_url: "https://www.youtube.com/embed/rtLhoBcVIr8",
+  user_id: "11",
+  description:"Le musicien niçois fait son chemin dans le milieu de la musique électronique est porte haut les couleurs de la Côte-d'Azur."
+)
+thoj.photos.attach(io: File.open('app/assets/images/bands/thoj.jpg'), filename: 'thoj.jpg', content_type:'image/jpg')
+
+thoj_oneils = Event.create!(
+  band_id: "11",
+  bar_id: "11",
+  start_date: "2021-09-03T21:30",
+  name: "Thoj au Oneils",
+  description: "Venez écouter Thoj, l'étoile montante de la scène locale."
+)
+
+l2duo = Band.create!(
+  name: "L2 duo",
+  user_id: "12",
+  description: "Un duo composé de Luisa Kelly et Liam Berthelot. Ils ont un répertoire très varié, chansons françaises et anglaises de tous styles."
+)
+l2duo.photos.attach(io: File.open('app/assets/images/bands/l2duo.jpg'), filename: 'l2duo.jpg', content_type:'image/jpg')
+
+l2duo_bateleur = Event.create!(
+  band_id: "12",
+  bar_id: "4",
+  start_date: "2021-09-03T21:00",
+  name: "Le Bateleur accueille",
+  description: "Ce duo habitué des lieux revient nous enchanter avec leur reprises accoustiques entrainante."
+)
+
 # _______________________________BANDS-STYLES_________________________________________
 
 BandStyle.create!(
@@ -364,6 +454,31 @@ BandStyle.create!(
   band_id: "8",
   style_id: "4"
 )
+BandStyle.create!(
+  band_id: "9",
+  style_id: "10, 6"
+)
+BandStyle.create!(
+  band_id: "9",
+  style_id: "6"
+)
+BandStyle.create!(
+  band_id: "10",
+  style_id: "10"
+)
+BandStyle.create!(
+  band_id: "11",
+  style_id: "10"
+)
+BandStyle.create!(
+  band_id: "11",
+  style_id: "6"
+)
+BandStyle.create!(
+  band_id: "12",
+  style_id: "13"
+)
+
 # ______________________________________________________________________________________
 
 
