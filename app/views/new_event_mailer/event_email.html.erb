@@ -1,13 +1,23 @@
-<h1 style="color:#14FFEC">Bonjour <%= @user.nickname %></h1>
+<h1 style="color:#14FFEC; text-align:center;">Bonjour <%= @user.nickname %></h1>
 
-Un nouveau concert de <%= @event.band.name %> sur Nice au <%= @event.bar.name %>, <%= @event.bar.address %> à <%= @event.start_date.strftime('%H:%M') %> !
+<br>
+<h2 style="text-align:center"> Un nouveau concert de <%= @event.band.name %> sur Nice au <%= @event.bar.name %>, <%= @event.bar.address %> à <%= @event.start_date.strftime('%H:%M') %> !
+ </h2>
 
-<%= @event.description %>
+<br>
 
-Rendez vous sur LiveProg pour plus d'informations!
+<h2 style="text-align:center"> <%= @event.description %> </h2>
+
+<br>
+
+<h2 style="text-align:center">Rendez vous sur <%= link_to "LiveProg", "http://www.liveprog.one/" %> pour plus d'informations!</h2>
 
 
-Viendez nombreux!
+<br>
+<br>
+<h2 style="text-align:center"> <strong> Viendez nombreux!</strong></h2>
 
+<br>
+<br>
 
-L'équipe de LiveProg.
+<h2 style="text-align:center">L'équipe de LiveProg.</h2>
