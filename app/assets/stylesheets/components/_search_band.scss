@@ -65,7 +65,7 @@
     background-color: $jet !important;
     border: none !important;
     width: 150px !important;
-    // height: 38px !important;
+    height: 38px !important;
 
 
 }
@@ -110,7 +110,11 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  top: -75px;
+  width: auto;
+  left: -200px;
+  width: 350px;
+  top: 30px;
+  height: 42px;
   padding: 0 !important;
+  overflow: hidden;
 }
-

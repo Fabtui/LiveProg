@@ -19,5 +19,4 @@ class Band < ApplicationRecord
                     styles: [ :style_type ]
                   },
                   using: { tsearch: { prefix: true } }
-
 end
