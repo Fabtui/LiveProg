@@ -12,4 +12,11 @@ class Band < ApplicationRecord
   pg_search_scope :global_search,
                   against: [ :name, :description ],
                   using: { tsearch: { prefix: true } }
+
+  pg_search_scope :style_search,
+                  associated_against: {
+                    styles: [ :style_type ]
+                  },
+                  using: { tsearch: { prefix: true } }
+
 end
