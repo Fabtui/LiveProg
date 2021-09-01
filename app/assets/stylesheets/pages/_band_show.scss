@@ -1,18 +1,14 @@
 #header-band{
-  position: relative;
-  margin-bottom: 10px;
-  font-size: 2rem;
-  h1 {
-    margin: 16px 0;
-    padding-top: 0;
+  padding: 32px 0 0 32px;
+    h1 {
+  font-size: 40px;
+  margin: 0;
   }
 }
 
 .band-favorite{
   z-index: 999;
-  position: absolute;
-  right: 12px;
-  top: 0px;
+  position: relative;
   font-size: 30px;
 }
 

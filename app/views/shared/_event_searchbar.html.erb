@@ -11,7 +11,7 @@
     <%= f.input :date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
   </div>
   <div class="event-style-input" id="search_style_type">
-    <%= f.input :style_type, placeholder: "Par style", collection: Style::STYLES, prompt: "Par style" %>
+    <%= f.input :style_type, placeholder: "Par style", collection: Style::STYLES.sort, prompt: "Par style" %>
   </div>
   <div class="event-serch-button-container">
     <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>

@@ -1,0 +1,119 @@
+.gradient-text-title-container {
+  padding: 8px 32px;
+}
+
+h1 {
+  font-family: 'Reckoner';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 48px;
+  margin-bottom: 3rem;
+  color: $blue;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.gradient-text-title {
+  width: 100%;
+  height: auto;
+  font-family: 'Reckoner';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+  color: $blue;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-sizing: initial;
+  background-color: $blue;
+  background-image: linear-gradient(
+        45deg,
+        #14FFEC 16.666%,
+        #9c9c9c 16.666%,
+        #1bc7e6 33.333%,
+        #8f8ad1 33.333%,
+        #F18F43 50%,
+        #8B9862 50%,
+        #8B9862 66.666%,
+        #476098 66.666%,
+        #476098 83.333%,
+        #A7489B 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+.gradient-text-title:hover{
+  animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+.gradient-text-content {
+  margin: 2rem;
+}
+
+#gradient-text {
+  width: 100%;
+  height: auto;
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 48px;
+  padding: 1rem 0;
+  color: $cream;
+  // text-shadow:
+  //     0.07em 0 black,
+  //     0 0.07em black,
+  //     -0.07em 0 black,
+  //     0 -0.07em black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)),
+          contrast(-10);
+  box-sizing: initial;
+  border-color: 3px, 3px, 10px, 0.618 black;
+  background-color: $cream;
+  background-image: linear-gradient(
+        45deg,
+        #f2faf9 16.666%,
+        #ebe0e0 16.666%,
+        #32d5f1 33.333%,
+        #a5a1df 33.333%,
+        #f19955 50%,
+        #9aa76f 50%,
+        #a1b365 66.666%,
+        #32d5f1 33.333%,
+        #4371d3 83.333%,
+        #cc39b8 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+    40% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    80% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+
+a:hover {
+  text-decoration: none;
+}
