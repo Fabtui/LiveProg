@@ -6,23 +6,25 @@
           <% rating += review.rating %>
         <% end %>
           <% averagerating = rating / @band.band_reviews.count %>
-        <% end %>
           <% averagerating.times do %>
           <div class="show-stars">
             <i class="fas fa-star"></i>
           </div>
+      <% end %>
     <% end %>
   </div>
-  <% if @band.band_favs.count > 0 %>
+   <% if @band.band_favs.count > 0 %>
     <div class="band-likes">
       <%= @band.band_favs.count %>
       <i class="fas fa-heart"></i>
     </div>
   <% end %>
+  <% if @band.band_reviews.count > 0 %>
   <div class="band-comment">
     <div class="band-comment-content">
       <%= @band.band_reviews.count %>
         <i class="fas fa-comment"></i>
     </div>
   </div>
+  <% end %>
 </div>

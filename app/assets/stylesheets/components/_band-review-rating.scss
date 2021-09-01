@@ -8,8 +8,7 @@
 
 
 .band-likes {
-  position: absolute;
-  left: 47%;
+  transform: translateX(-12px);
   i {
     color: red;
   }

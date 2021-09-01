@@ -25,9 +25,7 @@
   <%= cl_image_tag @band.photos[0].key, :height=>250, 'aria-expanded': false%>
 </div>
 
-<% if @band.band_reviews.count > 0 %>
   <%= render 'shared/band_review_rating', band: @band %>
-<% end %>
 
 <div class="bandstyle-container">
 <% @band.styles.each do |style| %>
