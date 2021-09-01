@@ -68,7 +68,8 @@
 }
 
 #best-bar-title {
-  margin: 0 3.6rem;
+  transform: translateY(16px);
+  margin: 16px 3.6rem;
   font-size: 1rem;
   letter-spacing: 1px;
   color: $green;
