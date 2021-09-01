@@ -11,7 +11,7 @@
     <%= f.input :band, as: :string, placeholder: "Par Artiste", required: false, class: "band-search-input", label: false %>
   </div>
   <div class="event-style-input" id="search_style_type">
-    <%= f.input :band_style, placeholder: "Par style", collection: Style::STYLES, prompt: "Par style", label: false %>
+    <%= f.input :band_style, collection: Style::STYLES, label: false, input_html: { multiple: true } %>
   </div>
   <div class="event-serch-button-container">
     <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>
