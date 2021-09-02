@@ -8,6 +8,10 @@
 
   <%= render 'shared/band_searchbar'%>
 
+<% if @bands.count < 1 %>
+  <h2 style="text-align: center;">Pas de résultats pour cette recherche</h2>
+<% end %>
+
 </div>
   <div class="card-band-container">
           <% @bands.each do |band| %>
