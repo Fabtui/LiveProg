@@ -20,12 +20,9 @@
           <div class="blur-grayscale"></div>
         <div class="description-of-participation">
           <div>
-            <%=link_to participation.event.name, event_path(participation.event) %> 
+            <%=link_to participation.event.name, event_path(participation.event) %>
             <%= " le #{participation.event.start_date.strftime('%d/%m')} à #{participation.event.start_date.strftime('%H:%M')} " %>
           </div>
-          <%= link_to participation_path(participation), method: :delete, remote: true do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
         </div>
       </div>
     <% end %>

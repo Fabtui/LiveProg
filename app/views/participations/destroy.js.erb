@@ -1,9 +1,5 @@
-var popUp = document.getElementById('participation-popup')
-var container = document.querySelector('#infos-container')
-popUp.classList.remove('hidden')
-container.style.filter = "blur(3px)";
+var partIcone = document.querySelector(".event-participation")
 
-var link = document.getElementById('add-participation')
-console.log(link)
+<% link = link_to '<div id="part-icone"><i class="far fa-calendar"></i></div>'.html_safe, event_participations_path(@event.id), method: :post, remote: true, id: "add-part" %>
 
-link.outerHTML = "<%= link_to "Ajouter!", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "links-event" %>"
+partIcone.innerHTML = "<%= j(link)%>"
