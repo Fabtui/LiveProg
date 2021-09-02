@@ -8,9 +8,9 @@
 
   <%= render 'shared/band_searchbar'%>
 
+</div>
   <div class="card-band-container">
           <% @bands.each do |band| %>
           <%= render 'shared/band_index_card', band: band %>
           <% end %>
   </div>
-</div>
