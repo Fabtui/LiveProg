@@ -75,11 +75,11 @@
 </div>
 <div class="participants-count">
   <% if @event.participations.count > 1 %>
-    <p><%= @event.participations.count %> personnes interessées par cette évenement.</p>
+    <p><%= @event.participations.count %> personnes interessées par cet évenement.</p>
   <% elsif @event.participations.count == 1 %>
-    <p><%= @event.participations.count %> personne interessée par cette évenement.</p>
+    <p><%= @event.participations.count %> personne interessée par cet évenement.</p>
   <% else %>
-    <p>Soyez la première personne à vous inscrire à cette évenement!</p>
+    <p>Soyez la première personne à vous inscrire à cet évenement!</p>
   <% end %>
 </div>
 
