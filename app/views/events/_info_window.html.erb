@@ -3,7 +3,6 @@
       <div class="carousel">
         <div class="cards-event">
           <% bar.events.future.each do |event| %>
-          <%= bar.name %>
             <%= render 'shared/event_card', event: event %>
           <% end %>
         </div>
