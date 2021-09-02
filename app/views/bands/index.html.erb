@@ -3,11 +3,12 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
 </div>
-
-  <div id="band-index-title"><h1>DECOUVREZ DES ARTISTES</h1></div>
+<div class="container">
+  <div id="band-index-title"><h1>decouvrez des artistes</h1></div>
 
   <%= render 'shared/band_searchbar'%>
 
+</div>
   <div class="card-band-container">
           <% @bands.each do |band| %>
           <%= render 'shared/band_index_card', band: band %>
