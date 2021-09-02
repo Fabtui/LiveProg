@@ -139,3 +139,20 @@
   justify-content: center;
   text-align: center;
 }
+
+#same-band-format {
+
+  img {
+  height: 140px;
+  width: 100%;
+  width: 12rem;
+  opacity: 0.8;
+  filter: blur(0.1px) grayscale(20%) contrast(130%) drop-shadow(1px 1px 3px #0c0000);
+  border-radius: 10px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  color: #F5FFFA;
+  -o-object-fit: cover;
+  object-fit: cover;
+  }
+}

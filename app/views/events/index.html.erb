@@ -15,12 +15,20 @@
   </div>
   <div class="bar-show-programme">
     <% participations.each do |participation| %>
-    <div class="btn btn-gradient"></btn-gradient><%=link_to participation.event.name, event_path(participation.event) %>   <%= " le #{participation.event.start_date.strftime('%d/%m')} à #{participation.event.start_date.strftime('%H:%M')} " %>
-    <%= link_to participation_path(participation), method: :delete, remote: true do %>
-      <i class="fas fa-trash-alt"></i>
+      <div class="btn btn-gradient participation-event-picture">
+          <%= cl_image_tag participation.event.band.photos.first.key, class: "picture-of-band" %>
+          <div class="blur-grayscale"></div>
+        <div class="description-of-participation">
+          <div>
+            <%=link_to participation.event.name, event_path(participation.event) %> 
+            <%= " le #{participation.event.start_date.strftime('%d/%m')} à #{participation.event.start_date.strftime('%H:%M')} " %>
+          </div>
+          <%= link_to participation_path(participation), method: :delete, remote: true do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-    </div>
-  <% end %>
   </div>
   <% end %>
 </div>
@@ -48,7 +56,9 @@
       </div>
     </div>
   </div>
+
  <h2>À venir</h2>
+
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
