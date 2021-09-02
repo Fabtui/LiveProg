@@ -42,15 +42,15 @@ const initMapbox = () => {
       trackUserLocation: true,
       showUserHeading: true
       }));
-    // const userPosition = navigator.geolocation.getCurrentPosition( (position) => {
-    //   const userLat = position.coords.latitude
-    //   const userLong = position.coords.longitude
-    //   const marker = new mapboxgl.Marker({
-    //     color: "red",
-    //     draggable: true
-    //     }).setLngLat([userLong, userLat])
-    //     .addTo(map);
-    // })
+    const userPosition = navigator.geolocation.getCurrentPosition( (position) => {
+      const userLat = position.coords.latitude
+      const userLong = position.coords.longitude
+      const marker = new mapboxgl.Marker({
+        color: "red",
+        draggable: true
+        }).setLngLat([userLong, userLat])
+        .addTo(map);
+    })
   }
 };
 
