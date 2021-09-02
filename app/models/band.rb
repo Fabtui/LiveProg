@@ -18,5 +18,5 @@ class Band < ApplicationRecord
                   associated_against: {
                     styles: [ :style_type ]
                   },
-                  using: { tsearch: { prefix: true } }
+                  using: { tsearch: { prefix: true, any_word: true } }
 end
