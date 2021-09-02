@@ -83,7 +83,7 @@
   <% end %>
 </div>
 
-<%= link_to "Ajouter au calendrier", @cal.google_url, id: "calendar-link", class: "d-none", target: "_blank" %>
+<%= link_to "Ajouter au calendrier", @cal.google_url, id: "calendar-link", class: "d-none" %>
 
 <div class="d-flex justify-content-center mb-4">
   <div id="event-location" class="links-event"> <%=link_to "", "https://www.google.fr/maps/dir//#{@event.bar.address}", class:"fas fa-map-marker-alt", style: "color:white" %></div>
