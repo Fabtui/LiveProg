@@ -50,7 +50,11 @@ class BandsController < ApplicationController
   end
 
   def search_style
-    params[:search][:band_style].compact_blank
+    if params[:search][:band_style].is_a?(Array)
+      params[:search][:band_style].compact_blank
+    else
+      params[:search][:band_style]
+    end
   end
 
   def search_band
