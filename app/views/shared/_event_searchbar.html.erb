@@ -4,13 +4,14 @@
   </div>
   <h3>Rechercher</h3>
 </div>
+
 <div class="event-search-form-container">
   <%= simple_form_for :search, method: "get" do |f| %>
   <div class="event-date-input" id="search_start_date">
     <%= f.input :date, as: :string, placeholder: "Par dates", required: false, input_html: {class: "datepicker"}, label: false %>
   </div>
   <div class="event-style-input" id="search_style_type">
-    <%= f.input :style_type, as: :string, placeholder: "Par style", required: false, label: false %>
+    <%= f.input :style_type, placeholder: "Par style", collection: Style::STYLES.sort, prompt: "Par style" %>
   </div>
   <div class="event-serch-button-container">
     <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>

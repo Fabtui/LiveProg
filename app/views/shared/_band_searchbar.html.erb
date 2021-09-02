@@ -1,45 +1,20 @@
-<form action="bands" method="get">
-  <div class="band-search">
-    <div class="band-search-element">
-      <div class="band-search-icone">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="band-search-bar">
-        <input class="band-search-input"
-                type="text"
-                placeholder="Artiste"
-                class=""
-                autocomplete="on"
-                name="search[band]">
-      </div>
-    </div>
-    <div class="band-search-element">
-      <div class="band-search-icone">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="band-search-bar">
-      <datalist id="suggestions">
-          <option>Acoustique</option>
-          <option>Electro</option>
-          <option>Funk</option>
-          <option>Hip Hop</option>
-          <option>House</option>
-          <option>Jazz</option>
-          <option>Metal</option>
-          <option>Pop</option>
-          <option>Rap</option>
-          <option>Reggae</option>
-          <option>Reprises</option>
-          <option>Rock</option>
-      </datalist>
-      <input class="band-search-input"
-             type="text"
-             list="suggestions"
-             placeholder="Style"
-             autocomplete="on"
-             name="search[band_style]">
-      </div>
-      </div>
-    <input type="submit" name="commit" class="btn btn-blue-mini" value="Chercher">
+<div class="event-search-label">
+  <div class="event-search-icone">
+    <i class="fas fa-search"></i>
   </div>
-</form>
+  <h3>Rechercher</h3>
+</div>
+
+<div class="event-search-form-container">
+  <%= simple_form_for :search, method: "get" do |f| %>
+  <div class="event-date-input" id="search_start_date">
+    <%= f.input :band, as: :string, placeholder: "Par Artiste", required: false, class: "band-search-input", label: false %>
+  </div>
+  <div class="event-style-input" id="search_style_type">
+    <%= f.input :band_style, placeholder: "Par style", collection: Style::STYLES.sort, prompt: "Par style", label: false %>
+  </div>
+  <div class="event-serch-button-container">
+    <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>
+  </div>
+  <% end %>
+</div>

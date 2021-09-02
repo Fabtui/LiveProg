@@ -5,10 +5,15 @@
 </div>
 <div class="container">
 <div class="user-events-cotainer">
-  <h1>evenements</h1>
-<h4 id="best-bar-title" >Mes évenements</h4>
-  <div class="bar-show-programme">
+  <div class="event-title-container">
+    <h1>evenements</h1>
+  </div>
   <% participations = Participation.where(user_id: current_user.id) %>
+  <% if participations.count > 0 %>
+  <div class="my-event-container">
+    <h4 id="my-events" >Mes évenements</h4>
+  </div>
+  <div class="bar-show-programme">
     <% participations.each do |participation| %>
       <div class="btn btn-gradient participation-event-picture">
           <%= cl_image_tag participation.event.band.photos.first.key, class: "picture-of-band" %>
@@ -25,6 +30,7 @@
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
 
 <%= render 'shared/event_searchbar'%>
@@ -50,9 +56,9 @@
       </div>
     </div>
   </div>
-<br>
-<br>
- <h2 id="special-title">À venir</h2>
+
+ <h2>À venir</h2>
+
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
