@@ -68,6 +68,7 @@
 </div>
 
 
+
 <div class="d-flex justify-content-center mb-4">
   <%  @participations = Participation.where(user: current_user.id)  %>
   <% if @participations.find_by_event_id(@event) %>

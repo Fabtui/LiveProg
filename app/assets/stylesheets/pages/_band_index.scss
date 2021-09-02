@@ -1,7 +1,7 @@
 .card-band-container {
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 24px;
 }
 
 .band-index-card {
@@ -29,10 +29,14 @@
   text-align: end;
 }
 
-#band-index-title h1 {
+#band-index-title {
+  padding: 32px 0 0 32px;
+  h1 {
   font-size: 40px;
-  margin-bottom: 30px;
+  margin: 0;
+  }
 }
+
 
 .band-index-image img {
   border-radius: 4px;
