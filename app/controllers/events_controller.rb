@@ -3,6 +3,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @participations = Participation.where(user: current_user.id)
     @user = current_user
+    @cal = AddToCalendar::URLs.new(
+        start_datetime: @event.start_date,
+        title: "#{@event.band.name}-#{@event.bar.name}",
+        timezone: 'Europe/Paris'
+      )
   end
 
   def index

@@ -80,6 +80,7 @@
               method: :delete %>
   <% else  %>
     <%= link_to "Ajouter!", event_participations_path(@event.id), method: :post, remote: true, id: "add-participation", class: "links-event" %>
+    <%= link_to "Ajouter au calendrier", @cal.google_url %>
   <% end %>
 </div>
 

@@ -27,6 +27,7 @@ gem 'cloudinary', '~> 1.16.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'geocoder'
+gem 'add_to_calendar'
 
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
