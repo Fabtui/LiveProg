@@ -48,6 +48,7 @@
 
 #event-search-button {
   // position: absolute;
+  
 }
 
 .event-serch-button-container {
@@ -61,4 +62,8 @@
   color: $blue !important;
   box-shadow: none !important;
   border-color: $blue !important;
+}
+
+#special-title {
+  margin-left: 1.3rem;
 }
