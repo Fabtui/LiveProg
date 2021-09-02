@@ -11,7 +11,7 @@
   height: 9rem;
   justify-content: center;
   text-align: center;
-  z-index: 999999;
+  z-index: 99;
     img {
       width: 30px;
       position: absolute;
@@ -34,6 +34,12 @@
   justify-content: center;
   text-align: center;
   color: black;
+}
+
+.event-participation {
+  position: absolute;
+  top: 50px;
+  right: 24px;
 }
 
 .links-event{

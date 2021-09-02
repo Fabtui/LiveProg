@@ -59,6 +59,7 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create
     @event = Event.new(event_params)
     @band = Band.find(params[:band_id])
@@ -67,11 +68,15 @@ class EventsController < ApplicationController
     @event.bar = bar
     @event.name = "#{@band.name} x #{bar.name}"
     if @event.save
-    redirect_to event_path(@event)
+      @band.fans.each do |user|
+        NewEventMailer.event_email(user, @event).deliver_later
+      end
+      redirect_to event_path(@event)
     else
       render :new
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def edit
   end

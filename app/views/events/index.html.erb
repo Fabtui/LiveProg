@@ -5,18 +5,29 @@
 </div>
 <div class="container">
 <div class="user-events-cotainer">
-  <h1>evenements</h1>
-<h4 id="best-bar-title" >Mes évenements</h4>
-  <div class="bar-show-programme">
-  <% participations = Participation.where(user_id: current_user.id) %>
-    <% participations.each do |participation| %>
-    <div class="btn btn-gradient"></btn-gradient><%=link_to participation.event.name, event_path(participation.event) %>   <%= " le #{participation.event.start_date.strftime('%d/%m')} à #{participation.event.start_date.strftime('%H:%M')} " %>
-    <%= link_to participation_path(participation), method: :delete, remote: true do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-    </div>
-  <% end %>
+  <div class="event-title-container">
+    <h1>evenements</h1>
   </div>
+  <% participations = Participation.where(user_id: current_user.id) %>
+  <% if participations.count > 0 %>
+  <div class="my-event-container">
+    <h4 id="my-events" >Mes évenements</h4>
+  </div>
+  <div class="bar-show-programme">
+    <% participations.each do |participation| %>
+      <div class="btn btn-gradient participation-event-picture">
+          <%= cl_image_tag participation.event.band.photos.first.key, class: "picture-of-band" %>
+          <div class="blur-grayscale"></div>
+        <div class="description-of-participation">
+          <div>
+            <%=link_to participation.event.name, event_path(participation.event) %>
+            <%= " le #{participation.event.start_date.strftime('%d/%m')} à #{participation.event.start_date.strftime('%H:%M')} " %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
 </div>
 
 <%= render 'shared/event_searchbar'%>
@@ -42,9 +53,9 @@
       </div>
     </div>
   </div>
-<br>
-<br>
+
  <h2>À venir</h2>
+
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
