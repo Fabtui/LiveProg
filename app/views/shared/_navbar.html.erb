@@ -1,6 +1,6 @@
 <nav class="header">
 	<div class="header__item <%= "header__item--active" if controller_name == "pages" && action_name == "home" %>">
-    <a href="../">
+    <a href="/">
 		<div class="header__item-content">
 			<img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902563/yznpbp3kj6ipqrojfyfd.png" class="navbar-logo">
 			<%# <span>Accueil</span> %>
@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="header__item <%= "header__item--active" if controller_name == "events" && action_name == "index" %>">
-    <a href="../events">
+    <a href="/events">
 		<div class="header__item-content">
       <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902689/xruqwo2ns5utxlkaj9fr.png" class="navbar-logo">
 			<%# <span>Evenements</span> %>
@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="header__item <%= "header__item--active" if controller_name == "registrations" && action_name == "edit" %>">
-    <a href="../users/edit">
+    <a href="/users/edit">
 		<div class="header__item-content">
       <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902700/wyryn2zwcvkkyfskrgao.png" class="navbar-logo">
         <%# <span>Profil</span> %>
