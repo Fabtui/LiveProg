@@ -1,8 +1,7 @@
-var popUp = document.getElementById('participation-popup')
-var container = document.querySelector('#infos-container')
-popUp.classList.remove('hidden')
-container.style.filter = "blur(3px)";
+var partIcone = document.querySelector(".event-participation")
 
-var link = document.getElementById('add-participation')
+<% link = link_to '<div id="part-icone"><i class="fas fa-calendar"></i></div>'.html_safe, participation_path(@participation), method: :delete, remote: true, id: "remove-part" %>
 
-link.outerHTML = "<%= j(link_to "Retirer!", participation_path(@participation), class: "links-event", method: :delete, id: "add-participation", remote: true) %>"
+partIcone.innerHTML = "<%= j(link)%>"
+
+document.getElementById("calendar-link").click()
