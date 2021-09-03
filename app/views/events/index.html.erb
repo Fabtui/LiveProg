@@ -4,20 +4,21 @@
   <% end %>
 </div>
 <div class="container">
-<div class="user-events-cotainer">
-  <div class="event-title-container">
-    <h1>evenements</h1>
-  </div>
-  <% participations = Participation.where(user_id: current_user.id) %>
-  <% if participations.count > 0 %>
-  <div class="my-event-container">
-    <h4 id="my-events" >Mes évènements</h4>
-  </div>
-  <div class="bar-show-programme">
-    <% participations.each do |participation| %>
+  <div class="user-events-cotainer">
+    <div class="event-title-container">
+      <h1>evenements</h1>
+    </div>
+      <% participations = Participation.where(user_id: current_user.id) %>
+      <% if participations.count > 0 %>
+    <div class="my-event-container">
+      <h4 id="my-events" >Mes évènements</h4>
+    </div>
+    <div class="bar-show-programme">
+      <% participations.each do |participation| %>
       <div class="btn btn-gradient participation-event-picture">
-          <%= cl_image_tag participation.event.band.photos.first.key, class: "picture-of-band" %>
-          <div class="blur-grayscale"></div>
+        <%= cl_image_tag participation.event.band.photos.first.key, class: "picture-of-band" %>
+        <div class="blur-grayscale">
+        </div>
         <div class="description-of-participation">
           <div>
             <%=link_to participation.event.name, event_path(participation.event) %>
@@ -25,44 +26,37 @@
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   <% end %>
+</div>
 </div>
 
 <%= render 'shared/event_searchbar'%>
 
+  <h2>Aujourd'hui</h2>
   <% today = [] %>
   <% others = [] %>
   <% @events.each do |event| %>
-  <% if event.start_date.today? %>
-  <h2>Aujourd'hui</h2>
+    <% if event.start_date.today? %>
+      <% today << event %>
+    <% else %>
+      <% others << event %>
+    <% end %>
+  <% end %>
   <div class="carousel-container">
     <div class="carousel-wrapper">
       <div class="carousel">
         <div class="cards-event">
-              <% today << event %>
-            <% else %>
-              <% others << event %>
-            <% end %>
-          <% end %>
         <% today.each do |event| %>
-        <%= render 'shared/event_card', event: event %>
+          <%= render 'shared/event_card', event: event %>
         <% end %>
         </div>
       </div>
     </div>
   </div>
 
-<% if others.count > 0 %>
  <h2>Prochainement</h2>
-<% elsif others.count < 1 && today.count > 0 %>
-  <h2></h2>
-<% else %>
-  <h2 style="text-align: center;">Pas de résultats pour cette recherche</h2>
-<% end %>
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
       <div class="carousel">
         <div class="cards-event">
         <% others.each do |event| %>
@@ -72,7 +66,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <div class="up-container">
   <div class="up-icone" id="up-button">
