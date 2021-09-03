@@ -17,7 +17,7 @@ end
 # _______________________________BARS_________________________________________
 
 le_shakpo = Bar.create!(
-  name: "Le Shakpo",
+  name: "Le Shapko",
   address: "5 Rue Rossetti, 06300 Nice",
   description: "Café-Concert",
   opening_time: "21h00 - 01h00"
@@ -220,6 +220,12 @@ User.create!(
   nickname: "blueberry"
 )
 User.create!(
+  email: "michel@gmail.com",
+  password: "12345678",
+  nickname: "Michel"
+)
+
+User.create!(
   email: "sebsaunier@gmail.com",
   password: "12345678",
   nickname: "Seb Saunier"
@@ -385,7 +391,7 @@ thoj_oneils = Event.create!(
 )
 
 l2duo = Band.create!(
-  name: "L2 duo",
+  name: "L2 Duo",
   user_id: "12",
   description: "Un duo composé de Luisa Kelly et Liam Berthelot. Ils ont un répertoire très varié, chansons françaises et anglaises de tous styles."
 )
@@ -395,8 +401,41 @@ l2duo_bateleur = Event.create!(
   band_id: "12",
   bar_id: "4",
   start_date: "2021-09-25T21:00",
-  name: "Le Bateleur accueille",
+  name: "L2 Duo au Bateleur",
   description: "Ce duo habitué des lieux revient nous enchanter avec leur reprises accoustiques entrainante."
+)
+
+kamini = Band.create!(
+  name: "Kamini",
+  user_id: "13",
+  youtube_url: "https://www.youtube.com/embed/D782Iv9GXSU",
+  description: "Rappeur français, connu pour être l'auteur de Marly-Gomont, chanson qui a remporté un vif succès et dont le clip est devenu un phénomène sur Internet"
+)
+kamini.photos.attach(io: File.open('app/assets/images/bands/kamini.jpg'), filename: 'kamini.jpg', content_type:'image/jpg')
+
+
+kamini_bateleur = Event.create!(
+  band_id: "13",
+  bar_id: "13",
+  start_date: "2021-09-12T21:00",
+  name: "Kamini au MaNolan's du Port",
+  description: "Kamini est de retour au Manolan's du POrt de Nice, avec son flow et son humour!"
+)
+
+claudio = Band.create!(
+  name: "Claudio & friends",
+  user_id: "14",
+  youtube_url: "https://www.youtube.com/embed/j-TWQA5EIdw",
+  description: "Claudio & friends, groupe de jazz niçois touche à tout, l'aise dans tout les styles!"
+)
+claudio.photos.attach(io: File.open('app/assets/images/bands/claudio.jpg'), filename: 'claudio.jpg', content_type:'image/jpg')
+
+claudio_shapko = Event.create!(
+  band_id: "14",
+  bar_id: "1",
+  start_date: "2021-09-03T22:00",
+  name: "Claudio & friends au Shapko!",
+  description: "Claudio & friends en live au Shapko pour un set-list Jazz/Rock de folie!"
 )
 
 # _______________________________BANDS-STYLES_________________________________________
@@ -486,6 +525,21 @@ BandStyle.create!(
   style_id: "13"
 )
 
+BandStyle.create!(
+  band_id: "13",
+  style_id: "2"
+)
+
+BandStyle.create!(
+  band_id: "14",
+  style_id: "3"
+)
+
+BandStyle.create!(
+  band_id: "14",
+  style_id: "9"
+)
+
 # ______________________________________________________________________________________
 
 347.times do
@@ -572,6 +626,19 @@ end
   like.save(validation: false)
 end
 
+276.times do
+  like = BandFav.new
+  like.band = Band.find(13)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+236.times do
+  like = BandFav.new
+  like.band = Band.find(14)
+  like.user = User.first
+  like.save(validation: false)
+end
 # ______________________________________________________________________________________
 
 BandReview.create!(
@@ -580,6 +647,21 @@ BandReview.create!(
   comment: "Trop cool! Super son!",
   rating: 4,
 )
+
+BandReview.create!(
+  user_id: "3",
+  band_id: "6",
+  comment: "Pas ouf..",
+  rating: 2,
+)
+
+BandReview.create!(
+  user_id: "9",
+  band_id: "6",
+  comment: "Nouveau style, pas terrible.",
+  rating: 3,
+)
+
 
 # ______________________________________________________________________________________
 
