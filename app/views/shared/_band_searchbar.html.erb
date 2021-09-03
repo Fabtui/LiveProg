@@ -1,9 +1,4 @@
-<div class="event-search-label">
-  <div class="event-search-icone">
-    <i class="fas fa-search"></i>
-  </div>
-  <h3>Rechercher</h3>
-</div>
+<hr>
 
 <div class="event-search-form-container">
   <%= simple_form_for :search, method: "get" do |f| %>
@@ -14,7 +9,7 @@
     <%= f.input :band_style, collection: Style::STYLES.sort, label: false, input_html: { multiple: true } %>
   </div>
   <div class="event-serch-button-container">
-    <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost", id: "event-search-button" %>
+    <%= f.button :submit, value: "Rechercher", class: "btn btn-ghost mt-2", id: "event-search-button" %>
   </div>
   <% end %>
 </div>

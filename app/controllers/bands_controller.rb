@@ -7,6 +7,7 @@ class BandsController < ApplicationController
       bands_from_style = Band.style_search(search_style)
       @bands = [bands_from_name, bands_from_style].reject(&:blank?).reduce(:&)
       @bands ||= []
+      @results = params[:search][:band_style].compact_blank
     end
   end
 
