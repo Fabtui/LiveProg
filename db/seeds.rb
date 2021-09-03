@@ -5,6 +5,7 @@ Style.destroy_all if Rails.env.development?
 BandStyle.destroy_all if Rails.env.development?
 BandFav.destroy_all if Rails.env.development?
 BandReview.destroy_all if Rails.env.development?
+Event.destroy_all if Rails.env.development?
 
 # _______________________________STYLE_________________________________________
 
