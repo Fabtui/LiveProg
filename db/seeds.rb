@@ -3,10 +3,12 @@ User.destroy_all if Rails.env.development?
 Band.destroy_all if Rails.env.development?
 Style.destroy_all if Rails.env.development?
 BandStyle.destroy_all if Rails.env.development?
+BandFav.destroy_all if Rails.env.development?
+BandReview.destroy_all if Rails.env.development?
 
 # _______________________________STYLE_________________________________________
 
-styles = %w(Hip\ Hop Rap Rock Metal Pop Electro Funk Rap Jazz House Reggae Divers Reprises Acoustique)
+styles = %w(Hip\ Hop Rap Rock Metal Pop Electro Funk Rap Jazz House Reggae Punk Reprises Acoustique)
 
 styles.each do |style|
   Style.create!(style_type: style)
@@ -217,6 +219,11 @@ User.create!(
   password: "12345678",
   nickname: "blueberry"
 )
+User.create!(
+  email: "sebsaunier@gmail.com",
+  password: "12345678",
+  nickname: "Seb Saunier"
+)
 
 # _______________________________BANDS-EVENTS_________________________________________
 
@@ -249,7 +256,7 @@ efb.photos.attach(io: File.open('app/assets/images/bands/EFB.jpg'), filename: 'E
 efb_waka = Event.create!(
   band_id: "2",
   bar_id: "6",
-  start_date: "2021-09-02T21:30",
+  start_date: "2021-09-04T21:30",
   name: "Elmer Food Beat au Waka",
   description: "Elmer Food Beat en concert au Waka bar pour une soirée barrée!"
 )
@@ -266,7 +273,7 @@ djpone.photos.attach(io: File.open('app/assets/images/bands/djpone.jpg'), filena
 djpone_chupito = Event.create!(
   band_id: "3",
   bar_id: "10",
-  start_date: "2021-08-31T22:30",
+  start_date: "2021-09-23T22:30",
   name: "DJ Pone au Chupito Loco",
   description: "DJ Pone pour un live set exclusif au Chupito Loco."
 )
@@ -283,7 +290,7 @@ shokinpapa.photos.attach(io: File.open('app/assets/images/bands/shokinpapa.jpg')
 shokinpapa_bulldog = Event.create!(
   band_id: "4",
   bar_id: "16",
-  start_date: "2021-09-20T21:30",
+  start_date: "2021-09-04T21:30",
   name: "The Shokin' Papas au Bulldog",
   description: "Les Shokin' Papas viennent décoller le papier peint des murs du Bulldog."
 )
@@ -340,7 +347,7 @@ theAvener.photos.attach(io: File.open('app/assets/images/bands/avener.jpg'), fil
 theAvener_waka = Event.create!(
   band_id: "9",
   bar_id: "6",
-  start_date: "2021-09-03T21:30",
+  start_date: "2021-09-18T21:30",
   name: "The Avener au Waka bar",
   description: "Le Waka est ravi de vous accueillir à l'occasion du passage d'une figure locale de la musique electronique."
 )
@@ -372,7 +379,7 @@ thoj.photos.attach(io: File.open('app/assets/images/bands/thoj.jpg'), filename: 
 thoj_oneils = Event.create!(
   band_id: "11",
   bar_id: "11",
-  start_date: "2021-09-03T21:30",
+  start_date: "2021-09-03T20:30",
   name: "Thoj au Oneils",
   description: "Venez écouter Thoj, l'étoile montante de la scène locale."
 )
@@ -387,7 +394,7 @@ l2duo.photos.attach(io: File.open('app/assets/images/bands/l2duo.jpg'), filename
 l2duo_bateleur = Event.create!(
   band_id: "12",
   bar_id: "4",
-  start_date: "2021-09-03T21:00",
+  start_date: "2021-09-25T21:00",
   name: "Le Bateleur accueille",
   description: "Ce duo habitué des lieux revient nous enchanter avec leur reprises accoustiques entrainante."
 )
@@ -440,7 +447,7 @@ BandStyle.create!(
 )
 BandStyle.create!(
   band_id: "6",
-  style_id: "4"
+  style_id: "5"
 )
 BandStyle.create!(
   band_id: "7",
@@ -456,7 +463,7 @@ BandStyle.create!(
 )
 BandStyle.create!(
   band_id: "9",
-  style_id: "10, 6"
+  style_id: "10"
 )
 BandStyle.create!(
   band_id: "9",
@@ -481,6 +488,101 @@ BandStyle.create!(
 
 # ______________________________________________________________________________________
 
+347.times do
+  like = BandFav.new
+  like.band = Band.find(1)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+387.times do
+  like = BandFav.new
+  like.band = Band.find(2)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+456.times do
+  like = BandFav.new
+  like.band = Band.find(3)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+665.times do
+  like = BandFav.new
+  like.band = Band.find(4)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+456.times do
+  like = BandFav.new
+  like.band = Band.find(5)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+423.times do
+  like = BandFav.new
+  like.band = Band.find(6)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+312.times do
+  like = BandFav.new
+  like.band = Band.find(7)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+259.times do
+  like = BandFav.new
+  like.band = Band.find(8)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+243.times do
+  like = BandFav.new
+  like.band = Band.find(9)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+189.times do
+  like = BandFav.new
+  like.band = Band.find(10)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+280.times do
+  like = BandFav.new
+  like.band = Band.find(11)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+176.times do
+  like = BandFav.new
+  like.band = Band.find(12)
+  like.user = User.first
+  like.save(validation: false)
+end
+
+# ______________________________________________________________________________________
+
+BandReview.create!(
+  user_id: "10",
+  band_id: "1",
+  comment: "Trop cool! Super son!",
+  rating: 4,
+)
+
+# ______________________________________________________________________________________
+
 
 puts "#{Style.all.count} styles created"
 puts "#{Bar.all.count} bars created"
@@ -488,3 +590,5 @@ puts "#{User.all.count} users created"
 puts "#{Band.all.count} bands created"
 puts "#{Event.all.count} events created"
 puts "#{BandStyle.all.count} band styles created"
+puts "#{BandFav.all.count} band favs created"
+puts "#{BandReview.all.count} band review created"
