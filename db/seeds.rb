@@ -231,6 +231,12 @@ User.create!(
   nickname: "Seb Saunier"
 )
 
+User.create!(
+  email: "caroline.bayle@lewagon.org",
+  password: "12345678",
+  nickname: "Mat"
+)
+
 # _______________________________BANDS-EVENTS_________________________________________
 
 vulfpeck = Band.create!(
@@ -438,6 +444,15 @@ claudio_shapko = Event.create!(
   description: "Claudio & friends en live au Shapko pour un set-list Jazz/Rock de folie!"
 )
 
+saunier = Band.create!(
+  name: "Seb Saunier's Trio",
+  user_id: "15",
+  youtube_url: "https://www.youtube.com/embed/FcoUvu0mGog",
+  description: "Seb Saunier Cofondateur du Wagon et son groupe de Death Metal mélange le code et la musique trash pour notre plus grand bonheur!"
+)
+saunier.photos.attach(io: File.open('app/assets/images/bands/saunier.jpg'), filename: 'saunier.jpg', content_type:'image/jpg')
+
+
 # _______________________________BANDS-STYLES_________________________________________
 
 BandStyle.create!(
@@ -540,6 +555,11 @@ BandStyle.create!(
   style_id: "9"
 )
 
+BandStyle.create!(
+  band_id: "15",
+  style_id: "4"
+)
+
 # ______________________________________________________________________________________
 
 347.times do
@@ -639,6 +659,13 @@ end
   like.user = User.first
   like.save(validation: false)
 end
+
+36.times do
+  like = BandFav.new
+  like.band = Band.find(15)
+  like.user = User.first
+  like.save(validation: false)
+end
 # ______________________________________________________________________________________
 
 BandReview.create!(
@@ -658,10 +685,23 @@ BandReview.create!(
 BandReview.create!(
   user_id: "9",
   band_id: "6",
-  comment: "Nouveau style, pas terrible.",
+  comment: "Pas fan du nouveau style.",
   rating: 3,
 )
 
+BandReview.create!(
+  user_id: "9",
+  band_id: "4",
+  comment: "Enorme!",
+  rating: 5,
+)
+
+BandReview.create!(
+  user_id: "15",
+  band_id: "4",
+  comment: "Super son!",
+  rating: 4,
+)
 
 # ______________________________________________________________________________________
 
