@@ -8,15 +8,12 @@
     </a>
 	</div>
 
-	<div class="header__item <%= "header__item--active" if controller_name == "bands" && action_name == "index" || controller_name == "bars" && action_name == "index" %>">
+	<div class="header__item <%= "header__item--active" if controller_name == "bands" && action_name == "index"%>">
 		<div class="header__item-content">
-      <%= image_tag "http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902667/nrzzhevfcqofigtu1akv.png", class: "navbar-logo dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= link_to "Les groupes", bands_path, class: "dropdown-item" %>
-        <%= link_to "Les bars", bars_path, class: "dropdown-item" %>
-        <%= link_to "Les évènements", events_path, class: "dropdown-item" %>
-      </div>
+    <a href="/bands">
+      <img src="http://res.cloudinary.com/dvocm8ddc/image/upload/v1629902667/nrzzhevfcqofigtu1akv.png" class="navbar-logo">
 		</div>
+    </a>
 	</div>
 	<div class="header__item <%= "header__item--active" if controller_name == "events" && action_name == "index" %>">
     <a href="/events">
