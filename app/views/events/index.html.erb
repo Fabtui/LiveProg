@@ -34,7 +34,6 @@
 
 <%= render 'shared/event_searchbar'%>
 
-  <h2>Aujourd'hui</h2>
   <% today = [] %>
   <% others = [] %>
   <% @events.each do |event| %>
@@ -43,6 +42,9 @@
     <% else %>
       <% others << event %>
     <% end %>
+  <% end %>
+  <% if today.count > 0 %>
+  <h2>Aujourd'hui</h2>
   <% end %>
   <div class="carousel-container">
     <div class="carousel-wrapper">
@@ -56,7 +58,13 @@
     </div>
   </div>
 
+<% if others.count > 0 %>
  <h2>Prochainement</h2>
+<% elsif others.count < 1 && today.count > 0 %>
+  <h2></h2>
+<% else %>
+  <h2 style="text-align: center;">Pas de résultats pour cette recherche</h2>
+<% end %>
       <div class="carousel">
         <div class="cards-event">
         <% others.each do |event| %>
