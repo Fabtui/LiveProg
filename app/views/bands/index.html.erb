@@ -8,6 +8,12 @@
 
   <%= render 'shared/band_searchbar'%>
 
+<% if @results  %>
+  <% @results.each do |style| %>
+    <div class="results-style btn btn-ghost-micro"><%= style %></div>
+  <% end %>
+<% end %>
+
 <% if @bands.count < 1 %>
   <h2 style="text-align: center;">Pas de résultat pour cette recherche</h2>
 <% end %>
