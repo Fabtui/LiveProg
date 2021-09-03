@@ -7,15 +7,15 @@
   font-weight: lighter;
   color: $blue;
   font-size: 2rem;
-  background: black;
+  background: $anthrax;
   height: 9rem;
   justify-content: center;
   text-align: center;
   z-index: 99;
     img {
-      width: 50px;
+      width: 40px;
       position: absolute;
-      top: 48px;
+      top: 52px;
       left: 24px;
   }
 }
