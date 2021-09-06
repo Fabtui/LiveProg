@@ -8,10 +8,14 @@
 
   <%= render 'shared/band_searchbar'%>
 
-<% if @results  %>
+<% if @results.is_a?(Array)  %>
   <% @results.each do |style| %>
     <div class="results-style btn btn-ghost-micro"><%= style %></div>
   <% end %>
+  <% elsif if @results.is_a?(String) %>
+    <div class="results-style btn btn-ghost-micro"><%= @results %></div>
+<% end %>
+
 <% end %>
 
 <% if @bands.count < 1 %>
